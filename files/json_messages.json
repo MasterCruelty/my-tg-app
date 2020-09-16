@@ -1,0 +1,4083 @@
+{
+    "_": "pyrogram.Message",
+    "message_id": 641065,
+    "date": "2019-06-13 21:19:30",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001142711616,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+            "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 38925381,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Paolo",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 38925381,
+            "recently": true
+        },
+        "username": "laolo_puca",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADRfRRAgAE2fosGwAETI4EAAIC",
+            "big_file_id": "AQADBAADRfRRAgAE2fosGwAETo4EAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "Scusate ma mi sto ancora riprendendo, oggi è stata una giornata davvero pessima a lavoro",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 273689,
+    "date": "2019-06-13 21:19:33",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001393849097,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Scena diamo una casa a Morgan",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQK7gYAAgI",
+            "big_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQM7gYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 77213908,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "luca",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 77213908,
+            "recently": true
+        },
+        "username": "ErmalMeth",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD1DCaBAAEO9weGwAEAucGAAIC",
+            "big_file_id": "AQADBAAD1DCaBAAEO9weGwAEBOcGAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "Tette",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 6577,
+    "date": "2019-06-13 21:19:36",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001400856253,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Gabinetto di Palazzo Chigi",
+        "username": "mattarellone",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARLvwYAAgI",
+            "big_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARNvwYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": false
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 432477404,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Ｌｕｃａ",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 432477404,
+            "recently": true
+        },
+        "username": "luconziox",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD3BTHGQAERDgiGwAEkwwHAAIC",
+            "big_file_id": "AQADBAAD3BTHGQAERDgiGwAElQwHAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 6247,
+        "date": "2019-06-13 15:18:41",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001400856253,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Gabinetto di Palazzo Chigi",
+            "username": "mattarellone",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARLvwYAAgI",
+                "big_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARNvwYAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": false
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 91230624,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Marco",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 91230624,
+                "recently": true
+            },
+            "username": "OnorevoleAvvocatoBombo",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADoBFwBQAEj5idGgAED04GAAIC",
+                "big_file_id": "AQADBAADoBFwBQAEj5idGgAEEU4GAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "Dicon che Borghezio ha una nonna tunisina e la tenga segregata da vent'anni giù in cantina",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "Pieeeeroooo",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 641066,
+    "date": "2019-06-13 21:19:43",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001142711616,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+            "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 38925381,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Paolo",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 38925381,
+            "recently": true
+        },
+        "username": "laolo_puca",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADRfRRAgAE2fosGwAETI4EAAIC",
+            "big_file_id": "AQADBAADRfRRAgAE2fosGwAETo4EAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "Ho fatto più volte la figura del ritardato in modo forte",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 273690,
+    "date": "2019-06-13 21:19:51",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001393849097,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Scena diamo una casa a Morgan",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQK7gYAAgI",
+            "big_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQM7gYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 30013746,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Willy",
+        "last_name": "Pendio",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 30013746,
+            "recently": true
+        },
+        "username": "siralamon",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADMvnJAQAEleNlGQAEHHgEAAIC",
+            "big_file_id": "AQADBAADMvnJAQAEleNlGQAEHngEAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "Che palle non se riesce mai a trova una con della frutta decente",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 273691,
+    "date": "2019-06-13 21:20:12",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001393849097,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Scena diamo una casa a Morgan",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQK7gYAAgI",
+            "big_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQM7gYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 77213908,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "luca",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 77213908,
+            "recently": true
+        },
+        "username": "ErmalMeth",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD1DCaBAAEO9weGwAEAucGAAIC",
+            "big_file_id": "AQADBAAD1DCaBAAEO9weGwAEBOcGAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 273690,
+        "date": "2019-06-13 21:19:51",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001393849097,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Scena diamo una casa a Morgan",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQK7gYAAgI",
+                "big_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQM7gYAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 30013746,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Willy",
+            "last_name": "Pendio",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 30013746,
+                "recently": true
+            },
+            "username": "siralamon",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADMvnJAQAEleNlGQAEHHgEAAIC",
+                "big_file_id": "AQADBAADMvnJAQAEleNlGQAEHngEAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "Che palle non se riesce mai a trova una con della frutta decente",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "media": true,
+    "voice": {
+        "_": "pyrogram.Voice",
+        "file_id": "AwADBAAD9AYAAgSUEFAwgaoaReYclgI",
+        "duration": 11,
+        "waveform": "b\"\\x00\\x00\\x00@\\x08!4\\xfa\\x7f\\xb5\\x9f{\\xf8x\\xb4V\\xb2\\xf1\\xdf\\xdd\\x07\\xfdsq\\xab\\x1f\\xe5\\xdf\\xe2\\xff\\x99\\xafk\\xccB\\xed\\x85@\\x02\\x00 \\x00\\x10\\x02\\xc3\\xff\\xa3\\xff'\\x1b\\xc7\\x9b\\xad\\x9cr\\t\\xbf\\xff\\xff#\\xac\\xad\\x06\"",
+        "mime_type": "audio/ogg",
+        "file_size": 26995,
+        "date": "2019-06-13 21:20:12"
+    },
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 641067,
+    "date": "2019-06-13 21:20:22",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001142711616,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+            "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 542430195,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Davide",
+        "last_name": "eSwatini 🇸🇿",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 542430195,
+            "recently": true
+        },
+        "username": "savoiardidance",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD89NUIAAExIkpGwAE1yMGAAIC",
+            "big_file_id": "AQADBAAD89NUIAAExIkpGwAE2SMGAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "con clienti?",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 273692,
+    "date": "2019-06-13 21:20:29",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001393849097,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Scena diamo una casa a Morgan",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQK7gYAAgI",
+            "big_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQM7gYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 77213908,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "luca",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 77213908,
+            "recently": true
+        },
+        "username": "ErmalMeth",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD1DCaBAAEO9weGwAEAucGAAIC",
+            "big_file_id": "AQADBAAD1DCaBAAEO9weGwAEBOcGAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "media": true,
+    "voice": {
+        "_": "pyrogram.Voice",
+        "file_id": "AwADBAAD9QYAAgSUEFAVejOrC_n9OwI",
+        "duration": 8,
+        "waveform": "b'`\\x880\\xc2 \\x85\\x8c\\x82\\x06I\\xf2[\\\\\\x1ek\\xebW\\n\\xb7|0\\xfe\\xab\\x8e\\x82\\xae\\xa5\\x86\\x99\\x84?\\xa1\\x87\\xff\\x9f\\xaa1\\xc7\\xbe\\x928\\xa3V\\x0e\\x1a\\xa9\\x9cA\\xd6\\xfff\\xb9$\\x1dF\\xff\\xffG\\\\\\xdd\\x89=\\x03'",
+        "mime_type": "audio/ogg",
+        "file_size": 20736,
+        "date": "2019-06-13 21:20:29"
+    },
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 1941727,
+    "date": "2019-06-13 21:20:33",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001146498129,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lotto MORTO",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAQADr8ME5xb___9nHxQwAAQlbgIAAgI",
+            "big_file_id": "AQADAQADr8ME5xb___9nHxQwAAQnbgIAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 542430195,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Davide",
+        "last_name": "eSwatini 🇸🇿",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 542430195,
+            "recently": true
+        },
+        "username": "savoiardidance",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD89NUIAAExIkpGwAE1yMGAAIC",
+            "big_file_id": "AQADBAAD89NUIAAExIkpGwAE2SMGAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 1941724,
+        "date": "2019-06-13 21:15:52",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001146498129,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lotto MORTO",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADAQADr8ME5xb___9nHxQwAAQlbgIAAgI",
+                "big_file_id": "AQADAQADr8ME5xb___9nHxQwAAQnbgIAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 249384467,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Enrico",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 249384467,
+                "recently": true
+            },
+            "username": "enrico_lele",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADE07dDgAEeC-xGgAEgbMBAAIC",
+                "big_file_id": "AQADBAADE07dDgAEeC-xGgAEg7MBAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "Cercala su insta",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "come si chiama",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 641068,
+    "date": "2019-06-13 21:20:37",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001142711616,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+            "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 38925381,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Paolo",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 38925381,
+            "recently": true
+        },
+        "username": "laolo_puca",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADRfRRAgAE2fosGwAETI4EAAIC",
+            "big_file_id": "AQADBAADRfRRAgAE2fosGwAETo4EAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 641067,
+        "date": "2019-06-13 21:20:22",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001142711616,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+                "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 542430195,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Davide",
+            "last_name": "eSwatini 🇸🇿",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 542430195,
+                "recently": true
+            },
+            "username": "savoiardidance",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAAD89NUIAAExIkpGwAE1yMGAAIC",
+                "big_file_id": "AQADBAAD89NUIAAExIkpGwAE2SMGAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "con clienti?",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "Nono, con altri in ufficii",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 641068,
+    "date": "2019-06-13 21:20:37",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001142711616,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+            "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 38925381,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Paolo",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 38925381,
+            "recently": true
+        },
+        "username": "laolo_puca",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADRfRRAgAE2fosGwAETI4EAAIC",
+            "big_file_id": "AQADBAADRfRRAgAE2fosGwAETo4EAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 641067,
+        "date": "2019-06-13 21:20:22",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001142711616,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+                "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 542430195,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Davide",
+            "last_name": "eSwatini 🇸🇿",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 542430195,
+                "recently": true
+            },
+            "username": "savoiardidance",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAAD89NUIAAExIkpGwAE1yMGAAIC",
+                "big_file_id": "AQADBAAD89NUIAAExIkpGwAE2SMGAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "con clienti?",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "edit_date": "2019-06-13 21:20:41",
+    "text": "Nono, con altri in ufficio",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 6578,
+    "date": "2019-06-13 21:20:54",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001400856253,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Gabinetto di Palazzo Chigi",
+        "username": "mattarellone",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARLvwYAAgI",
+            "big_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARNvwYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": false
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 432477404,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Ｌｕｃａ",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 432477404,
+            "recently": true
+        },
+        "username": "luconziox",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD3BTHGQAERDgiGwAEkwwHAAIC",
+            "big_file_id": "AQADBAAD3BTHGQAERDgiGwAElQwHAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "Quanto è bello Cristicchi",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 6579,
+    "date": "2019-06-13 21:21:03",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001400856253,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Gabinetto di Palazzo Chigi",
+        "username": "mattarellone",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARLvwYAAgI",
+            "big_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARNvwYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": false
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 147509378,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Ⓛⓤⓘⓢⓘⓐⓝⓐ",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 147509378,
+            "recently": true
+        },
+        "username": "louysyana",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADgtDKCAAEPRkiGwAE3zwGAAIC",
+            "big_file_id": "AQADBAADgtDKCAAEPRkiGwAE4TwGAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 6575,
+        "date": "2019-06-13 21:14:32",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001400856253,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Gabinetto di Palazzo Chigi",
+            "username": "mattarellone",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARLvwYAAgI",
+                "big_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARNvwYAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": false
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 18381299,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "E.",
+            "last_name": "Greggio",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 18381299,
+                "recently": true
+            },
+            "username": "decimosesto",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADAgAD83kYAQAEtU1fDwAEhv0FAAIC",
+                "big_file_id": "AQADAgAD83kYAQAEtU1fDwAEiP0FAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "Mi fa soffrire fisicamente al solo pensiero",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "Sta salvando l'Italia",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 641069,
+    "date": "2019-06-13 21:21:09",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001142711616,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+            "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 38925381,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Paolo",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 38925381,
+            "recently": true
+        },
+        "username": "laolo_puca",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADRfRRAgAE2fosGwAETI4EAAIC",
+            "big_file_id": "AQADBAADRfRRAgAE2fosGwAETo4EAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "Più o meno ho sbagliato cose semplicissime che hanno richiesto un sacco di tempo per essere corrette",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 230974,
+    "date": "2019-06-13 21:21:30",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001098737959,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Halosofia",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD2Ybd6Rb___9YAyIbAASVxAADAg",
+            "big_file_id": "AQADBAAD2Ybd6Rb___9YAyIbAASXxAACAQI"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 458116771,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "gic186",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 458116771,
+            "recently": true
+        },
+        "username": "gic186",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADo05OGwAE52yaGgAEFSYHAAIC",
+            "big_file_id": "AQADBAADo05OGwAE52yaGgAEFyYHAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "Profilo privato fiöi",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 6580,
+    "date": "2019-06-13 21:21:33",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001400856253,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Gabinetto di Palazzo Chigi",
+        "username": "mattarellone",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARLvwYAAgI",
+            "big_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARNvwYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": false
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 18381299,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "E.",
+        "last_name": "Greggio",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 18381299,
+            "recently": true
+        },
+        "username": "decimosesto",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAgAD83kYAQAEtU1fDwAEhv0FAAIC",
+            "big_file_id": "AQADAgAD83kYAQAEtU1fDwAEiP0FAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 6579,
+        "date": "2019-06-13 21:21:03",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001400856253,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Gabinetto di Palazzo Chigi",
+            "username": "mattarellone",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARLvwYAAgI",
+                "big_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARNvwYAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": false
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 147509378,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Ⓛⓤⓘⓢⓘⓐⓝⓐ",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 147509378,
+                "recently": true
+            },
+            "username": "louysyana",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADgtDKCAAEPRkiGwAE3zwGAAIC",
+                "big_file_id": "AQADBAADgtDKCAAEPRkiGwAE4TwGAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "Sta salvando l'Italia",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "Si sta suicidando in diretta TV?",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 962901,
+    "date": "2019-06-13 21:21:38",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": 96000757,
+        "type": "private",
+        "username": "MasterCruelty",
+        "first_name": "Roberto",
+        "last_name": "Amminz",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD9dq4BQAEP_QhGwAER4IFAAIC",
+            "big_file_id": "AQADBAAD9dq4BQAEP_QhGwAESYIFAAEBAg"
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 96000757,
+        "is_self": true,
+        "is_contact": true,
+        "is_mutual_contact": true,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Roberto",
+        "last_name": "Amminz",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 96000757,
+            "online": true,
+            "date": "2019-06-13 21:26:33"
+        },
+        "username": "MasterCruelty",
+        "phone_number": "************",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD9dq4BQAEP_QhGwAER4IFAAIC",
+            "big_file_id": "AQADBAAD9dq4BQAEP_QhGwAESYIFAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "media": true,
+    "photo": {
+        "_": "pyrogram.Photo",
+        "file_id": "AgADBAAD9LAxG7JQEFDR0bydgV1oT3kC",
+        "width": 1280,
+        "height": 523,
+        "file_size": 96437,
+        "date": "2019-06-13 21:21:38",
+        "thumbs": [
+            {
+                "_": "pyrogram.Thumbnail",
+                "file_id": "AAQEAAP0sDEbslAQUNHRvJ2BXWhPbQI",
+                "width": 320,
+                "height": 131,
+                "file_size": 14319
+            },
+            {
+                "_": "pyrogram.Thumbnail",
+                "file_id": "AAQEAAP0sDEbslAQUNHRvJ2BXWhPeAI",
+                "width": 800,
+                "height": 327,
+                "file_size": 59088
+            }
+        ]
+    },
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356663,
+    "date": "2019-06-13 21:21:38",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 197863853,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Lebowski Dude ᶠᶸᶜᵏᵧₒᵤ",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 197863853,
+            "recently": true
+        },
+        "username": "Lebowskidude",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADrSnLCwAEBCUfGwAEcdYFAAIC",
+            "big_file_id": "AQADBAADrSnLCwAEBCUfGwAEc9YFAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356622,
+        "date": "2019-06-13 19:42:26",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 255973116,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Sara 🦄",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 255973116,
+                "recently": true
+            },
+            "username": "Sarathelittlelion",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJFUEAAIC",
+                "big_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJlUEAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADqAYAAvQNEFB0I6zvabi2MQI",
+            "duration": 4,
+            "waveform": "b'\\x00\\x00\\x00@\\x10A\\x08\\x11\\xc2\\x08D\\xc9\\xff\\xff\\xff\\x909\\xe9\\xff\\x97\\xd7\\x8d\\xf3\\xff/\\xaa\\x9c\\x11\\xa7SB\\x041\\xc2\\x18d\\x10\\xa2\\xbc\\xffo\\x95\\xff\\xa5\\x9d)\\xf9\\x16\\xcbPv\\xd9\\xd78\\xd4\\xdf\\x1d!H\\xf9\\xaf-\\x08'",
+            "mime_type": "audio/ogg",
+            "file_size": 10528,
+            "date": "2019-06-13 19:42:25"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "❤️",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 641070,
+    "date": "2019-06-13 21:21:43",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001142711616,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+            "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 355857376,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "B",
+        "last_name": "3",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 355857376,
+            "recently": true
+        },
+        "username": "Hysteraa",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD4PM1FQAEe8YsGwAEBSwEAAIC",
+            "big_file_id": "AQADBAAD4PM1FQAEe8YsGwAEBywEAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 641060,
+        "date": "2019-06-13 21:18:55",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001142711616,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+                "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 329041853,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Lucia",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 329041853,
+                "recently": true
+            },
+            "username": "omeelette",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADvcecEwAE3gSxGgAE0RACAAIC",
+                "big_file_id": "AQADBAADvcecEwAE3gSxGgAE0xACAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "Siii",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "Seria?",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 962902,
+    "date": "2019-06-13 21:21:47",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": 96000757,
+        "type": "private",
+        "username": "MasterCruelty",
+        "first_name": "Roberto",
+        "last_name": "Amminz",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD9dq4BQAEP_QhGwAER4IFAAIC",
+            "big_file_id": "AQADBAAD9dq4BQAEP_QhGwAESYIFAAEBAg"
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 96000757,
+        "is_self": true,
+        "is_contact": true,
+        "is_mutual_contact": true,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Roberto",
+        "last_name": "Amminz",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 96000757,
+            "online": true,
+            "date": "2019-06-13 21:26:33"
+        },
+        "username": "MasterCruelty",
+        "phone_number": "************",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD9dq4BQAEP_QhGwAER4IFAAIC",
+            "big_file_id": "AQADBAAD9dq4BQAEP_QhGwAESYIFAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "media": true,
+    "voice": {
+        "_": "pyrogram.Voice",
+        "file_id": "AwADBAADywUAArJQEFDxF9-PnpTOCQI",
+        "duration": 3,
+        "waveform": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+        "mime_type": "audio/ogg",
+        "file_size": 21389,
+        "date": "2019-06-13 21:21:47"
+    },
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 641071,
+    "date": "2019-06-13 21:21:50",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001142711616,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+            "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 355857376,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "B",
+        "last_name": "3",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 355857376,
+            "recently": true
+        },
+        "username": "Hysteraa",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD4PM1FQAEe8YsGwAEBSwEAAIC",
+            "big_file_id": "AQADBAAD4PM1FQAEe8YsGwAEBywEAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 641061,
+        "date": "2019-06-13 21:19:00",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001142711616,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "ＡＴ／Ｍ／ ｓｈｉｔｐｏｓｔｉｎｇ ｃｏｍｍｕｎｉｔｙ",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADwIo-5xb____O_h4bAARwPAEAAgI",
+                "big_file_id": "AQADBAADwIo-5xb____O_h4bAARyPAEAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 329041853,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Lucia",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 329041853,
+                "recently": true
+            },
+            "username": "omeelette",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADvcecEwAE3gSxGgAE0RACAAIC",
+                "big_file_id": "AQADBAADvcecEwAE3gSxGgAE0xACAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "B3 sei saggio",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "Perché?",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 273693,
+    "date": "2019-06-13 21:21:54",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001393849097,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Scena diamo una casa a Morgan",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQK7gYAAgI",
+            "big_file_id": "AQADBAAD93xG2Bb___9SXSAbAAQM7gYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 489160429,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Linh",
+        "last_name": "Vu Thuy",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 489160429,
+            "recently": true
+        },
+        "username": "MandorlinaMandorla",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD7f4nHQAEIicfGwAEAr4GAAIC",
+            "big_file_id": "AQADBAAD7f4nHQAEIicfGwAEBL4GAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "Alla cortese attenzione di @Lamerdaccia  e @GigggioArgenio (ma è per tutti, dai) https://www.facebook.com/604337665/posts/10156418036327666/?sfnsn=mo",
+    "entities": [
+        {
+            "_": "pyrogram.MessageEntity",
+            "type": "mention",
+            "offset": 27,
+            "length": 12
+        },
+        {
+            "_": "pyrogram.MessageEntity",
+            "type": "mention",
+            "offset": 43,
+            "length": 15
+        },
+        {
+            "_": "pyrogram.MessageEntity",
+            "type": "url",
+            "offset": 81,
+            "length": 68
+        }
+    ],
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 1941728,
+    "date": "2019-06-13 21:21:54",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001146498129,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lotto MORTO",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAQADr8ME5xb___9nHxQwAAQlbgIAAgI",
+            "big_file_id": "AQADAQADr8ME5xb___9nHxQwAAQnbgIAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 249384467,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Enrico",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 249384467,
+            "recently": true
+        },
+        "username": "enrico_lele",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADE07dDgAEeC-xGgAEgbMBAAIC",
+            "big_file_id": "AQADBAADE07dDgAEeC-xGgAEg7MBAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 1941727,
+        "date": "2019-06-13 21:20:33",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001146498129,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lotto MORTO",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADAQADr8ME5xb___9nHxQwAAQlbgIAAgI",
+                "big_file_id": "AQADAQADr8ME5xb___9nHxQwAAQnbgIAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 542430195,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Davide",
+            "last_name": "eSwatini 🇸🇿",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 542430195,
+                "recently": true
+            },
+            "username": "savoiardidance",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAAD89NUIAAExIkpGwAE1yMGAAIC",
+                "big_file_id": "AQADBAAD89NUIAAExIkpGwAE2SMGAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "come si chiama",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "media": true,
+    "photo": {
+        "_": "pyrogram.Photo",
+        "file_id": "AgADBAADzbExG1HmGFBszxGl_KMxIHkC",
+        "width": 640,
+        "height": 1280,
+        "file_size": 80616,
+        "date": "2019-06-13 21:21:54",
+        "thumbs": [
+            {
+                "_": "pyrogram.Thumbnail",
+                "file_id": "AAQEAAPNsTEbUeYYUGzPEaX8ozEgbQI",
+                "width": 160,
+                "height": 320,
+                "file_size": 14496
+            },
+            {
+                "_": "pyrogram.Thumbnail",
+                "file_id": "AAQEAAPNsTEbUeYYUGzPEaX8ozEgeAI",
+                "width": 400,
+                "height": 800,
+                "file_size": 53076
+            }
+        ]
+    },
+    "caption": "E con questa basta che mi vergogno a fare lo stalker",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 962903,
+    "date": "2019-06-13 21:22:04",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": 96000757,
+        "type": "private",
+        "username": "MasterCruelty",
+        "first_name": "Roberto",
+        "last_name": "Amminz",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD9dq4BQAEP_QhGwAER4IFAAIC",
+            "big_file_id": "AQADBAAD9dq4BQAEP_QhGwAESYIFAAEBAg"
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 96000757,
+        "is_self": true,
+        "is_contact": true,
+        "is_mutual_contact": true,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Roberto",
+        "last_name": "Amminz",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 96000757,
+            "online": true,
+            "date": "2019-06-13 21:26:59"
+        },
+        "username": "MasterCruelty",
+        "phone_number": "************",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD9dq4BQAEP_QhGwAER4IFAAIC",
+            "big_file_id": "AQADBAAD9dq4BQAEP_QhGwAESYIFAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "media": true,
+    "video_note": {
+        "_": "pyrogram.VideoNote",
+        "file_id": "DQADBAADIQYAAgt74FNlYkmO-hJj7AI",
+        "mime_type": "video/mp4",
+        "file_size": 2064537,
+        "date": "2019-06-08 23:19:44",
+        "length": 240,
+        "duration": 32,
+        "thumbs": [
+            {
+                "_": "pyrogram.Thumbnail",
+                "file_id": "DgADBAADIQYAAgt74FNlYkmO-hJj7G0C",
+                "width": 240,
+                "height": 240,
+                "file_size": 9468
+            }
+        ]
+    },
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 6581,
+    "date": "2019-06-13 21:22:09",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001400856253,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Gabinetto di Palazzo Chigi",
+        "username": "mattarellone",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARLvwYAAgI",
+            "big_file_id": "AQADBAADQ5Hb1xb___8lJx8bAARNvwYAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": false
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 147509378,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Ⓛⓤⓘⓢⓘⓐⓝⓐ",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 147509378,
+            "recently": true
+        },
+        "username": "louysyana",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADgtDKCAAEPRkiGwAE3zwGAAIC",
+            "big_file_id": "AQADBAADgtDKCAAEPRkiGwAE4TwGAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "No, sta dicendo TUTTO quello che ha fatto per salvarla",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356664,
+    "date": "2019-06-13 21:22:12",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 255973116,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Sara 🦄",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 255973116,
+            "recently": true
+        },
+        "username": "Sarathelittlelion",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJFUEAAIC",
+            "big_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJlUEAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356663,
+        "date": "2019-06-13 21:21:38",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 197863853,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Lebowski Dude ᶠᶸᶜᵏᵧₒᵤ",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 197863853,
+                "recently": true
+            },
+            "username": "Lebowskidude",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADrSnLCwAEBCUfGwAEcdYFAAIC",
+                "big_file_id": "AQADBAADrSnLCwAEBCUfGwAEc9YFAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "❤️",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "Cuori a caso 🤔",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356680,
+    "date": "2019-06-13 21:24:28",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 197863853,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Lebowski Dude ᶠᶸᶜᵏᵧₒᵤ",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 197863853,
+            "recently": true
+        },
+        "username": "Lebowskidude",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADrSnLCwAEBCUfGwAEcdYFAAIC",
+            "big_file_id": "AQADBAADrSnLCwAEBCUfGwAEc9YFAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356679,
+        "date": "2019-06-13 21:24:13",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 259276793,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": true,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Voicy",
+            "username": "voicybot",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADAQAD-T90DwAE36znLwAEQDQCAAIC",
+                "big_file_id": "AQADAQAD-T90DwAE36znLwAEQjQCAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "edit_date": "2019-06-13 21:24:16",
+        "text": "non so perché sei inviato una ics a posto dall audio",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "Ics ahahahahahhahahahahahahaha",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356681,
+    "date": "2019-06-13 21:24:36",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 255973116,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Sara 🦄",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 255973116,
+            "recently": true
+        },
+        "username": "Sarathelittlelion",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJFUEAAIC",
+            "big_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJlUEAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356676,
+        "date": "2019-06-13 21:24:08",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 197863853,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Lebowski Dude ᶠᶸᶜᵏᵧₒᵤ",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 197863853,
+                "recently": true
+            },
+            "username": "Lebowskidude",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADrSnLCwAEBCUfGwAEcdYFAAIC",
+                "big_file_id": "AQADBAADrSnLCwAEBCUfGwAEc9YFAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADeAgAAvQNGFCTVgTVXhxUogI",
+            "duration": 11,
+            "waveform": "b'\\x00\\x00\\x00@\\x10\\xff\\xff\\xff\\xff\\xc8\\xfe\\xff\\xfe\\xbf\\xfc[\\x86\\x10B\\x08a\\xab\\xc9\\x939\\xff\\xff\\x00B\\x00!\\x84!\\x14\\xfd\\xff\\xdf\\x8f\\xf0O!\\x8c\\xf0O\\xfdC\\x0c!\\x08\\x11c\\x0ccPRM)g\\x10:\\x081\\x03'",
+            "mime_type": "audio/ogg",
+            "file_size": 27537,
+            "date": "2019-06-13 21:24:07"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "media": true,
+    "voice": {
+        "_": "pyrogram.Voice",
+        "file_id": "AwADBAADeggAAvQNGFD_XZ08OxKFvwI",
+        "duration": 3,
+        "waveform": "b\"\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x10\\x00\\x00\\x03\\x80\\xe2\\xd2Ji\\xa1QR)f\\x8c1\\xc6\\x10%\\x18C\\x102\\x85\\x90b\\x92J\\xe8\\x8c\\x84\\x10B\\x01\\x00\\x00\\xadB\\xeb?'\\x00\\x08F\\x8cc\\x8c\\x10\\x01\\x00\\x00\"",
+        "mime_type": "audio/ogg",
+        "file_size": 7206,
+        "date": "2019-06-13 21:24:36"
+    },
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356682,
+    "date": "2019-06-13 21:24:37",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 259276793,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": true,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Voicy",
+        "username": "voicybot",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAQAD-T90DwAE36znLwAEQDQCAAIC",
+            "big_file_id": "AQADAQAD-T90DwAE36znLwAEQjQCAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356681,
+        "date": "2019-06-13 21:24:36",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 255973116,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Sara 🦄",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 255973116,
+                "recently": true
+            },
+            "username": "Sarathelittlelion",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJFUEAAIC",
+                "big_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJlUEAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADeggAAvQNGFD_XZ08OxKFvwI",
+            "duration": 3,
+            "waveform": "b\"\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x10\\x00\\x00\\x03\\x80\\xe2\\xd2Ji\\xa1QR)f\\x8c1\\xc6\\x10%\\x18C\\x102\\x85\\x90b\\x92J\\xe8\\x8c\\x84\\x10B\\x01\\x00\\x00\\xadB\\xeb?'\\x00\\x08F\\x8cc\\x8c\\x10\\x01\\x00\\x00\"",
+            "mime_type": "audio/ogg",
+            "file_size": 7206,
+            "date": "2019-06-13 21:24:35"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "🦄 Il riconoscimento vocale è iniziato...",
+    "entities": [
+        {
+            "_": "pyrogram.MessageEntity",
+            "type": "italic",
+            "offset": 0,
+            "length": 41
+        }
+    ],
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356682,
+    "date": "2019-06-13 21:24:37",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 259276793,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": true,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Voicy",
+        "username": "voicybot",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAQAD-T90DwAE36znLwAEQDQCAAIC",
+            "big_file_id": "AQADAQAD-T90DwAE36znLwAEQjQCAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356681,
+        "date": "2019-06-13 21:24:36",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 255973116,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Sara 🦄",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 255973116,
+                "recently": true
+            },
+            "username": "Sarathelittlelion",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJFUEAAIC",
+                "big_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJlUEAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADeggAAvQNGFD_XZ08OxKFvwI",
+            "duration": 3,
+            "waveform": "b\"\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x10\\x00\\x00\\x03\\x80\\xe2\\xd2Ji\\xa1QR)f\\x8c1\\xc6\\x10%\\x18C\\x102\\x85\\x90b\\x92J\\xe8\\x8c\\x84\\x10B\\x01\\x00\\x00\\xadB\\xeb?'\\x00\\x08F\\x8cc\\x8c\\x10\\x01\\x00\\x00\"",
+            "mime_type": "audio/ogg",
+            "file_size": 7206,
+            "date": "2019-06-13 21:24:35"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "edit_date": "2019-06-13 21:24:39",
+    "text": "e mi dispiace",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 1941730,
+    "date": "2019-06-13 21:24:39",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001146498129,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lotto MORTO",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAQADr8ME5xb___9nHxQwAAQlbgIAAgI",
+            "big_file_id": "AQADAQADr8ME5xb___9nHxQwAAQnbgIAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": true,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 249384467,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Enrico",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 249384467,
+            "recently": true
+        },
+        "username": "enrico_lele",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADE07dDgAEeC-xGgAEgbMBAAIC",
+            "big_file_id": "AQADBAADE07dDgAEeC-xGgAEg7MBAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 1941729,
+        "date": "2019-06-13 21:23:41",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001146498129,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lotto MORTO",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADAQADr8ME5xb___9nHxQwAAQlbgIAAgI",
+                "big_file_id": "AQADAQADr8ME5xb___9nHxQwAAQnbgIAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": true,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 542430195,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Davide",
+            "last_name": "eSwatini 🇸🇿",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 542430195,
+                "recently": true
+            },
+            "username": "savoiardidance",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAAD89NUIAAExIkpGwAE1yMGAAIC",
+                "big_file_id": "AQADBAAD89NUIAAExIkpGwAE2SMGAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "e non la segui neanche ahahah",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "Prima volta che le apro insta giuro",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 762,
+    "date": "2019-06-13 21:24:40",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001335715339,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Sistemi Operativi - StataleInformatica",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAAD9Ym92xb____XvywbAAQ6wQADAg",
+            "big_file_id": "AQADBAAD9Ym92xb____XvywbAAQ8wQACAQI"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": true,
+            "can_invite_users": true,
+            "can_pin_messages": true,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 31240252,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Leonardo",
+        "last_name": "Menti",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 31240252,
+            "recently": true
+        },
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADPLDcAQAEpVK6GgAES_IGAAIC",
+            "big_file_id": "AQADBAADPLDcAQAEpVK6GgAETfIGAAEBAg"
+        }
+    },
+    "mentioned": false,
+    "text": "In teoria si può creare una directory in /home/part",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356683,
+    "date": "2019-06-13 21:24:43",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 197863853,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Lebowski Dude ᶠᶸᶜᵏᵧₒᵤ",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 197863853,
+            "recently": true
+        },
+        "username": "Lebowskidude",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADrSnLCwAEBCUfGwAEcdYFAAIC",
+            "big_file_id": "AQADBAADrSnLCwAEBCUfGwAEc9YFAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356675,
+        "date": "2019-06-13 21:24:06",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 362964268,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "𝓛𝓸𝓻𝓲𝓼 𝓦𝓲𝓵𝓵𝓲𝓪𝓶",
+            "last_name": "🦄",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 362964268,
+                "recently": true
+            },
+            "username": "LorisWilliam",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADLGWiFQAElTSxGgAEvNwBAAIC",
+                "big_file_id": "AQADBAADLGWiFQAElTSxGgAEvtwBAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "animation": {
+            "_": "pyrogram.Animation",
+            "file_id": "CgADAgADsAEAAg-TCEngKMPT7zQsLwI",
+            "file_name": "animation.mp4",
+            "mime_type": "video/mp4",
+            "file_size": 358031,
+            "date": "2018-06-13 07:44:45",
+            "width": 544,
+            "height": 640,
+            "duration": 3,
+            "thumbs": [
+                {
+                    "_": "pyrogram.Thumbnail",
+                    "file_id": "DgADAgADsAEAAg-TCEngKMPT7zQsL3MC",
+                    "width": 78,
+                    "height": 90,
+                    "file_size": 2678
+                }
+            ]
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "media": true,
+    "animation": {
+        "_": "pyrogram.Animation",
+        "file_id": "CgADAgADCAQAAuxVUUvxfJa2YMIamAI",
+        "mime_type": "video/mp4",
+        "file_size": 463036,
+        "date": "2019-05-26 00:23:53",
+        "width": 410,
+        "height": 384,
+        "duration": 15,
+        "thumbs": [
+            {
+                "_": "pyrogram.Thumbnail",
+                "file_id": "DgADAgADCAQAAuxVUUvxfJa2YMIamG0C",
+                "width": 320,
+                "height": 300,
+                "file_size": 15413
+            }
+        ]
+    },
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356684,
+    "date": "2019-06-13 21:24:56",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 197863853,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Lebowski Dude ᶠᶸᶜᵏᵧₒᵤ",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 197863853,
+            "recently": true
+        },
+        "username": "Lebowskidude",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADrSnLCwAEBCUfGwAEcdYFAAIC",
+            "big_file_id": "AQADBAADrSnLCwAEBCUfGwAEc9YFAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356681,
+        "date": "2019-06-13 21:24:36",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 255973116,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Sara 🦄",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 255973116,
+                "recently": true
+            },
+            "username": "Sarathelittlelion",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJFUEAAIC",
+                "big_file_id": "AQADBAAD_NZBDwAEzAsiGwAEJlUEAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADeggAAvQNGFD_XZ08OxKFvwI",
+            "duration": 3,
+            "waveform": "b\"\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x10\\x00\\x00\\x03\\x80\\xe2\\xd2Ji\\xa1QR)f\\x8c1\\xc6\\x10%\\x18C\\x102\\x85\\x90b\\x92J\\xe8\\x8c\\x84\\x10B\\x01\\x00\\x00\\xadB\\xeb?'\\x00\\x08F\\x8cc\\x8c\\x10\\x01\\x00\\x00\"",
+            "mime_type": "audio/ogg",
+            "file_size": 7206,
+            "date": "2019-06-13 21:24:35"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "media": true,
+    "voice": {
+        "_": "pyrogram.Voice",
+        "file_id": "AwADBAADewgAAvQNGFArbYr--QSi_wI",
+        "duration": 2,
+        "waveform": "b'\\x00\\x00\\x00\\x00\\x00 \\x84\\x10B\\x08\"\\xfe\\xff\\xff\\xff\\xff\\x7f\\xfd\\xbf\\xfb\\x9f\\x15B\\xc6\\x10\\x03\\xbe\\xfb\\xdaI\\n\\xb3!L\\x92\\x7f\\xaf\\x14\\xd5\\x92\\x8a\\x9c!\\xe3\\x18\\x83\\x9cB\\x14:4\\x992\\x86\\x08a\\x08!\\x82\\x18c\\x10\\x02'",
+        "mime_type": "audio/ogg",
+        "file_size": 7016,
+        "date": "2019-06-13 21:24:56"
+    },
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356685,
+    "date": "2019-06-13 21:24:56",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 259276793,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": true,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Voicy",
+        "username": "voicybot",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAQAD-T90DwAE36znLwAEQDQCAAIC",
+            "big_file_id": "AQADAQAD-T90DwAE36znLwAEQjQCAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356684,
+        "date": "2019-06-13 21:24:56",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 197863853,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Lebowski Dude ᶠᶸᶜᵏᵧₒᵤ",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 197863853,
+                "recently": true
+            },
+            "username": "Lebowskidude",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADrSnLCwAEBCUfGwAEcdYFAAIC",
+                "big_file_id": "AQADBAADrSnLCwAEBCUfGwAEc9YFAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADewgAAvQNGFArbYr--QSi_wI",
+            "duration": 2,
+            "waveform": "b'\\x00\\x00\\x00\\x00\\x00 \\x84\\x10B\\x08\"\\xfe\\xff\\xff\\xff\\xff\\x7f\\xfd\\xbf\\xfb\\x9f\\x15B\\xc6\\x10\\x03\\xbe\\xfb\\xdaI\\n\\xb3!L\\x92\\x7f\\xaf\\x14\\xd5\\x92\\x8a\\x9c!\\xe3\\x18\\x83\\x9cB\\x14:4\\x992\\x86\\x08a\\x08!\\x82\\x18c\\x10\\x02'",
+            "mime_type": "audio/ogg",
+            "file_size": 7016,
+            "date": "2019-06-13 21:24:55"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "🦄 Il riconoscimento vocale è iniziato...",
+    "entities": [
+        {
+            "_": "pyrogram.MessageEntity",
+            "type": "italic",
+            "offset": 0,
+            "length": 41
+        }
+    ],
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356685,
+    "date": "2019-06-13 21:24:56",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 259276793,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": true,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Voicy",
+        "username": "voicybot",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAQAD-T90DwAE36znLwAEQDQCAAIC",
+            "big_file_id": "AQADAQAD-T90DwAE36znLwAEQjQCAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356684,
+        "date": "2019-06-13 21:24:56",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 197863853,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Lebowski Dude ᶠᶸᶜᵏᵧₒᵤ",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 197863853,
+                "recently": true
+            },
+            "username": "Lebowskidude",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADrSnLCwAEBCUfGwAEcdYFAAIC",
+                "big_file_id": "AQADBAADrSnLCwAEBCUfGwAEc9YFAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADewgAAvQNGFArbYr--QSi_wI",
+            "duration": 2,
+            "waveform": "b'\\x00\\x00\\x00\\x00\\x00 \\x84\\x10B\\x08\"\\xfe\\xff\\xff\\xff\\xff\\x7f\\xfd\\xbf\\xfb\\x9f\\x15B\\xc6\\x10\\x03\\xbe\\xfb\\xdaI\\n\\xb3!L\\x92\\x7f\\xaf\\x14\\xd5\\x92\\x8a\\x9c!\\xe3\\x18\\x83\\x9cB\\x14:4\\x992\\x86\\x08a\\x08!\\x82\\x18c\\x10\\x02'",
+            "mime_type": "audio/ogg",
+            "file_size": 7016,
+            "date": "2019-06-13 21:24:55"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "edit_date": "2019-06-13 21:24:59",
+    "text": "ma lo dici cose che capitano",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 419112,
+    "date": "2019-06-13 21:25:04",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001096901835,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Linux Italian Community",
+        "username": "linuxita",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADNYv56Rb___-3eCkbAARo4AADAg",
+            "big_file_id": "AQADBAADNYv56Rb___-3eCkbAARq4AACAQI"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 78679195,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "nιĸĸo",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 78679195,
+            "recently": true
+        },
+        "username": "Nikko",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADm4ywBAAEXO6NGgAE1ZcCAAIC",
+            "big_file_id": "AQADBAADm4ywBAAEXO6NGgAE15cCAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 419108,
+        "date": "2019-06-13 21:14:34",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001096901835,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Linux Italian Community",
+            "username": "linuxita",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADNYv56Rb___-3eCkbAARo4AADAg",
+                "big_file_id": "AQADBAADNYv56Rb___-3eCkbAARq4AACAQI"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 245431596,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Andrea 👾",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 245431596,
+                "recently": true
+            },
+            "username": "Andry1993",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADLP2gDgAE0OQsGwAE2yEBAAIC",
+                "big_file_id": "AQADBAADLP2gDgAE0OQsGwAE3SEBAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "text": "dicono tutti che pesa più chrome... boo io uso firefox ma quelle poche volte che avvio chromium pesa decisamente meno",
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "A me gira meglio Safari di qualsiasi altro browser",
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356686,
+    "date": "2019-06-13 21:25:05",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 362964268,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "𝓛𝓸𝓻𝓲𝓼 𝓦𝓲𝓵𝓵𝓲𝓪𝓶",
+        "last_name": "🦄",
+        "status": {
+            "_": "pyrogram.UserStatus",
+            "user_id": 362964268,
+            "recently": true
+        },
+        "username": "LorisWilliam",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADLGWiFQAElTSxGgAEvNwBAAIC",
+            "big_file_id": "AQADBAADLGWiFQAElTSxGgAEvtwBAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356678,
+        "date": "2019-06-13 21:24:12",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 197863853,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "Lebowski Dude ᶠᶸᶜᵏᵧₒᵤ",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 197863853,
+                "recently": true
+            },
+            "username": "Lebowskidude",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADrSnLCwAEBCUfGwAEcdYFAAIC",
+                "big_file_id": "AQADBAADrSnLCwAEBCUfGwAEc9YFAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADeQgAAvQNGFBc1DSTON3RKAI",
+            "duration": 3,
+            "waveform": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\x80\\x00B\\xb0\\xff\\xffx\\x0c\\xfa0\\xfd\\xff\\xbf\\x08\\xc6\\xff\\xafKq\\xff\\xfe\\xff\\xff\\xf7\\x8c\\x18>\\x7f\\xfd\\xffk\\x17\\x86\\xf8\\xff\\x0c\\xd1\\xdc\\x08\"\\xa8\\xef!\\x83]OST;c\\x04!\\x84\\x10A\\x8c\\x01'",
+            "mime_type": "audio/ogg",
+            "file_size": 8688,
+            "date": "2019-06-13 21:24:11"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "media": true,
+    "voice": {
+        "_": "pyrogram.Voice",
+        "file_id": "AwADBAADfAgAAvQNGFDMn8hp7PvJjAI",
+        "duration": 17,
+        "waveform": "b'\\x00\\x00\\x00\\x00\\x00\\xe0\\x1f\\x98Y\\x99\\x80\\xa1\\xe4\\xd6<6\\x1cd\\xa1\\x94v\\xbd\\xd3\\x10\\x00\\xc0\\xa8c\\x16\"\\xe7\\xa2\\xc6J\\x19\\xe5\\x00g C\\x82\\x00\\x05\\x00\\x08\\x01\\x9erb\\xab\\xc6\\xc8\\x18\\t\\x8c\\xea,ee\\x10U\\xc6\\x0c'",
+        "mime_type": "audio/ogg",
+        "file_size": 37250,
+        "date": "2019-06-13 21:25:05"
+    },
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356687,
+    "date": "2019-06-13 21:25:06",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 259276793,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": true,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Voicy",
+        "username": "voicybot",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAQAD-T90DwAE36znLwAEQDQCAAIC",
+            "big_file_id": "AQADAQAD-T90DwAE36znLwAEQjQCAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356686,
+        "date": "2019-06-13 21:25:05",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 362964268,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "𝓛𝓸𝓻𝓲𝓼 𝓦𝓲𝓵𝓵𝓲𝓪𝓶",
+            "last_name": "🦄",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 362964268,
+                "recently": true
+            },
+            "username": "LorisWilliam",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADLGWiFQAElTSxGgAEvNwBAAIC",
+                "big_file_id": "AQADBAADLGWiFQAElTSxGgAEvtwBAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADfAgAAvQNGFDMn8hp7PvJjAI",
+            "duration": 17,
+            "waveform": "b'\\x00\\x00\\x00\\x00\\x00\\xe0\\x1f\\x98Y\\x99\\x80\\xa1\\xe4\\xd6<6\\x1cd\\xa1\\x94v\\xbd\\xd3\\x10\\x00\\xc0\\xa8c\\x16\"\\xe7\\xa2\\xc6J\\x19\\xe5\\x00g C\\x82\\x00\\x05\\x00\\x08\\x01\\x9erb\\xab\\xc6\\xc8\\x18\\t\\x8c\\xea,ee\\x10U\\xc6\\x0c'",
+            "mime_type": "audio/ogg",
+            "file_size": 37250,
+            "date": "2019-06-13 21:25:04"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "text": "🦄 Il riconoscimento vocale è iniziato...",
+    "entities": [
+        {
+            "_": "pyrogram.MessageEntity",
+            "type": "italic",
+            "offset": 0,
+            "length": 41
+        }
+    ],
+    "outgoing": false
+}{
+    "_": "pyrogram.Message",
+    "message_id": 356687,
+    "date": "2019-06-13 21:25:06",
+    "chat": {
+        "_": "pyrogram.Chat",
+        "id": -1001342921961,
+        "type": "supergroup",
+        "is_verified": false,
+        "is_restricted": false,
+        "is_scam": false,
+        "title": "Lombardia Chat",
+        "username": "lombardiachat",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+            "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+        },
+        "permissions": {
+            "_": "pyrogram.ChatPermissions",
+            "until_date": "1970-01-01 01:00:00",
+            "can_change_info": false,
+            "can_invite_users": false,
+            "can_pin_messages": false,
+            "can_send_messages": true,
+            "can_send_media_messages": true,
+            "can_send_other_messages": true,
+            "can_add_web_page_previews": true,
+            "can_send_polls": true
+        }
+    },
+    "from_user": {
+        "_": "pyrogram.User",
+        "id": 259276793,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": true,
+        "is_verified": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_scam": false,
+        "first_name": "Voicy",
+        "username": "voicybot",
+        "photo": {
+            "_": "pyrogram.ChatPhoto",
+            "small_file_id": "AQADAQAD-T90DwAE36znLwAEQDQCAAIC",
+            "big_file_id": "AQADAQAD-T90DwAE36znLwAEQjQCAAEBAg"
+        }
+    },
+    "reply_to_message": {
+        "_": "pyrogram.Message",
+        "message_id": 356686,
+        "date": "2019-06-13 21:25:05",
+        "chat": {
+            "_": "pyrogram.Chat",
+            "id": -1001342921961,
+            "type": "supergroup",
+            "is_verified": false,
+            "is_restricted": false,
+            "is_scam": false,
+            "title": "Lombardia Chat",
+            "username": "lombardiachat",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADF5NP2xb___95Lp8aAATgdgMAAgI",
+                "big_file_id": "AQADBAADF5NP2xb___95Lp8aAATidgMAAQEC"
+            },
+            "permissions": {
+                "_": "pyrogram.ChatPermissions",
+                "until_date": "1970-01-01 01:00:00",
+                "can_change_info": false,
+                "can_invite_users": false,
+                "can_pin_messages": false,
+                "can_send_messages": true,
+                "can_send_media_messages": true,
+                "can_send_other_messages": true,
+                "can_add_web_page_previews": true,
+                "can_send_polls": true
+            }
+        },
+        "from_user": {
+            "_": "pyrogram.User",
+            "id": 362964268,
+            "is_self": false,
+            "is_contact": false,
+            "is_mutual_contact": false,
+            "is_deleted": false,
+            "is_bot": false,
+            "is_verified": false,
+            "is_restricted": false,
+            "is_support": false,
+            "is_scam": false,
+            "first_name": "𝓛𝓸𝓻𝓲𝓼 𝓦𝓲𝓵𝓵𝓲𝓪𝓶",
+            "last_name": "🦄",
+            "status": {
+                "_": "pyrogram.UserStatus",
+                "user_id": 362964268,
+                "recently": true
+            },
+            "username": "LorisWilliam",
+            "photo": {
+                "_": "pyrogram.ChatPhoto",
+                "small_file_id": "AQADBAADLGWiFQAElTSxGgAEvNwBAAIC",
+                "big_file_id": "AQADBAADLGWiFQAElTSxGgAEvtwBAAEBAg"
+            }
+        },
+        "mentioned": false,
+        "media": true,
+        "voice": {
+            "_": "pyrogram.Voice",
+            "file_id": "AwADBAADfAgAAvQNGFDMn8hp7PvJjAI",
+            "duration": 17,
+            "waveform": "b'\\x00\\x00\\x00\\x00\\x00\\xe0\\x1f\\x98Y\\x99\\x80\\xa1\\xe4\\xd6<6\\x1cd\\xa1\\x94v\\xbd\\xd3\\x10\\x00\\xc0\\xa8c\\x16\"\\xe7\\xa2\\xc6J\\x19\\xe5\\x00g C\\x82\\x00\\x05\\x00\\x08\\x01\\x9erb\\xab\\xc6\\xc8\\x18\\t\\x8c\\xea,ee\\x10U\\xc6\\x0c'",
+            "mime_type": "audio/ogg",
+            "file_size": 37250,
+            "date": "2019-06-13 21:25:04"
+        },
+        "outgoing": false
+    },
+    "mentioned": false,
+    "edit_date": "2019-06-13 21:25:12",
+    "text": "io invece boh c'è questa qua che vuole che vado tutti i costi al landa ma gli ho detto no no no non ci voglio e non posso guidare città e mi fa dai passo a prenderti anche se. questo è malata",
+    "outgoing": false
+}
