@@ -6,7 +6,8 @@ import requests
 import json
 
 """
-funzione che tra le 16.40 e le 17.20 controlla se è stato effettuato un nuovo commit su salute.gov.it
+funzione che controlla se è stato effettuato un nuovo commit su salute.gov.it(problema di cookies, non funziona correttamente)
+Viene controllato se l'ultimo hash commit è cambiato, ovvero un commit nuovo.
 """
 def check_covid():
     file_commit = open('files/commit_covid.txt','r')
@@ -21,9 +22,10 @@ def check_covid():
     else:
         return True
     
+
 """
     funzione che prende ogni giorno il json aggiornato contenente i dati dei contagiati in Italia.
-    Direttamente da salute.gov.it
+    Direttamente dal repository git di salute.gov.it
 """
 def covid_daily():
     url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json'
@@ -38,6 +40,25 @@ def covid_daily():
         giorno = str(item["data"])[0:10]
     result = "I nuovi positivi in data " + giorno +" sono: " + nuovi_positivi + "\nAttualmente vi sono:\n" + ricoverati + " pazienti ricoverati con sintomi\n" + terapia_intensiva + " pazienti in terapia intensiva\n" + isolamento + " pazienti in isolamento domiciliare\n" + deceduti + " pazienti deceduti"
     return result
+
+"""
+	funzione che salva su file il json del messaggio Telegram in arrivo
+"""
+def save_json(message):
+    nome_file = "json_messages.json"
+    save = open(nome_file,'a')
+    save.write(str(message))
+    save.close()
+"""
+	funzione che esegue uno script shell per recuperare gli ip bannati sul raspberry pi
+"""
+def showIpBanned():
+    #os.popen ("sudo zgrep 'Ban ' /var/log/fail2ban.log* > ip_banned.txt")
+    os.popen("sudo fail2ban-client status sshd | grep -A 15 Actions > ip_banned.txt")
+    file_banned = open("ip_banned.txt",'r')
+    lista_banned = file_banned.read()
+    return lista_banned
+
 """
 	funzione per loggare i messaggi in arrivo da qualunque chat
 """
@@ -119,20 +140,3 @@ def recuperaFileID(message):
         file_id = "Non supportato"
     print(">>>>file_id recuperato correttamente<<<< => " + file_id)
     return file_id        
-"""
-	funzione che salva su file.json il json di un singolo messaggio in arrivo
-"""
-def save_json(message):
-    nome_file = "json_messages.json"
-    save = open(nome_file,'a')
-    save.write(str(message))
-    save.close()
-"""
-	funzione che esegue uno script shell per recuperare gli ip bannati sul raspberry pi
-"""
-def showIpBanned():
-    #os.popen ("sudo zgrep 'Ban ' /var/log/fail2ban.log* > ip_banned.txt")
-    os.popen("sudo fail2ban-client status sshd | grep -A 15 Actions > ip_banned.txt")
-    file_banned = open("ip_banned.txt",'r')
-    lista_banned = file_banned.read()
-    return lista_banned
