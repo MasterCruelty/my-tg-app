@@ -2,6 +2,7 @@ from pyrogram import Client, MessageHandler
 from system import *
 from wiki import *
 from gmaps import *
+from atm_feature import *
 import time
 from datetime import date
 from datetimerange import DateTimeRange
@@ -69,6 +70,10 @@ def print_updates(client,message):
     if "/covid" in messaggio :
        result = covid_daily()
        app.send_message(chat,result,reply_to_message_id=id_messaggio)
+    if "/atm" in messaggio :
+        stop = messaggio[5:]
+        result = get_stop_info(stop)
+        app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
     if "/map" in messaggio:
         address = messaggio[5:]
         coordinates = showmaps(address)
