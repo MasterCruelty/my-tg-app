@@ -1,4 +1,4 @@
-import util_config
+import utils_config
 import requests
 import json
 
@@ -12,18 +12,20 @@ api_url = config.api_url
     Dato un codice fermata, vengono fornite le informazioni relative a quella fermata contattando direttamente il server atm
 """
 def get_stop_info(stop_code):
-    data = {"url": "tpPortal/geodata/pois/stops" + stop_code + "?lang=it".format()}
+    data = {"url": "tpPortal/geodata/pois/stops/" + stop_code + "?lang=it".format()}
     resp = requests.post(api_url,data = data)
-    data_json = json.loads(resp.text)
-    for item in data_json:
-        descrizione = item["Description"]
-        Lines = item["Lines"]
-        line_code = Lines["Line"]["LineCode"]
-        line_description = Lines["Line"]["LineDescription"]
-        wait_time = Lines["WaitMessage"]
-        time_table = Lines["BookletUrl"]
+    data_json = resp.json()
+    descrizione = data_json["Description"]
+    Lines = data_json["Lines"]
+    for item in Lines:
+        Line = item["Line"]
+        line_code = Line["LineCode"]
+        line_code = Line["LineCode"]
+        line_description = Line["LineDescription"]
+        wait_time = item["WaitMessage"]
+        time_table = item["BookletUrl"]
 
-    result = "**" + descrizione + "**" + "\n" + line_code + " " + line_description + ":" + "**" + wait_time + "**" + "\n" + "Puoi consultare gli orari su:" + time_table
+    result = "**" + descrizione + "**" + "\n" + line_code + " " + line_description + ": " + "**" + wait_time + "**" + "\n\n" + "Puoi consultare gli orari su:" + time_table
     return result
 
 """
