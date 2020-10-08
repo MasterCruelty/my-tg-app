@@ -1,4 +1,4 @@
-from pyrogram import Client, MessageHandler
+from pyrogram import Client #, MessageHandler   de-commentare se si torna a pyrogram 0.18
 from system import *
 from wiki import *
 from gmaps import *
@@ -91,8 +91,9 @@ def print_updates(client,message):
         result = route
         app.send_message(chat,result,"html",False,False,id_messaggio)
 
-my_handler = MessageHandler(print_updates)
-app.add_handler(my_handler)
+#linee per pyrogram 0.18 (in caso di scalo di versione)
+#my_handler = MessageHandler(print_updates)
+#app.add_handler(my_handler)
 
 app.run()
 
