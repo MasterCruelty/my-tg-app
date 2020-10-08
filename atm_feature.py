@@ -17,15 +17,19 @@ def get_stop_info(stop_code):
     data_json = resp.json()
     descrizione = data_json["Description"]
     Lines = data_json["Lines"]
+    line_code, line_description, wait_time, time_table = ([] for i in range(4))
     for item in Lines:
         Line = item["Line"]
-        line_code = Line["LineCode"]
-        line_code = Line["LineCode"]
-        line_description = Line["LineDescription"]
-        wait_time = item["WaitMessage"]
-        time_table = item["BookletUrl"]
+        line_code.append(Line["LineCode"])
+        line_description.append(Line["LineDescription"])
+        wait_time.append(item["WaitMessage"])
+        time_table.append(item["BookletUrl"])
 
-    result = "**" + descrizione + "**" + "\n" + line_code + " " + line_description + ": " + "**" + wait_time + "**" + "\n\n" + "Puoi consultare gli orari su:" + time_table
+    result = "**" + descrizione + "**" + "\n"
+    for i in range(len(line_code)):
+        result += line_code[i] + " " + line_description[i] + ": " + "**" + wait_time[i] + "**" + "\n"
+    for i in range(len(line_code)):
+        result += "Orari linea " + line_code[i] + ": " + time_table[i] + "\n"
     return result
 
 """
