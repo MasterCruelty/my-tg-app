@@ -2,7 +2,7 @@
 
 ---
 
-##Librerie/Libraries
+###Librerie/Libraries
 
 **[IT]**
 La libreria principale è *pyrogram* perchè ci permette di lavorare con le API di telegram molto facilmente.
@@ -24,7 +24,7 @@ And then *wikipedia* module for fetching data from the famous web site.
 
 ---
 
-##Come si usano le funzioni/How to use main functions
+###Come si usano le funzioni/How to use main functions
 
 **[IT]**
 1. /wiki  : "/wiki <lingua> <parola chiave da cercare>" (modalità base)  
