@@ -2,7 +2,8 @@
 
 ---
 
-###Librerie/Libraries
+Librerie/Libraries
+=======
 
 **[IT]**
 La libreria principale è *pyrogram* perchè ci permette di lavorare con le API di telegram molto facilmente.
@@ -24,9 +25,12 @@ And then *wikipedia* module for fetching data from the famous web site.
 
 ---
 
-###Come si usano le funzioni/How to use main functions
+Come si usano le funzioni/How to use main functions
+=======
+
 
 **[IT]**
+
 1. /wiki  : "/wiki <lingua> <parola chiave da cercare>" (modalità base)  
 2. /poll  : "/poll <domanda>/<opzione 1>, <opzione 2>, <opzione N>"
 3. /covid : è sufficiente scrivere /covid
@@ -36,6 +40,7 @@ And then *wikipedia* module for fetching data from the famous web site.
 7. /route : "/route <luogo 1>, <luogo 2>
 
 **[ENG]**
+
 1. /wiki  : "/wiki <lang> <keyword to search>" (basic mode)  
 2. /poll  : "/poll <question>/<option 1>, <option 2>, <option N>"
 3. /covid : just type /covid
@@ -44,3 +49,4 @@ And then *wikipedia* module for fetching data from the famous web site.
 6. /km    : "/km <place 1>, <place 2>
 7. /route : "/route <place 1>, <place 2>
 
+---
