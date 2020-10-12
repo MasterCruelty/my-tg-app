@@ -3,6 +3,7 @@ from modules.system import *
 from modules.wiki import *
 from modules.gmaps import *
 from modules.atm_feature import *
+from modules.lyrics import *
 import time
 from datetime import date
 from datetimerange import DateTimeRange
@@ -74,6 +75,11 @@ def print_updates(client,message):
         stop = messaggio[5:]
         result = get_stop_info(stop)
         app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
+    if messaggio.startswith("/lyrics"):
+        messaggio = messaggio[8:]
+        parametri = messaggio.split(",")
+        result = get_lyrics_formated(parametri[0],parametri[1]) 
+        app.send_message(chat,result,reply_to_message_id=id_messaggio)
     if "/map" in messaggio:
         address = messaggio[5:]
         coordinates = showmaps(address)
