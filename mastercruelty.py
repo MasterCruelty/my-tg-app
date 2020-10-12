@@ -1,8 +1,8 @@
 from pyrogram import Client #, MessageHandler   de-commentare se si torna a pyrogram 0.18
-from system import *
-from wiki import *
-from gmaps import *
-from atm_feature import *
+from modules.system import *
+from modules.wiki import *
+from modules.gmaps import *
+from modules.atm_feature import *
 import time
 from datetime import date
 from datetimerange import DateTimeRange
