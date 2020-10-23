@@ -68,7 +68,7 @@ def print_updates(client,message):
         opzioni = poll[1]
         opzioni = opzioni.split(",")
         app.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
-    if "/covid" in messaggio :
+    if messaggio.startswith("/covid") :
        result = covid_daily()
        app.send_message(chat,result,reply_to_message_id=id_messaggio)
     if "/atm" in messaggio :
