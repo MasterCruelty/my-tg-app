@@ -34,6 +34,7 @@ And then *wikipedia* module for fetching data from the famous web site.<br/>
 5. /map   : "/map <luogo>"
 6. /km    : "/km <luogo 1>, <luogo 2>
 7. /route : "/route <luogo 1>, <luogo 2>
+8. /lyrics: "/lyrics <artista>, <canzone>"
 ```
 
 **[ENG]**
@@ -46,4 +47,5 @@ And then *wikipedia* module for fetching data from the famous web site.<br/>
 5. /map   : "/map <place>"
 6. /km    : "/km <place 1>, <place 2>
 7. /route : "/route <place 1>, <place 2>
+8. /lyrics: "/lyrics <artist>, <song>
 ```
