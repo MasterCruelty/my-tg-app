@@ -30,10 +30,10 @@ And then *wikipedia* module for fetching data from the famous web site.<br/>
 1. /wiki  : "/wiki <lingua> <parola chiave da cercare>" (modalità base)  
 2. /poll  : "/poll <domanda>/<opzione 1>, <opzione 2>, <opzione N>"
 3. /covid : è sufficiente scrivere /covid
-4. /atm   : "/atm <codice fermata>
+4. /atm   : "/atm <codice fermata>"
 5. /map   : "/map <luogo>"
-6. /km    : "/km <luogo 1>, <luogo 2>
-7. /route : "/route <luogo 1>, <luogo 2>
+6. /km    : "/km <luogo 1>, <luogo 2>"
+7. /route : "/route <luogo 1>, <luogo 2>"
 8. /lyrics: "/lyrics <artista>, <canzone>"
 ```
 
@@ -43,9 +43,9 @@ And then *wikipedia* module for fetching data from the famous web site.<br/>
 1. /wiki  : "/wiki <lang> <keyword to search>" (basic mode)
 2. /poll  : "/poll <question>/<option 1>, <option 2>, <option N>"
 3. /covid : just type /covid
-4. /atm   : "/atm <stop code>
+4. /atm   : "/atm <stop code>"
 5. /map   : "/map <place>"
-6. /km    : "/km <place 1>, <place 2>
-7. /route : "/route <place 1>, <place 2>
-8. /lyrics: "/lyrics <artist>, <song>
+6. /km    : "/km <place 1>, <place 2>"
+7. /route : "/route <place 1>, <place 2>"
+8. /lyrics: "/lyrics <artist>, <song>"
 ```
