@@ -14,7 +14,11 @@ api_url = config.api_url
 def get_stop_info(stop_code):
     data = {"url": "tpPortal/geodata/pois/stops/" + stop_code + "?lang=it".format()}
     resp = requests.post(api_url,data = data)
-    data_json = resp.json()
+    try:
+        data_json = resp.json()
+    except:
+        result = "404: page not found"
+        return result
     descrizione = data_json["Description"]
     Lines = data_json["Lines"]
     line_code, line_description, wait_time, time_table = ([] for i in range(4))
