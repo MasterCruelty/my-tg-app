@@ -1,5 +1,5 @@
 import wikipedia
-import time
+import re
 
 #data la lingua e la parola chiave da cercare, restituisce una frase della voce trovata
 def wiki(lang,keyword):
@@ -24,9 +24,12 @@ def wikirandom(lang,sents):
 def comune():
     wikipedia.set_lang("it")
     random = ""
+    people = re.compile("(\d+)\W(\d+)\s+abitanti")
     while(True):
         random = wikipedia.random()
-        result = wikipedia.summary(random,sentences=3)
+        result = wikipedia.summary(random,sentences=2)
+        matched = people.findall(random)
         if ("abitanti" in result and "comune" in result) or ("popolazione" in result):
+            result += "\n\n" + "" + matched[0] + ""
             break
     return result
