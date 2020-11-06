@@ -22,14 +22,11 @@ def wikirandom(lang,sents):
     result = wikipedia.summary(random,sentences=sents)
     return result
 def comune():
-    wikipedia.set_lang("it")
-    random = ""
-    people = re.compile("(\d+)\W(\d+)\s+abitanti")
+    #people = re.compile("(\d+)\W(\d+)\s+abitanti") il match non funziona
     while(True):
-        random = wikipedia.random()
-        result = wikipedia.summary(random,sentences=2)
-        if ("abitanti" in result and "comune" in result) or ("popolazione" in result):
-            matched = people.findall(result)
-            result += "\n\n" + "Abitanti:" + "**" + matched[0] + "**"
+        result = wikirandom("it",2)
+        if ("abitanti" in result or "comune" in result):
+            #matched = people.findall(result)
+            #result += "\n\n" + "Abitanti:" + "**" + str(matched[0]) + "**"
             break
     return result
