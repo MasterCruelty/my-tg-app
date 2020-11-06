@@ -34,12 +34,10 @@ def print_updates(client,message):
     else:
         username = "@" + message["from_user"]["username"]
     if message["text"] is None:
-        file_id = recuperaFileID(message) 
-        messaggio = "file multimediale con file_id: " + file_id 
+        messaggio = "file multimediale" 
     else:
         messaggio = message["text"]
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
-    #logger(chat,nome_utente,username,utente,messaggio) funzione usata in passato per salvare su txt i messaggi consecutivamente
     if "/wiki" in messaggio:
         search = messaggio[6:]
         parole = search.split(" ")
@@ -48,13 +46,17 @@ def print_updates(client,message):
         word = ""
         for i in range(len(parole)):
             word += parole[i] + " "  
-        if "all" in messaggio:
+        if " all " in messaggio:
             parole.remove(parole[0])
             result = wikiall(lingua,word)
             app.send_message(chat,result,"html",False,False,id_messaggio)
             return
+        if "/comune" in messaggio:
+            result = comune()
+            app.send_message(chat,result,"html",False,False,id_messaggio)
+            return
         if "random" in messaggio:
-            result = wikirandom(lingua)
+            result = wikirandom(lingua,1)
             app.send_message(chat,result,"html",False,False,id_messaggio)
             return
         else:
@@ -71,7 +73,7 @@ def print_updates(client,message):
     if messaggio.startswith("/covid") :
        result = covid_daily()
        app.send_message(chat,result,reply_to_message_id=id_messaggio)
-    if "/atm" in messaggio :
+    if messaggio.startswith("/atm"):
         stop = messaggio[5:]
         result = get_stop_info(stop)
         app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
@@ -80,17 +82,17 @@ def print_updates(client,message):
         parametri = messaggio.split(",")
         result = get_lyrics_formated(parametri[0],parametri[1]) 
         app.send_message(chat,result,reply_to_message_id=id_messaggio)
-    if "/map" in messaggio:
+    if messaggio.startswith("/map"):
         address = messaggio[5:]
         coordinates = showmaps(address)
         app.send_location(chat,coordinates[0],coordinates[1])
-    if "/km" in messaggio:
+    if messaggio.startswith("/km"):
         messaggio = messaggio[4:]
         addresses = messaggio.split(',')
         km = distanza(addresses[0],addresses[1])
         result = "La distanza tra i due luoghi è di " + str(km) + " km."
         app.send_message(chat,result,"html",False,False,id_messaggio)
-    if "/route" in messaggio:
+    if messaggio.startswith("/route"):
         messaggio = messaggio[7:]
         addresses = messaggio.split(',')
         route = directions(addresses[0],addresses[1])
