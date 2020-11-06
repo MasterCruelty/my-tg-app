@@ -7,7 +7,7 @@ import json
 
 """
 funzione che controlla se è stato effettuato un nuovo commit su salute.gov.it(problema di cookies, non funziona correttamente)
-Viene controllato se l'ultimo hash commit è cambiato, ovvero un commit nuovo.
+Viene controllato se l'ultimo hash commit è cambiato
 """
 def check_covid():
     file_commit = open('files/commit_covid.txt','r')
@@ -60,54 +60,6 @@ def showIpBanned():
     return lista_banned
 
 """
-	funzione per loggare i messaggi in arrivo da qualunque chat
-"""
-def logger(chat,nome_utente,username,utente,messaggio):
-    if str(chat).startswith("-"):
-        return
-    data_messaggio = time.strftime("%d/%m/%Y")
-    orario_messaggio = time.strftime("%H:%M:%S")
-    path = 'Logger/Logger_' + data_messaggio.replace('/','_')
-    try:
-        file_logger = open(path,'r')
-        file_logger.close()
-        file_logger = open(path,'a')
-        stringa = str(chat) + ";" + nome_utente + ";" + username + ";" + str(utente) + ";" + str(orario_messaggio) + ";" + messaggio + "\n\n"
-        try:
-            file_logger.write(stringa)
-        except:
-            file_logger.write(stringa.encode('utf-8'))
-    except:
-        print(">>>>Il file logger in data odierna non esiste<<<< ==> Scrivo la prima riga di default")
-        file_logger = open(path,'w')
-        file_logger.write('File di log data: ' + data_messaggio + '\n\nID CHAT||||NOME UTENTE||||USERNAME||||ID UTENTE||||ORA_MESSAGGIO||||MESSAGGIO\n\n')
-        stringa = str(chat) + ";" + nome_utente + ";" +  username + ";" + str(utente) + ";" + str(orario_messaggio) + ";" + messaggio + "\n\n"
-        try:
-            file_logger.write(stringa)
-        except:
-            file_logger.write(stringa.encode('utf-8'))
-        file_logger.close()
-    print(">>>>Log messaggio salvato con successo<<<<")
-    return
-
-"""
-	funzione per backuppare le chat di gruppo
-"""
-def backup_chat_gruppi(chat_id,nome_chat,utente,nome_utente,username,messaggio):
-    nome_file = "database_chat_gruppi/database_chat_" + str(chat_id) + ".txt"
-    save_chat = open(nome_file,'a')
-    stringa = "ID CHAT: " + str(chat_id) + 'NOME CHAT: '+ nome_chat + ' | ID UTENTE: ' + str(utente) +' | NOME: '+ nome_utente+ ' | Nickname: '+ username  + '\nContenuto del messaggio: \n' + messaggio + '\n________________________________________________________________________________________________\n\n'
-    try:
-            save_chat.write(stringa)
-    except:
-            print ('>>>>Chat name is unicode type<<<< ==> Saved message from '+ str(chat_id))
-            nome_file = "Files/database_chat_esterne/database_chat_" + str(chat_id) + ".txt"
-            save_chat = open(nome_file,'a')
-            save_chat.write(stringa.encode('utf-8'))
-    save_chat.close()
-    print ('>>>>Salvataggio messaggio chat_gruppo effettuato<<<<')
-
-"""
 	funzione per visualizzare a schermo i dati principali del messaggio in arrivo
 """
 def visualizza(chat,nome_chat,utente,nome_utente,username,messaggio):
@@ -122,6 +74,7 @@ def visualizza(chat,nome_chat,utente,nome_utente,username,messaggio):
         return "nome_chat: " + str(chat) +"id_utente: " + str(utente) + "\nnome_utente: " + nome_utente + "\nusername: " + username + "\n\n" + "Messaggio: " + messaggio 
 """
     da rifattorizzare: funzione per recuperare il file id del messaggio corrente
+    plus: per rendere la funzione utile si dovrebbe gestire anche il parametro file_ref
 """
 def recuperaFileID(message):
     try:
