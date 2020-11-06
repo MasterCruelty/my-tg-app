@@ -30,6 +30,6 @@ def comune():
         result = wikipedia.summary(random,sentences=2)
         if ("abitanti" in result and "comune" in result) or ("popolazione" in result):
             matched = people.findall(result)
-            result += "\n\n" + "" + matched[0] + ""
+            result += "\n\n" + "Abitanti:" + "**" + matched[0] + "**"
             break
     return result
