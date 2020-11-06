@@ -28,8 +28,8 @@ def comune():
     while(True):
         random = wikipedia.random()
         result = wikipedia.summary(random,sentences=2)
-        matched = people.findall(random)
         if ("abitanti" in result and "comune" in result) or ("popolazione" in result):
+            matched = people.findall(result)
             result += "\n\n" + "" + matched[0] + ""
             break
     return result
