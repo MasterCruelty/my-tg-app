@@ -34,12 +34,10 @@ def print_updates(client,message):
     else:
         username = "@" + message["from_user"]["username"]
     if message["text"] is None:
-        file_id = recuperaFileID(message) 
-        messaggio = "file multimediale con file_id: " + file_id 
+        messaggio = "file multimediale" 
     else:
         messaggio = message["text"]
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
-    #logger(chat,nome_utente,username,utente,messaggio) funzione usata in passato per salvare su txt i messaggi consecutivamente
     if "/wiki" in messaggio:
         search = messaggio[6:]
         parole = search.split(" ")
@@ -48,13 +46,13 @@ def print_updates(client,message):
         word = ""
         for i in range(len(parole)):
             word += parole[i] + " "  
-        if "all" in messaggio:
+        if " all " in messaggio:
             parole.remove(parole[0])
             result = wikiall(lingua,word)
             app.send_message(chat,result,"html",False,False,id_messaggio)
             return
         if "random" in messaggio:
-            result = wikirandom(lingua)
+            result = wikirandom(lingua,1)
             app.send_message(chat,result,"html",False,False,id_messaggio)
             return
         else:
