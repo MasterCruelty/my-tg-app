@@ -3,6 +3,13 @@ import time
 import os
 import re
 
+"""
+funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
+"""
+def parser(message):
+    temp = message.split(" ",1)
+    result = temp[1]
+    return result
 
 """
 	funzione che salva su file il json del messaggio Telegram in arrivo
