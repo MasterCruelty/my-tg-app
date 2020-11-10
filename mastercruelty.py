@@ -40,7 +40,7 @@ def print_updates(client,message):
         messaggio = message["text"]
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
     if "/wiki" in messaggio:
-        search = messaggio[6:]
+        search = parser(messaggio)
         parole = search.split(" ")
         lingua = parole[0]
         parole.remove(parole[0])
@@ -65,40 +65,47 @@ def print_updates(client,message):
             app.send_message(chat,result,"html",False,False,id_messaggio)
             return
     if "/poll" in messaggio:
-        messaggio = messaggio.replace("/poll","")
+        messsaggio = parser(messaggio)
         poll = messaggio.split("/")
         domanda = poll[0]
         opzioni = poll[1]
         opzioni = opzioni.split(",")
         app.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
+        return
     if messaggio.startswith("/covid") :
        result = covid_daily()
        app.send_message(chat,result,reply_to_message_id=id_messaggio)
+       return
     if messaggio.startswith("/atm"):
-        stop = messaggio[5:]
+        stop = parser(messaggio)
         result = get_stop_info(stop)
         app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
+        return
     if messaggio.startswith("/lyrics"):
-        messaggio = messaggio[8:]
+        messaggio = parser(messaggio)
         parametri = messaggio.split(",")
         result = get_lyrics_formated(parametri[0],parametri[1]) 
         app.send_message(chat,result,reply_to_message_id=id_messaggio)
+        return
     if messaggio.startswith("/map"):
-        address = messaggio[5:]
+        address = parser(messaggio)
         coordinates = showmaps(address)
         app.send_location(chat,coordinates[0],coordinates[1])
+        return
     if messaggio.startswith("/km"):
-        messaggio = messaggio[4:]
+        messaggio = parser(messaggio)
         addresses = messaggio.split(',')
         km = distanza(addresses[0],addresses[1])
         result = "La distanza tra i due luoghi è di " + str(km) + " km."
         app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
     if messaggio.startswith("/route"):
-        messaggio = messaggio[7:]
+        messaggio = parser(messaggio)
         addresses = messaggio.split(',')
         route = directions(addresses[0],addresses[1])
         result = route
         app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
 
 #linee per pyrogram 0.18 (in caso di scalo di versione)
 #my_handler = MessageHandler(print_updates)
