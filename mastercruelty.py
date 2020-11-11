@@ -65,7 +65,7 @@ def print_updates(client,message):
             app.send_message(chat,result,"html",False,False,id_messaggio)
             return
     if "/poll" in messaggio:
-        messsaggio = parser(messaggio)
+        messaggio = parser(messaggio)
         poll = messaggio.split("/")
         domanda = poll[0]
         opzioni = poll[1]
