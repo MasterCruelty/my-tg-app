@@ -71,6 +71,7 @@ def print_updates(client,message):
         return
     if messaggio.startswith("/endsearchmsg"):
         endsearchmsg = True
+        return
 
 
 
