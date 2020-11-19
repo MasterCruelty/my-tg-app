@@ -53,8 +53,12 @@ def print_updates(client,message):
             app.send_message(chat,result,"html",False,False,id_messaggio)
             return
         if "/comune" in messaggio:
-            result = comune()
-            app.send_message(chat,result,"html",False,False,id_messaggio)
+            app.send_message(chat,"cerco un comune...","html",False,False,id_messaggio)
+            try:
+                result = comune()
+            except:
+                result = "operazione fallita"
+            app.edit_message_text(chat,id_messaggio+1,result,"html",False,False)
             return
         if "random" in messaggio:
             result = wikirandom(lingua,1)
