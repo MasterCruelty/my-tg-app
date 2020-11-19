@@ -38,7 +38,41 @@ def print_updates(client,message):
         messaggio = "file multimediale" 
     else:
         messaggio = message["text"]
+    
+    #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
+    #alcune funzioni di sistema
+    if messaggio.startswith("/hcount"):
+        result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    if messaggio.startswith("/id"):
+        result = app.get_chat(chat)
+        result = result["id"]
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    if messaggio.startswith("/getuser"):
+        search = parser(messaggio)
+        result = app.get_users(search)
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    if "/getmessage" in str(message):
+        app.send_message(chat,message,"html",False,False,id_messaggio)
+        return
+    if messaggio.startswith("/searchmsg"):
+        search = parser(messaggio)
+        for message in app.search_messages(chat, query = search):
+            result = message.message_id
+            app.send_message(chat,"Trovato","html",False,False,result)
+            time.sleep(2)
+        app.send_message(chat,"Trovati tutti i messaggi.","html",False,False,id_messaggio)
+        return
+
+    
+
+
+
+    #funzionalità per gli utenti
     if "/wiki" in messaggio:
         search = parser(messaggio)
         parole = search.split(" ")
