@@ -18,6 +18,7 @@ api_id = config.api_id
 api_hash = config.api_hash
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
+endsearchmsg = False
 
 @app.on_message()
 def print_updates(client,message):
@@ -30,11 +31,13 @@ def print_updates(client,message):
     id_messaggio = message["message_id"]
     time_message = time.strftime("%H:%M:%S")
     file_id = "Nullo"
-    endsearchmsg = False
+    global endsearchmsg #this is useful to stop the search of messages
+    
     if message["from_user"]["username"] is None:
         username = "Non impostato"
     else:
         username = "@" + message["from_user"]["username"]
+    
     if message["text"] is None:
         messaggio = "file multimediale"
     else:
@@ -42,6 +45,7 @@ def print_updates(client,message):
 
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
+    
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount"):
         result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
@@ -64,12 +68,13 @@ def print_updates(client,message):
         search = parser(messaggio)
         for message in app.search_messages(chat, query = search):
             if not endsearchmsg:
-                result = message.message_id
+                result = message.message_id -1
                 app.send_message(chat,"Trovato","html",False,False,result)
                 time.sleep(2)
         app.send_message(chat,"Trovati tutti i messaggi.","html",False,False,id_messaggio)
+        endsearchmsg = False
         return
-    if messaggio.startswith("/endsearchmsg"):
+    if messaggio.startswith("/stopmsg"):
         endsearchmsg = True
         return
 
