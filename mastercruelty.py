@@ -18,29 +18,34 @@ api_id = config.api_id
 api_hash = config.api_hash
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
+endsearchmsg = False
 
 @app.on_message()
 def print_updates(client,message):
     #print(message)
     #save_json(message) scommentare quando serve un json non a portata di mano
-    chat = message["chat"]["id"] 
+    chat = message["chat"]["id"]
     nome_chat = message["chat"]["title"]
     utente = message["from_user"]["id"]
     nome_utente = message["from_user"]["first_name"]
     id_messaggio = message["message_id"]
     time_message = time.strftime("%H:%M:%S")
     file_id = "Nullo"
+    global endsearchmsg #this is useful to stop the search of messages
+    
     if message["from_user"]["username"] is None:
         username = "Non impostato"
     else:
         username = "@" + message["from_user"]["username"]
+    
     if message["text"] is None:
-        messaggio = "file multimediale" 
+        messaggio = "file multimediale"
     else:
         messaggio = message["text"]
-    
+
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
+    
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount"):
         result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
@@ -62,13 +67,18 @@ def print_updates(client,message):
     if messaggio.startswith("/searchmsg"):
         search = parser(messaggio)
         for message in app.search_messages(chat, query = search):
-            result = message.message_id
-            app.send_message(chat,"Trovato","html",False,False,result)
-            time.sleep(2)
+            if not endsearchmsg:
+                result = message.message_id -1
+                app.send_message(chat,"Trovato","html",False,False,result)
+                time.sleep(2)
         app.send_message(chat,"Trovati tutti i messaggi.","html",False,False,id_messaggio)
+        endsearchmsg = False
+        return
+    if messaggio.startswith("/stopmsg"):
+        endsearchmsg = True
         return
 
-    
+
 
 
 
@@ -80,7 +90,7 @@ def print_updates(client,message):
         parole.remove(parole[0])
         word = ""
         for i in range(len(parole)):
-            word += parole[i] + " "  
+            word += parole[i] + " "
         if " all " in messaggio:
             parole.remove(parole[0])
             result = wikiall(lingua,word)
@@ -122,7 +132,7 @@ def print_updates(client,message):
     if messaggio.startswith("/lyrics"):
         messaggio = parser(messaggio)
         parametri = messaggio.split(",")
-        result = get_lyrics_formated(parametri[0],parametri[1]) 
+        result = get_lyrics_formated(parametri[0],parametri[1])
         app.send_message(chat,result,reply_to_message_id=id_messaggio)
         return
     if messaggio.startswith("/map"):
@@ -150,4 +160,3 @@ def print_updates(client,message):
 #app.add_handler(my_handler)
 
 app.run()
-
