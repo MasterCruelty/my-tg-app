@@ -67,8 +67,8 @@ def print_updates(client,message):
     if messaggio.startswith("/searchmsg"):
         search = parser(messaggio)
         for message in app.search_messages(chat, query = search):
-            if not endsearchmsg:
-                result = message.message_id -1
+            if not endsearchmsg and "/searchmsg" not in str(message):
+                result = message.message_id
                 app.send_message(chat,"Trovato","html",False,False,result)
                 time.sleep(2)
         app.send_message(chat,"Trovati tutti i messaggi.","html",False,False,id_messaggio)
