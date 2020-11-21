@@ -8,14 +8,10 @@ from modules.lyrics import *
 import time
 from datetime import date
 from datetimerange import DateTimeRange
-import utils_config
 
-#prendo api_id e api_hash da file di configurazione .json esterno al sorgente
-config_file = "config.json"
-config = utils_config.load_config(config_file)
-utils_config.serialize_config(config)
-api_id = config.api_id
-api_hash = config.api_hash
+config = get_config_file("config.json")
+api_id = config["api_id"]
+api_hash = config["api_hash"]
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
 endsearchmsg = False
@@ -45,7 +41,7 @@ def print_updates(client,message):
 
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
-    
+    return
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount"):
         result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
