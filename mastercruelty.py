@@ -1,13 +1,15 @@
+import time
+from datetime import date
+from datetimerange import DateTimeRange
 from pyrogram import Client #, MessageHandler   de-commentare se si torna a pyrogram 0.18
-from utils.system import *
 from modules.covid import *
 from modules.wiki import *
 from modules.gmaps import *
 from modules.atm_feature import *
 from modules.lyrics import *
-import time
-from datetime import date
-from datetimerange import DateTimeRange
+from utils.system import *
+#from utils.manageusers import *
+
 
 config = get_config_file("config.json")
 api_id = config["api_id"]
@@ -41,7 +43,26 @@ def print_updates(client,message):
 
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
-    return
+    """
+    db = SqliteDatabase('utils/users.db')
+    db.connect()
+    def isSuper(id_user):
+        check = SuperAdmin.select().where(SuperAdmin.id_user == id_user)
+        for superadmin in check:
+            return True
+        return False
+    if messaggio.startswith("/setuser") and isSuper(utente):
+        utente = parser(messaggio)
+        info_utente = app.get_users(utente)
+        nome_utente = info_utente["first_name"]
+        username = info_utente["username"]
+        user = User(id_user = utente, name = nome_utente, username = username)
+        query = User.select().where(id_user == utente)
+        for user in query:
+            app.send_message(chat,"Utente salvato:\n" + user.id +"\n"+user.name+"\n"+user.username,"html",False,False,id_messaggio)
+    """
+    #return de-comment during development
+    
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount"):
         result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
@@ -60,7 +81,7 @@ def print_updates(client,message):
     if "/getmessage" in str(message):
         app.send_message(chat,message,"html",False,False,id_messaggio)
         return
-    if messaggio.startswith("/searchmsg"):
+    if messaggio.startswith("/seazzzrchmsg"):
         search = parser(messaggio)
         for message in app.search_messages(chat, query = search):
             if not endsearchmsg and "/searchmsg" not in str(message):
@@ -70,7 +91,7 @@ def print_updates(client,message):
         app.send_message(chat,"Trovati tutti i messaggi.","html",False,False,id_messaggio)
         endsearchmsg = False
         return
-    if messaggio.startswith("/stopmsg"):
+    if messaggio.startswith("/stozzzpmsg"):
         endsearchmsg = True
         return
 
