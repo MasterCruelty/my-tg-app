@@ -4,13 +4,9 @@ import openrouteservice
 from openrouteservice import convert
 import time
 import json
-import utils_config
 
-config_file = "config.json"
-config = utils_config.load_config(config_file)
-utils_config.serialize_config(config)
-
-api_geopy = config.api_geopy
+config = get_config_file("config.json")
+api_geopy = config["api_geopy"]
 
 def showmaps(address):
     geolocate = Nominatim(user_agent="map_app")
