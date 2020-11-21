@@ -1,12 +1,8 @@
-import utils_config
 import requests
 import json
 
-config_file = "config.json"
-config = utils_config.load_config(config_file)
-utils_config.serialize_config(config)
-
-api_url = config.api_url
+config = get_config_file("config.json")
+api_url = config["api_url"]
 
 """
     Dato un codice fermata, vengono fornite le informazioni relative a quella fermata contattando direttamente il server atm

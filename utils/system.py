@@ -2,6 +2,17 @@ from datetime import date
 import time
 import os
 import re
+import utils_config
+
+"""
+Funzione che preleva i dati dal file di configurazione json
+"""
+def get_config_file(json_file):
+    config = utils_config.load_config(json_file)
+    return utils_config.serialize_config(config)
+
+
+
 
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
