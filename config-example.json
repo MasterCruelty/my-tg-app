@@ -1,7 +1,7 @@
 {
 	"api_id": "YOUR API ID",
 	"api_hash": "YOUR API HASH",
-	"api_url": "atm milano api url",
+	"api_url": "ATM MILANO API URL",
 	"api_geopy": "YOUR GEOPY API",
-	"id_super_admin": "A USER ID YOU WANNA USE FOR SUPER ADMIN"
+	"id_super_admin": "ID_USER;NAME_USER;USERNAME_USER"
 }
