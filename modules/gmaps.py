@@ -4,6 +4,9 @@ import openrouteservice
 from openrouteservice import convert
 import time
 import json
+import sys
+sys.path.append(sys.path[0] + "/..")
+from utils.system import get_config_file
 
 config = get_config_file("config.json")
 api_geopy = config["api_geopy"]
