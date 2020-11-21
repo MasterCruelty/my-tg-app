@@ -1,5 +1,8 @@
 import requests
 import json
+import sys
+sys.path.append(sys.path[0] + "/..")
+from utils.system import get_config_file
 
 config = get_config_file("config.json")
 api_url = config["api_url"]
