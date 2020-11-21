@@ -1,5 +1,5 @@
 from pyrogram import Client #, MessageHandler   de-commentare se si torna a pyrogram 0.18
-from modules.system import *
+from utils.system import *
 from modules.covid import *
 from modules.wiki import *
 from modules.gmaps import *
