@@ -1,5 +1,4 @@
 from peewee import *
-#from system import get_config_file
 import sys
 sys.path.append(sys.path[0] + "/..")
 from utils.system import get_config_file
