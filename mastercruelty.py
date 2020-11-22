@@ -17,6 +17,7 @@ api_hash = config["api_hash"]
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
 endsearchmsg = False
+db.connect()
 
 @app.on_message()
 def print_updates(client,message):
@@ -43,46 +44,47 @@ def print_updates(client,message):
 
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
-    """
-    db = SqliteDatabase('utils/users.db')
-    db.connect()
+    
     def isSuper(id_utente):
         check = SuperAdmin.select().where(SuperAdmin.id_user == id_utente)
         for superadmin in check:
             return True
         return False
+    def isAdmin(id_utente):
+        check = Admin.select().where(Admin.id_user == id_utente)
+        for admin in check:
+            return True
+        return False
     if messaggio.startswith("/setuser") and isSuper(utente):
-        utente = parser(messaggio)
-        info_utente = app.get_users(utente)
+        utente_new = parser(messaggio)
+        info_utente = app.get_users(utente_new)
         nome_utente = info_utente["first_name"]
-        username = info_utente["username"]
-        user = User(id_user = utente, name = nome_utente, username = username)
+        username = "@" + info_utente["username"]
+        user = User(id_user = utente_new, name = nome_utente, username = username)
         user.save()
-        query = User.select().where(User.id_user == utente)
+        query = User.select().where(User.id_user == utente_new)
         for user in query:
             app.send_message(chat,"Utente salvato:\n" + str(user.id_user) +"\n"+user.name+"\n"+user.username,"html",False,False,id_messaggio)
-    """
-    #return #de-comment during development
-    
+       
     #alcune funzioni di sistema
-    if messaggio.startswith("/hcount"):
+    if messaggio.startswith("/hcount") and (isAdmin(utente) or isSuper(utente)):
         result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
         app.send_message(chat,result,"html",False,False,id_messaggio)
         return
-    if messaggio.startswith("/id"):
+    if messaggio.startswith("/id") and (isAdmin(utente) or isSuper(utente)):
         result = app.get_chat(chat)
         result = result["id"]
         app.send_message(chat,result,"html",False,False,id_messaggio)
         return
-    if messaggio.startswith("/getuser"):
+    if messaggio.startswith("/getuser") and (isAdmin(utente) or isSuper(utente)):
         search = parser(messaggio)
         result = app.get_users(search)
         app.send_message(chat,result,"html",False,False,id_messaggio)
         return
-    if "/getmessage" in str(message):
+    if "/getmessage" in str(message) and (isAdmin(utente) or isSuper(utente)):
         app.send_message(chat,message,"html",False,False,id_messaggio)
         return
-    if messaggio.startswith("/seazzzrchmsg"):
+    if messaggio.startswith("/searchmsg") and (isAdmin(utente) or isSuper(utente)):
         search = parser(messaggio)
         for message in app.search_messages(chat, query = search):
             if not endsearchmsg and "/searchmsg" not in str(message):
@@ -92,12 +94,9 @@ def print_updates(client,message):
         app.send_message(chat,"Trovati tutti i messaggi.","html",False,False,id_messaggio)
         endsearchmsg = False
         return
-    if messaggio.startswith("/stozzzpmsg"):
+    if messaggio.startswith("/stopmsg") and (isAdmin(utente) or isSuper(utente)):
         endsearchmsg = True
         return
-
-
-
 
 
     #funzionalità per gli utenti
