@@ -8,7 +8,7 @@ from modules.gmaps import *
 from modules.atm_feature import *
 from modules.lyrics import *
 from utils.system import *
-#from utils.manageusers import *
+from utils.manageusers import *
 
 
 config = get_config_file("config.json")
@@ -46,8 +46,8 @@ def print_updates(client,message):
     """
     db = SqliteDatabase('utils/users.db')
     db.connect()
-    def isSuper(id_user):
-        check = SuperAdmin.select().where(SuperAdmin.id_user == id_user)
+    def isSuper(id_utente):
+        check = SuperAdmin.select().where(SuperAdmin.id_user == id_utente)
         for superadmin in check:
             return True
         return False
@@ -57,11 +57,12 @@ def print_updates(client,message):
         nome_utente = info_utente["first_name"]
         username = info_utente["username"]
         user = User(id_user = utente, name = nome_utente, username = username)
-        query = User.select().where(id_user == utente)
+        user.save()
+        query = User.select().where(User.id_user == utente)
         for user in query:
-            app.send_message(chat,"Utente salvato:\n" + user.id +"\n"+user.name+"\n"+user.username,"html",False,False,id_messaggio)
+            app.send_message(chat,"Utente salvato:\n" + str(user.id_user) +"\n"+user.name+"\n"+user.username,"html",False,False,id_messaggio)
     """
-    #return de-comment during development
+    #return #de-comment during development
     
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount"):
