@@ -2,11 +2,13 @@ from peewee import *
 import sys
 sys.path.append(sys.path[0] + "/..")
 from utils.system import get_config_file
-global db
-db = SqliteDatabase('users.db')
 
-config = get_config_file("../config.json")
+config = get_config_file("config.json")
 id_super_admin = config["id_super_admin"].split(";")
+path_db = config["path_db"]
+
+global db
+db = SqliteDatabase(path_db)
 
 class BaseModel(Model):
     class Meta:
