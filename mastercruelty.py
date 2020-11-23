@@ -44,7 +44,32 @@ def print_updates(client,message):
 
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
-    
+    def list_user():
+        result = "Lista utenti saltati:\n\n"
+        query = User.select()
+        for user in query:
+            result += str(user.id_user) + ";" + user.name + ";" + user.username + "\n"
+        return result
+    def all_user():
+        result = 0
+        query = User.select()
+        for user in query:
+            result += 1
+        return "Totale utenti registrati: " + str(result)
+    def set_user(json_user):
+        userid = json_user["id"]
+        nome_utente = json_user["first_name"]
+        username_utente = "@" + json_user["username"]
+        user = User(id_user = userid, name = nome_utente, username = username_utente)
+        user.save()
+        query = User.select().where(User.id_user == userid)
+        for user in query:
+            result = "Utente salvato:\n" + str(user.id_user) + "\n" + user.name + "\n" + user.username
+        return result
+    def del_user(json_user):
+        userid = json_user["id"]
+        query = User.delete().where(User.id_user == userid).execute()
+        result = str(userid) + " eliminato."
     def isSuper(id_utente):
         check = SuperAdmin.select().where(SuperAdmin.id_user == id_utente)
         for superadmin in check:
@@ -58,13 +83,23 @@ def print_updates(client,message):
     if messaggio.startswith("/setuser") and isSuper(utente):
         utente_new = parser(messaggio)
         info_utente = app.get_users(utente_new)
-        nome_utente = info_utente["first_name"]
-        username = "@" + info_utente["username"]
-        user = User(id_user = utente_new, name = nome_utente, username = username)
-        user.save()
-        query = User.select().where(User.id_user == utente_new)
-        for user in query:
-            app.send_message(chat,"Utente salvato:\n" + str(user.id_user) +"\n"+user.name+"\n"+user.username,"html",False,False,id_messaggio)
+        result = set_user(info_utente)
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    if messaggio.startswith("/deluser") and isSuper(utente):
+        user = parser(messaggio)
+        info_utente = app.get_users(user)
+        result = del_user(info_utente)
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+    if messaggio.startswith("/listuser") and isSuper(utente):
+        result = list_user()
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    if messaggio.startswith("/alluser") and isSuper(utente):
+        result = all_user()
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+
        
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount") and (isAdmin(utente) or isSuper(utente)):
