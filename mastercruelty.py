@@ -8,7 +8,7 @@ from modules.gmaps import *
 from modules.atm_feature import *
 from modules.lyrics import *
 from utils.system import *
-from utils.manageusers import *
+from utils.dbfunctions import *
 
 
 config = get_config_file("config.json")
@@ -17,7 +17,6 @@ api_hash = config["api_hash"]
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
 endsearchmsg = False
-db.connect()
 
 @app.on_message()
 def print_updates(client,message):
@@ -44,42 +43,8 @@ def print_updates(client,message):
 
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
-    def list_user():
-        result = "Lista utenti saltati:\n\n"
-        query = User.select()
-        for user in query:
-            result += str(user.id_user) + ";" + user.name + ";" + user.username + "\n"
-        return result
-    def all_user():
-        result = 0
-        query = User.select()
-        for user in query:
-            result += 1
-        return "Totale utenti registrati: " + str(result)
-    def set_user(json_user):
-        userid = json_user["id"]
-        nome_utente = json_user["first_name"]
-        username_utente = "@" + json_user["username"]
-        user = User(id_user = userid, name = nome_utente, username = username_utente)
-        user.save()
-        query = User.select().where(User.id_user == userid)
-        for user in query:
-            result = "Utente salvato:\n" + str(user.id_user) + "\n" + user.name + "\n" + user.username
-        return result
-    def del_user(json_user):
-        userid = json_user["id"]
-        query = User.delete().where(User.id_user == userid).execute()
-        result = str(userid) + " eliminato."
-    def isSuper(id_utente):
-        check = SuperAdmin.select().where(SuperAdmin.id_user == id_utente)
-        for superadmin in check:
-            return True
-        return False
-    def isAdmin(id_utente):
-        check = Admin.select().where(Admin.id_user == id_utente)
-        for admin in check:
-            return True
-        return False
+
+    #funzioni dedicate al database 
     if messaggio.startswith("/setuser") and isSuper(utente):
         utente_new = parser(messaggio)
         info_utente = app.get_users(utente_new)
@@ -111,6 +76,10 @@ def print_updates(client,message):
         result = result["id"]
         app.send_message(chat,result,"html",False,False,id_messaggio)
         return
+    if messaggio.startswith("/getid") and (isAdmin(utente) or isSuper(utente)):
+        content = message["reply_to_message"]["from_user"]
+        result = content["id"]
+        app.send_message(chat,result,"html",False,False,id_messaggio)
     if messaggio.startswith("/getuser") and (isAdmin(utente) or isSuper(utente)):
         search = parser(messaggio)
         result = app.get_users(search)
@@ -139,7 +108,7 @@ def print_updates(client,message):
 
 
     #funzionalità per gli utenti
-    if "/wiki" in messaggio:
+    if "/wiki" in messaggio and isUser(utente):
         search = parser(messaggio)
         parole = search.split(" ")
         lingua = parole[0]
@@ -168,7 +137,7 @@ def print_updates(client,message):
             result = wiki(lingua,word)
             app.send_message(chat,result,"html",False,False,id_messaggio)
             return
-    if "/poll" in messaggio:
+    if "/poll" in messaggio and isUser(utente):
         messaggio = parser(messaggio)
         poll = messaggio.split("/")
         domanda = poll[0]
@@ -176,34 +145,34 @@ def print_updates(client,message):
         opzioni = opzioni.split(",")
         app.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
         return
-    if messaggio.startswith("/covid") :
+    if messaggio.startswith("/covid") and isUser(utente):
        result = covid_daily()
        app.send_message(chat,result,reply_to_message_id=id_messaggio)
        return
-    if messaggio.startswith("/atm"):
+    if messaggio.startswith("/atm") and isUser(utente):
         stop = parser(messaggio)
         result = get_stop_info(stop)
         app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
         return
-    if messaggio.startswith("/lyrics"):
+    if messaggio.startswith("/lyrics") and isUser(utente):
         messaggio = parser(messaggio)
         parametri = messaggio.split(",")
         result = get_lyrics_formated(parametri[0],parametri[1])
         app.send_message(chat,result,reply_to_message_id=id_messaggio)
         return
-    if messaggio.startswith("/map"):
+    if messaggio.startswith("/map") and isUser(utente):
         address = parser(messaggio)
         coordinates = showmaps(address)
         app.send_location(chat,coordinates[0],coordinates[1])
         return
-    if messaggio.startswith("/km"):
+    if messaggio.startswith("/km") and isUser(utente):
         messaggio = parser(messaggio)
         addresses = messaggio.split(',')
         km = distanza(addresses[0],addresses[1])
         result = "La distanza tra i due luoghi è di " + str(km) + " km."
         app.send_message(chat,result,"html",False,False,id_messaggio)
         return
-    if messaggio.startswith("/route"):
+    if messaggio.startswith("/route") and isUser(utente):
         messaggio = parser(messaggio)
         addresses = messaggio.split(',')
         route = directions(addresses[0],addresses[1])
