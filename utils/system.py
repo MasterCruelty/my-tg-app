@@ -2,6 +2,14 @@ from datetime import date
 import time
 import os
 import re
+import utils_config
+
+"""
+Funzione che preleva i dati dal file di configurazione json
+"""
+def get_config_file(json_file):
+    config = utils_config.load_config(json_file)
+    return utils_config.serialize_config(config)
 
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
@@ -15,8 +23,8 @@ def parser(message):
 	funzione che salva su file il json del messaggio Telegram in arrivo
 """
 def save_json(message):
-    nome_file = "json_messages.json"
-    save = open(nome_file,'a')
+    nome_file = "json_message.json"
+    save = open(nome_file,'w')
     save.write(str(message))
     save.close()
 """
