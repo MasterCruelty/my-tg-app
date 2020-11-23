@@ -82,7 +82,11 @@ def print_updates(client,message):
         app.send_message(chat,result,"html",False,False,id_messaggio)
         return
     if "/getmessage" in str(message) and (isAdmin(utente) or isSuper(utente)):
-        app.send_message(chat,message,"html",False,False,id_messaggio)
+        try:
+            app.send_message(chat,message,"html",False,False,id_messaggio)
+        except:
+            save_json(message)
+            app.send_document(chat,"json_message.json",None,None,"Ecco il json prodotto dal messaggio","html",None,False,False,id_messaggio)
         return
     if messaggio.startswith("/searchmsg") and (isAdmin(utente) or isSuper(utente)):
         search = parser(messaggio)
