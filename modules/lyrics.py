@@ -24,6 +24,8 @@ Questa funzione formatta una stringa in modo che sia pronta per essere usata in 
 def format_input(string):
     string = string.lower()
     string = string.replace(" ","")
+    string = string.replace("'","")
+    string = string.replace("-","")
     return string
 
 """
