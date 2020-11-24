@@ -1,5 +1,43 @@
 import wikipedia
 import re
+from pyrogram import Client
+import sys
+sys.path.append(sys.path[0] + "/..")
+from utils.system import get_config_file
+
+config = get_config_file("config.json")
+api_id = config["api_id"]
+api_hash = config["api_hash"]
+app = Client("my_account", api_id, api_hash,no_updates = True)
+app.start()
+def execute_wiki(chat,id_messaggio,query):
+    parole = query.split(" ")
+    lingua = parole[0]
+    parole.remove(parole[0])
+    word = ""
+    for i in range(len(parole)):
+        word += parole[i] + " "
+    if " all " in query:
+        parole.remove(parole[0])
+        result = wikiall(lingua,word)
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    if "/comune" in query:
+        app.send_message(chat,"cerco un comune...","html",False,False,id_messaggio)
+        try:
+            result = comune()
+        except:
+            result = "operazione fallita"
+        app.edit_message_text(chat,id_messaggio+1,result,"html",False,False)
+        return
+    if "random" in query:
+        result = wikirandom(lingua,1)
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    else:
+        result = wiki(lingua,word)
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
 
 #data la lingua e la parola chiave da cercare, restituisce una frase della voce trovata
 def wiki(lang,keyword):
