@@ -14,6 +14,7 @@ from utils.dbfunctions import *
 config = get_config_file("config.json")
 api_id = config["api_id"]
 api_hash = config["api_hash"]
+comandi = config["lista_comandi"]
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
 endsearchmsg = False
@@ -106,37 +107,14 @@ def print_updates(client,message):
         endsearchmsg = True
         return
 
-
+     
     #funzionalità per gli utenti
-    if "/wiki" in messaggio and isUser(utente):
-        search = parser(messaggio)
-        parole = search.split(" ")
-        lingua = parole[0]
-        parole.remove(parole[0])
-        word = ""
-        for i in range(len(parole)):
-            word += parole[i] + " "
-        if " all " in messaggio:
-            parole.remove(parole[0])
-            result = wikiall(lingua,word)
-            app.send_message(chat,result,"html",False,False,id_messaggio)
-            return
-        if "/comune" in messaggio:
-            app.send_message(chat,"cerco un comune...","html",False,False,id_messaggio)
-            try:
-                result = comune()
-            except:
-                result = "operazione fallita"
-            app.edit_message_text(chat,id_messaggio+1,result,"html",False,False)
-            return
-        if "random" in messaggio:
-            result = wikirandom(lingua,1)
-            app.send_message(chat,result,"html",False,False,id_messaggio)
-            return
-        else:
-            result = wiki(lingua,word)
-            app.send_message(chat,result,"html",False,False,id_messaggio)
-            return
+    lista_comandi = comandi.split(";")
+    match = messaggio.split(" ")
+    if match[0] in lista_comandi and isUser(utente):
+        query = parser(messaggio)
+        fetch_command(chat,id_messaggio,match[0],query)
+    return
     if "/poll" in messaggio and isUser(utente):
         messaggio = parser(messaggio)
         poll = messaggio.split("/")
