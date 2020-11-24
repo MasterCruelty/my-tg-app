@@ -4,5 +4,6 @@
 	"api_url": "ATM MILANO API URL",
 	"api_geopy": "YOUR GEOPY API",
 	"id_super_admin": "ID_USER;NAME_USER;USERNAME_USER",
-	"path_db":"YOUR PATH/DATABASE.db"
+	"path_db":"YOUR PATH/DATABASE.db",
+	"lista_comandi":"COMMAND1;COMMAND2;COMMAND3;COMMAND_N"
 }
