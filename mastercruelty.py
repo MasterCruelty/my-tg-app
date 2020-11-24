@@ -20,8 +20,6 @@ endsearchmsg = False
 
 @app.on_message()
 def print_updates(client,message):
-    #print(message)
-    #save_json(message) scommentare quando serve un json non a portata di mano
     chat = message["chat"]["id"]
     nome_chat = message["chat"]["title"]
     utente = message["from_user"]["id"]
@@ -56,6 +54,7 @@ def print_updates(client,message):
         info_utente = app.get_users(user)
         result = del_user(info_utente)
         app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
     if messaggio.startswith("/listuser") and isSuper(utente):
         result = list_user()
         app.send_message(chat,result,"html",False,False,id_messaggio)
@@ -64,8 +63,27 @@ def print_updates(client,message):
         result = all_user()
         app.send_message(chat,result,"html",False,False,id_messaggio)
         return
-
-       
+    if messaggio.startswith("/setadmin") and isSuper(utente):
+        admin_new = parser(messaggio)
+        info_admin = app.get_users(admin_new)
+        result = set_admin(info_admin)
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    if messaggio.startswith("/deladmin") and isSuper(utente):
+        admin = parser(messaggio)
+        info_admin = app.get_users(admin)
+        result = del_admin(info_admin)
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    if messaggio.startswith("/listadmin") and (isAdmin(utente) or isSuper(utente)):
+        result = list_admin()
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+    if messaggio.startswith("/alladmin") and (isAdmin(utente) or isSuper(utente)):
+        result = all_admin()
+        app.send_message(chat,result,"html",False,False,id_messaggio)
+        return
+        
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount") and (isAdmin(utente) or isSuper(utente)):
         result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
