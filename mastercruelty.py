@@ -3,13 +3,11 @@ from datetime import date
 from datetimerange import DateTimeRange
 from pyrogram import Client #, MessageHandler   de-commentare se si torna a pyrogram 0.18
 from modules.covid import *
-from modules.wiki import *
 from modules.gmaps import *
 from modules.atm_feature import *
 from modules.lyrics import *
 from utils.system import *
 from utils.dbfunctions import *
-
 
 config = get_config_file("config.json")
 api_id = config["api_id"]
@@ -113,8 +111,15 @@ def print_updates(client,message):
     match = messaggio.split(" ")
     if match[0] in lista_comandi and isUser(utente):
         query = parser(messaggio)
-        fetch_command(chat,id_messaggio,match[0],query)
-    return
+        if query == "/comune":
+            app.send_message(chat,"Cerco un comune...",reply_to_message_id=id_messaggio)
+            result = fetch_command(chat,id_messaggio,match[0],query)
+            app.edit_message_text(chat,id_messaggio+1,result)
+        else:
+            result = fetch_command(chat,id_messaggio,match[0],query)
+            app.send_message(chat,result,reply_to_message_id=id_messaggio)
+
+    return #questo return resta finchè non si codifica tutti i comandi
     if "/poll" in messaggio and isUser(utente):
         messaggio = parser(messaggio)
         poll = messaggio.split("/")
