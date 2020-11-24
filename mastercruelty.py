@@ -20,8 +20,6 @@ endsearchmsg = False
 
 @app.on_message()
 def print_updates(client,message):
-    #print(message)
-    #save_json(message) scommentare quando serve un json non a portata di mano
     chat = message["chat"]["id"]
     nome_chat = message["chat"]["title"]
     utente = message["from_user"]["id"]
@@ -86,8 +84,6 @@ def print_updates(client,message):
         app.send_message(chat,result,"html",False,False,id_messaggio)
         return
         
-
-       
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount") and (isAdmin(utente) or isSuper(utente)):
         result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
