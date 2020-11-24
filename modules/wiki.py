@@ -1,15 +1,7 @@
 import wikipedia
 import re
-from pyrogram import Client
-import sys
-sys.path.append(sys.path[0] + "/..")
-from utils.system import get_config_file
 
-config = get_config_file("config.json")
-api_id = config["api_id"]
-api_hash = config["api_hash"]
-app = Client("my_account", api_id, api_hash,no_updates = True)
-app.start()
+#Questa funzione esegue il comando wiki richiesto dall'app principale fetchato tramite la funzione in system.py
 def execute_wiki(chat,id_messaggio,query):
     parole = query.split(" ")
     lingua = parole[0]
@@ -20,24 +12,19 @@ def execute_wiki(chat,id_messaggio,query):
     if " all " in query:
         parole.remove(parole[0])
         result = wikiall(lingua,word)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
+        return result 
     if "/comune" in query:
-        app.send_message(chat,"cerco un comune...","html",False,False,id_messaggio)
         try:
             result = comune()
         except:
             result = "operazione fallita"
-        app.edit_message_text(chat,id_messaggio+1,result,"html",False,False)
-        return
+        return result 
     if "random" in query:
         result = wikirandom(lingua,1)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
+        return result
     else:
         result = wiki(lingua,word)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
+        return result
 
 #data la lingua e la parola chiave da cercare, restituisce una frase della voce trovata
 def wiki(lang,keyword):
@@ -59,6 +46,7 @@ def wikirandom(lang,sents):
     random = wikipedia.random()
     result = wikipedia.summary(random,sentences=sents)
     return result
+#Simpatica funzione che cerca un comune su Wikipedia e ne restituisce i dati evidenziando numero abitanti e numero pagine visitate per trovarlo.
 def comune():
     i = 0
     while(True):
@@ -66,8 +54,8 @@ def comune():
         try:
             result = wikirandom("it",1)
         except:
-            continue 
-        if ("abitanti" in result and "comune" in result):
+            return comune() 
+        if ("abitanti" in result and ("comune" in result or "città" in result or "centro abitato" in result)):
             page = result.split(" ")
             for i in range(len(page)):
                 if page[i] == "abitanti":
