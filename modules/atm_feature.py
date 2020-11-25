@@ -2,10 +2,18 @@ import requests
 import json
 import sys
 sys.path.append(sys.path[0] + "/..")
-from utils.system import get_config_file
 
-config = get_config_file("config.json")
-api_url = config["api_url"]
+#Le seguenti tre righe commentate vanno fixate perchè danno luogo a un import ciclico
+#from utils.system import get_config_file
+#config = get_config_file("config.json")
+#api_url = config["api_url"]
+import utils_config
+config = utils_config.load_config("config.json")
+dict_conf = utils_config.serialize_config(config)
+api_url = dict_conf["api_url"]
+
+def execute_atm_get_stop(stop):
+    return get_stop_info(stop)
 
 """
     Dato un codice fermata, vengono fornite le informazioni relative a quella fermata contattando direttamente il server atm
