@@ -4,6 +4,10 @@ import os
 import re
 import utils_config
 import modules.wiki
+import modules.gmaps
+#import modules.lyrics
+import modules.atm_feature
+import modules.covid
 
 """
 Funzione che preleva i dati dal file di configurazione json
@@ -15,21 +19,21 @@ def get_config_file(json_file):
 """
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
-def fetch_command(chat,message_id,match,query):
+def fetch_command(match,query):
     if match == "/wiki":
-        return modules.wiki.execute_wiki(chat,message_id,query)
+        return modules.wiki.execute_wiki(query)
     if match == "/map":
-        return modules.gmaps.execute_map(chat,message_id,query)
+        return modules.gmaps.execute_map(query)
     if match == "/km":
-        return modules.gmaps.execute_km(chat,message_id,query)
+        return modules.gmaps.execute_km(query)
     if match == "/route":
-        return modules.gmaps.execute_route(chat,message_id,query)
+        return modules.gmaps.execute_route(query)
     if match == "/lyrics":
-        return modules.lyrics.execute_lyrics(chat,message_id,query)
+        return modules.lyrics.execute_lyrics(query)
     if match == "/atm":
-        return modules.atm_feature.execute_atm(chat,message_id,query)
+        return modules.atm_feature.execute_atm_get_stop(query)
     if match == "/covid":
-        return modules.covid.execute_covid(chat,message_id,query)
+        return modules.covid.execute_covid()
 
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
