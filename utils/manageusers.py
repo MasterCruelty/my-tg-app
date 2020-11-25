@@ -20,7 +20,7 @@ class User(BaseModel):
     username = CharField()
 
 class Admin(BaseModel):
-    id_user = ForeignKeyField(User, backref='users')
+    id_user = IntegerField(unique = True)
     name = CharField()
     username = CharField()
 
