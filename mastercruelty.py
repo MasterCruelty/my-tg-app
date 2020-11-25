@@ -1,11 +1,7 @@
 import time
 from datetime import date
 from datetimerange import DateTimeRange
-from pyrogram import Client #, MessageHandler   de-commentare se si torna a pyrogram 0.18
-from modules.covid import *
-from modules.gmaps import *
-from modules.atm_feature import *
-from modules.lyrics import *
+from pyrogram import Client 
 from utils.system import *
 from utils.dbfunctions import *
 
@@ -104,22 +100,6 @@ def print_updates(client,message):
     if messaggio.startswith("/stopmsg") and (isAdmin(utente) or isSuper(utente)):
         endsearchmsg = True
         return
-
-     
-    #funzionalità per gli utenti
-    lista_comandi = comandi.split(";")
-    match = messaggio.split(" ")
-    if match[0] in lista_comandi and isUser(utente):
-        query = parser(messaggio)
-        if query == "/comune":
-            app.send_message(chat,"Cerco un comune...",reply_to_message_id=id_messaggio)
-            result = fetch_command(chat,id_messaggio,match[0],query)
-            app.edit_message_text(chat,id_messaggio+1,result)
-        else:
-            result = fetch_command(chat,id_messaggio,match[0],query)
-            app.send_message(chat,result,reply_to_message_id=id_messaggio)
-
-    return #questo return resta finchè non si codifica tutti i comandi
     if "/poll" in messaggio and isUser(utente):
         messaggio = parser(messaggio)
         poll = messaggio.split("/")
@@ -128,43 +108,25 @@ def print_updates(client,message):
         opzioni = opzioni.split(",")
         app.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
         return
-    if messaggio.startswith("/covid") and isUser(utente):
-       result = covid_daily()
-       app.send_message(chat,result,reply_to_message_id=id_messaggio)
-       return
-    if messaggio.startswith("/atm") and isUser(utente):
-        stop = parser(messaggio)
-        result = get_stop_info(stop)
-        app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
-        return
-    if messaggio.startswith("/lyrics") and isUser(utente):
-        messaggio = parser(messaggio)
-        parametri = messaggio.split(",")
-        result = get_lyrics_formated(parametri[0],parametri[1])
-        app.send_message(chat,result,reply_to_message_id=id_messaggio)
-        return
-    if messaggio.startswith("/map") and isUser(utente):
-        address = parser(messaggio)
-        coordinates = showmaps(address)
-        app.send_location(chat,coordinates[0],coordinates[1])
-        return
-    if messaggio.startswith("/km") and isUser(utente):
-        messaggio = parser(messaggio)
-        addresses = messaggio.split(',')
-        km = distanza(addresses[0],addresses[1])
-        result = "La distanza tra i due luoghi è di " + str(km) + " km."
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/route") and isUser(utente):
-        messaggio = parser(messaggio)
-        addresses = messaggio.split(',')
-        route = directions(addresses[0],addresses[1])
-        result = route
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
 
-#linee per pyrogram 0.18 (in caso di scalo di versione)
-#my_handler = MessageHandler(print_updates)
-#app.add_handler(my_handler)
+     
+    #funzionalità per gli utenti
+    lista_comandi = comandi.split(";")
+    match = messaggio.split(" ")
+    if match[0] in lista_comandi and isUser(utente):
+        try:
+            query = parser(messaggio)
+        except:
+            query = messaggio
+        if query == "/comune":
+            app.send_message(chat,"Cerco un comune...",reply_to_message_id=id_messaggio)
+            result = fetch_command(match[0],query)
+            app.edit_message_text(chat,id_messaggio+1,result)
+        else:
+            result = fetch_command(match[0],query)
+            if type(result) == list:
+                app.send_location(chat,result[0],result[1],reply_to_message_id = id_messaggio)
+            else:
+                app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
 
 app.run()
