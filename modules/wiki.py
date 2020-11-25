@@ -2,7 +2,7 @@ import wikipedia
 import re
 
 #Questa funzione esegue il comando wiki richiesto dall'app principale fetchato tramite la funzione in system.py
-def execute_wiki(chat,id_messaggio,query):
+def execute_wiki(query):
     parole = query.split(" ")
     lingua = parole[0]
     parole.remove(parole[0])
