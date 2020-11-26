@@ -2,6 +2,9 @@ import os
 import requests
 import json
 
+
+def execute_covid():
+    return covid_daily()
 """
 funzione che controlla se è stato effettuato un nuovo commit su salute.gov.it(problema di cookies, non funziona correttamente)
 Viene controllato se l'ultimo hash commit è cambiato

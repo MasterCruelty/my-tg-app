@@ -1,19 +1,16 @@
 import time
 from datetime import date
 from datetimerange import DateTimeRange
-from pyrogram import Client #, MessageHandler   de-commentare se si torna a pyrogram 0.18
-from modules.covid import *
-from modules.wiki import *
-from modules.gmaps import *
-from modules.atm_feature import *
-from modules.lyrics import *
+from pyrogram import Client 
 from utils.system import *
 from utils.dbfunctions import *
-
+from utils.get_config import get_config_file
 
 config = get_config_file("config.json")
 api_id = config["api_id"]
 api_hash = config["api_hash"]
+comandi = config["lista_comandi"]
+comandi_super = config["lista_comandi_super"] 
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
 endsearchmsg = False
@@ -42,48 +39,6 @@ def print_updates(client,message):
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
 
-    #funzioni dedicate al database 
-    if messaggio.startswith("/setuser") and isSuper(utente):
-        utente_new = parser(messaggio)
-        info_utente = app.get_users(utente_new)
-        result = set_user(info_utente)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/deluser") and isSuper(utente):
-        user = parser(messaggio)
-        info_utente = app.get_users(user)
-        result = del_user(info_utente)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/listuser") and isSuper(utente):
-        result = list_user()
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/alluser") and isSuper(utente):
-        result = all_user()
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/setadmin") and isSuper(utente):
-        admin_new = parser(messaggio)
-        info_admin = app.get_users(admin_new)
-        result = set_admin(info_admin)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/deladmin") and isSuper(utente):
-        admin = parser(messaggio)
-        info_admin = app.get_users(admin)
-        result = del_admin(info_admin)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/listadmin") and (isAdmin(utente) or isSuper(utente)):
-        result = list_admin()
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/alladmin") and (isAdmin(utente) or isSuper(utente)):
-        result = all_admin()
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-        
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount") and (isAdmin(utente) or isSuper(utente)):
         result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
@@ -123,38 +78,6 @@ def print_updates(client,message):
     if messaggio.startswith("/stopmsg") and (isAdmin(utente) or isSuper(utente)):
         endsearchmsg = True
         return
-
-
-    #funzionalità per gli utenti
-    if "/wiki" in messaggio and isUser(utente):
-        search = parser(messaggio)
-        parole = search.split(" ")
-        lingua = parole[0]
-        parole.remove(parole[0])
-        word = ""
-        for i in range(len(parole)):
-            word += parole[i] + " "
-        if " all " in messaggio:
-            parole.remove(parole[0])
-            result = wikiall(lingua,word)
-            app.send_message(chat,result,"html",False,False,id_messaggio)
-            return
-        if "/comune" in messaggio:
-            app.send_message(chat,"cerco un comune...","html",False,False,id_messaggio)
-            try:
-                result = comune()
-            except:
-                result = "operazione fallita"
-            app.edit_message_text(chat,id_messaggio+1,result,"html",False,False)
-            return
-        if "random" in messaggio:
-            result = wikirandom(lingua,1)
-            app.send_message(chat,result,"html",False,False,id_messaggio)
-            return
-        else:
-            result = wiki(lingua,word)
-            app.send_message(chat,result,"html",False,False,id_messaggio)
-            return
     if "/poll" in messaggio and isUser(utente):
         messaggio = parser(messaggio)
         poll = messaggio.split("/")
@@ -163,43 +86,43 @@ def print_updates(client,message):
         opzioni = opzioni.split(",")
         app.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
         return
-    if messaggio.startswith("/covid") and isUser(utente):
-       result = covid_daily()
-       app.send_message(chat,result,reply_to_message_id=id_messaggio)
-       return
-    if messaggio.startswith("/atm") and isUser(utente):
-        stop = parser(messaggio)
-        result = get_stop_info(stop)
-        app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
-        return
-    if messaggio.startswith("/lyrics") and isUser(utente):
-        messaggio = parser(messaggio)
-        parametri = messaggio.split(",")
-        result = get_lyrics_formated(parametri[0],parametri[1])
-        app.send_message(chat,result,reply_to_message_id=id_messaggio)
-        return
-    if messaggio.startswith("/map") and isUser(utente):
-        address = parser(messaggio)
-        coordinates = showmaps(address)
-        app.send_location(chat,coordinates[0],coordinates[1])
-        return
-    if messaggio.startswith("/km") and isUser(utente):
-        messaggio = parser(messaggio)
-        addresses = messaggio.split(',')
-        km = distanza(addresses[0],addresses[1])
-        result = "La distanza tra i due luoghi è di " + str(km) + " km."
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/route") and isUser(utente):
-        messaggio = parser(messaggio)
-        addresses = messaggio.split(',')
-        route = directions(addresses[0],addresses[1])
-        result = route
-        app.send_message(chat,result,"html",False,False,id_messaggio)
+
+    #funzionalità super admin
+    cmd_super = comandi_super.split(";")
+    match = messaggio.split(" ")
+    if match[0] in cmd_super and isSuper(utente):
+        try:
+            query = parser(messaggio)
+        except:
+            query = messaggio
+        if match[0].startswith("/s") or match[0].startswith("/d"):
+            fetch = app.get_users(query)
+            result = fetch_super_command(match[0],fetch)
+            app.send_message(chat,result,reply_to_message_id=id_messaggio)
+        else:
+            result = fetch_super_command(match[0],query)
+            app.send_message(chat,result,reply_to_message_id=id_messaggio)
         return
 
-#linee per pyrogram 0.18 (in caso di scalo di versione)
-#my_handler = MessageHandler(print_updates)
-#app.add_handler(my_handler)
+
+
+    #funzionalità per gli utenti
+    lista_comandi = comandi.split(";")
+    match = messaggio.split(" ")
+    if match[0] in lista_comandi and isUser(utente):
+        try:
+            query = parser(messaggio)
+        except:
+            query = messaggio
+        if query == "/comune":
+            app.send_message(chat,"Cerco un comune...",reply_to_message_id=id_messaggio)
+            result = fetch_command(match[0],query)
+            app.edit_message_text(chat,id_messaggio+1,result)
+        else:
+            result = fetch_command(match[0],query)
+            if type(result) == list:
+                app.send_location(chat,result[0],result[1],reply_to_message_id = id_messaggio)
+            else:
+                app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
 
 app.run()
