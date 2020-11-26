@@ -5,17 +5,11 @@ from openrouteservice import convert
 import time
 import json
 import sys
-
 sys.path.append(sys.path[0] + "/..")
-#Le seguenti tre righe commentate vanno fixate perchè danno luogo a un import ciclico
-#from utils.system import get_config_file
-#config = utils.system.get_config_file("config.json")
-#api_geopy = config["api_geopy"]
+from utils.get_config import get_config_file
+config = get_config_file("config.json")
+api_geopy = config["api_geopy"]
 
-import utils_config
-config = utils_config.load_config("config.json")
-dict_conf = utils_config.serialize_config(config)
-api_geopy = dict_conf["api_geopy"]
 
 def execute_map(query):
     return showmaps(query)
