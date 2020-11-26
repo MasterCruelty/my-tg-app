@@ -1,6 +1,6 @@
 import sys
 sys.path.append(sys.path[0] + "/..")
-from utils.manageusers import *
+from utils.dbtables import *
 
 #Inizio della connessione con il db
 db.connect()
@@ -14,6 +14,18 @@ def list_user():
     query = User.select()
     for user in query:
         result += str(user.id_user) + ";" + user.name + ";" + user.username + "\n"
+    return result
+
+"""
+questa funzione fa una select dalla tabella User e restituisce gli id di tutti gli utenti registratii in una lista di int
+"""
+
+def list_id():
+    result = []
+    query = User.select()
+    query += Admin.select()
+    for user in query:
+        result.append(user.id_user)
     return result
 
 """
