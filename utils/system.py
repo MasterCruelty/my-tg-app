@@ -3,14 +3,50 @@ import time
 import os
 import re
 import utils_config
+import modules.wiki
+import modules.gmaps
+import modules.lyrics
+import modules.atm_feature
+import modules.covid
+import utils.dbfunctions 
+
 
 """
-Funzione che preleva i dati dal file di configurazione json
+Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
-def get_config_file(json_file):
-    config = utils_config.load_config(json_file)
-    return utils_config.serialize_config(config)
+def fetch_command(match,query):
+    if match == "/wiki":
+        return modules.wiki.execute_wiki(query)
+    if match == "/map":
+        return modules.gmaps.execute_map(query)
+    if match == "/km":
+        return modules.gmaps.execute_km(query)
+    if match == "/route":
+        return modules.gmaps.execute_route(query)
+    if match == "/lyrics":
+        return modules.lyrics.execute_lyrics(query)
+    if match == "/atm":
+        return modules.atm_feature.execute_atm_get_stop(query)
+    if match == "/covid":
+        return modules.covid.execute_covid()
 
+def fetch_super_command(match,info_user):
+    if match == "/setuser":
+        return utils.dbfunctions.execute_setuser(info_user)
+    if match == "/deluser":
+        return utils.dbfunctions.execute_deluser(info_user)
+    if match == "/listuser":
+        return utils.dbfunctions.execute_listuser()
+    if match == "/alluser":
+        return utils.dbfunctions.execute_alluser()
+    if match == "/setadmin":
+        return utils.dbfunctions.execute_setadmin(info_user)
+    if match == "/deladmin":
+        return utils.dbfunctions.execute_deladmin(info_user)
+    if match == "/listadmin":
+        return utils.dbfunctions.execute_listadmin()
+    if match == "/alladmin":
+        return utils.dbfunctions.execute_alladmin()
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
 """
