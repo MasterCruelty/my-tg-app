@@ -8,13 +8,8 @@ import modules.gmaps
 import modules.lyrics
 import modules.atm_feature
 import modules.covid
+import utils.dbfunctions 
 
-"""
-Funzione che preleva i dati dal file di configurazione json
-"""
-def get_config_file(json_file):
-    config = utils_config.load_config(json_file)
-    return utils_config.serialize_config(config)
 
 """
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
@@ -35,6 +30,23 @@ def fetch_command(match,query):
     if match == "/covid":
         return modules.covid.execute_covid()
 
+def fetch_super_command(match,info_user):
+    if match == "/setuser":
+        return utils.dbfunctions.execute_setuser(info_user)
+    if match == "/deluser":
+        return utils.dbfunctions.execute_deluser(info_user)
+    if match == "/listuser":
+        return utils.dbfunctions.execute_listuser()
+    if match == "/alluser":
+        return utils.dbfunctions.execute_alluser()
+    if match == "/setadmin":
+        return utils.dbfunctions.execute_setadmin(info_user)
+    if match == "/deladmin":
+        return utils.dbfunctions.execute_deladmin(info_user)
+    if match == "/listadmin":
+        return utils.dbfunctions.execute_listadmin()
+    if match == "/alladmin":
+        return utils.dbfunctions.execute_alladmin()
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
 """
