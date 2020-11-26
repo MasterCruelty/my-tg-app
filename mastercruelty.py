@@ -4,11 +4,13 @@ from datetimerange import DateTimeRange
 from pyrogram import Client 
 from utils.system import *
 from utils.dbfunctions import *
+from utils.get_config import get_config_file
 
 config = get_config_file("config.json")
 api_id = config["api_id"]
 api_hash = config["api_hash"]
 comandi = config["lista_comandi"]
+comandi_super = config["lista_comandi_super"] 
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
 endsearchmsg = False
@@ -37,48 +39,6 @@ def print_updates(client,message):
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
 
-    #funzioni dedicate al database 
-    if messaggio.startswith("/setuser") and isSuper(utente):
-        utente_new = parser(messaggio)
-        info_utente = app.get_users(utente_new)
-        result = set_user(info_utente)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/deluser") and isSuper(utente):
-        user = parser(messaggio)
-        info_utente = app.get_users(user)
-        result = del_user(info_utente)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/listuser") and isSuper(utente):
-        result = list_user()
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/alluser") and isSuper(utente):
-        result = all_user()
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/setadmin") and isSuper(utente):
-        admin_new = parser(messaggio)
-        info_admin = app.get_users(admin_new)
-        result = set_admin(info_admin)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/deladmin") and isSuper(utente):
-        admin = parser(messaggio)
-        info_admin = app.get_users(admin)
-        result = del_admin(info_admin)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/listadmin") and (isAdmin(utente) or isSuper(utente)):
-        result = list_admin()
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/alladmin") and (isAdmin(utente) or isSuper(utente)):
-        result = all_admin()
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-        
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount") and (isAdmin(utente) or isSuper(utente)):
         result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
@@ -127,7 +87,25 @@ def print_updates(client,message):
         app.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
         return
 
-     
+    #funzionalità super admin
+    cmd_super = comandi_super.split(";")
+    match = messaggio.split(" ")
+    if match[0] in cmd_super and isSuper(utente):
+        try:
+            query = parser(messaggio)
+        except:
+            query = messaggio
+        if match[0].startswith("/s") or match[0].startswith("/d"):
+            fetch = app.get_users(query)
+            result = fetch_super_command(match[0],fetch)
+            app.send_message(chat,result,reply_to_message_id=id_messaggio)
+        else:
+            result = fetch_super_command(match[0],query)
+            app.send_message(chat,result,reply_to_message_id=id_messaggio)
+        return
+
+
+
     #funzionalità per gli utenti
     lista_comandi = comandi.split(";")
     match = messaggio.split(" ")
