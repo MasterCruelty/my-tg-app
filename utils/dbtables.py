@@ -29,6 +29,11 @@ class SuperAdmin(BaseModel):
     name = CharField()
     username = CharField()
 
+class group(BaseModel):
+    id_group = IntegerField(unique = True)
+    title = CharField()
+
+
 db.connect()
 db.create_tables([User,Admin,SuperAdmin])
 
