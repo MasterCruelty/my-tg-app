@@ -1,7 +1,7 @@
 from peewee import *
 import sys
 sys.path.append(sys.path[0] + "/..")
-from utils.system import get_config_file
+from utils.get_config import get_config_file
 
 config = get_config_file("config.json")
 id_super_admin = config["id_super_admin"].split(";")

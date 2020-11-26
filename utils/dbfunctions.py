@@ -5,6 +5,31 @@ from utils.dbtables import *
 #Inizio della connessione con il db
 db.connect()
 
+
+def execute_alluser():
+    return all_user()
+
+def execute_listuser():
+    return list_user()
+
+def execute_setuser(info_user):
+    return set_user(info_user)
+
+def execute_deluser(info_user):
+    return del_user(info_user)
+
+def execute_alladmin():
+    return all_admin()
+
+def execute_listadmin():
+    return list_admin()
+
+def execute_setadmin(info_user):
+    return set_admin(info_user)
+
+def execute_deladmin(info_user):
+    return del_admin(info_user)
+
 """
 questa funzione fa una select dalla tabella User e restituisce i dati di tutti gli utenti
 """
@@ -117,7 +142,7 @@ def set_admin(json_user):
         return "Admin già registrato"
     query = Admin.select().where(Admin.id_user == userid)
     for admin in query:
-        result = "Admin " + str(user.id_user) + " salvato!"
+        result = "Admin " + str(admin.id_user) + " salvato!"
     return result
 
 """
@@ -126,7 +151,7 @@ Questa funzione elimina un admin  dalla tabella Admin
 
 def del_admin(json_user):
     userid = json_user["id"]
-    query = Admin.delete().where(User.id_user == userid).execute()
+    query = Admin.delete().where(Admin.id_user == userid).execute()
     result = "Admin " + str(userid) + " eliminato."
     return result
 

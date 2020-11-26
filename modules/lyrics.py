@@ -1,6 +1,13 @@
 import urllib.request
 from bs4 import BeautifulSoup
 
+
+
+def execute_lyrics(query):
+    parametri = query.split(",")
+    result = get_lyrics_formated(parametri[0],parametri[1])
+    return result
+
 """
 Questa funzione, dati artista e canzone, effettua una richiesta http a azlyrics.com e filtrando i tag con una bellissima zuppa,
 ci restituisce le lyrics della canzone desiderata(se esiste sul sito)
