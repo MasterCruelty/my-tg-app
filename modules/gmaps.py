@@ -6,10 +6,26 @@ import time
 import json
 import sys
 sys.path.append(sys.path[0] + "/..")
-from utils.system import get_config_file
-
+from utils.get_config import get_config_file
 config = get_config_file("config.json")
 api_geopy = config["api_geopy"]
+
+
+def execute_map(query):
+    return showmaps(query)
+
+def execute_km(query):
+    addresses = query.split(',')
+    km = distanza(addresses[0],addresses[1])
+    result = "La distanza tra i due luoghi è di " + str(km) + " km."
+    return result
+
+def execute_route(query):
+    addresses = query.split(',')
+    route = directions(addresses[0],addresses[1])
+    result = route
+    return result
+
 
 def showmaps(address):
     geolocate = Nominatim(user_agent="map_app")
