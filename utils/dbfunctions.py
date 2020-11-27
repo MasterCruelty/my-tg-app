@@ -31,6 +31,49 @@ def execute_deladmin(info_user):
     return del_admin(info_user)
 
 """
+questa funzione fa una select dalla tabella User e restituisce gli id di tutti gli utenti registratii dentro una lista di int
+"""
+
+def list_id_users():
+    result = []
+    query = User.select()
+    query += Admin.select()
+    for user in query:
+        result.append(user.id_user)
+    return result
+
+"""
+questa funzione fa una select dalla tabella Group e restituisce gli id di tutti i gruppi registratii dentro una lista di int
+"""
+def list_group_id():
+    result = []
+    query = Group.select()
+    for group in query:
+        result.append(group.id_group)
+    return result
+
+"""
+questa funzione fa una select dalla tabella Group e restituisce i dati di tutti i gruppi
+"""
+def list_group():
+    result = "Lista gruppi salvati:\n\n"
+    query = Group.select()
+    for group in query:
+        result += str(group.id_group) + ";" + group.title
+    return result
+
+"""
+questa funzione è simile a list_user ma restituisce solo il numero degli utenti registrati nella tabella User
+"""
+
+def all_group():
+    result = 0
+    query = Group.select()
+    for group in query:
+        result += 1
+    return "Totale utenti registrati: " + str(result)
+
+"""
 questa funzione fa una select dalla tabella User e restituisce i dati di tutti gli utenti
 """
 
@@ -39,18 +82,6 @@ def list_user():
     query = User.select()
     for user in query:
         result += str(user.id_user) + ";" + user.name + ";" + user.username + "\n"
-    return result
-
-"""
-questa funzione fa una select dalla tabella User e restituisce gli id di tutti gli utenti registratii in una lista di int
-"""
-
-def list_id():
-    result = []
-    query = User.select()
-    query += Admin.select()
-    for user in query:
-        result.append(user.id_user)
     return result
 
 """
