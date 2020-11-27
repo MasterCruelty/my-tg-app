@@ -29,7 +29,7 @@ class SuperAdmin(BaseModel):
     name = CharField()
     username = CharField()
 
-class group(BaseModel):
+class Group(BaseModel):
     id_group = IntegerField(unique = True)
     title = CharField()
 
