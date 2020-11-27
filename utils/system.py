@@ -8,7 +8,7 @@ import modules.gmaps
 import modules.lyrics
 import modules.atm_feature
 import modules.covid
-import utils.dbfunctions 
+import utils.dbfunctions
 
 
 """
@@ -68,7 +68,7 @@ def save_json(message):
 """
 def showIpBanned():
     #os.popen ("sudo zgrep 'Ban ' /var/log/fail2ban.log* > ip_banned.txt")
-    os.popen("sudo fail2ban-client status sshd | grep -A 15 Actions > ip_banned.txt")
+    os.system("./ip_banned.sh")
     file_banned = open("ip_banned.txt",'r')
     lista_banned = file_banned.read()
     return lista_banned
@@ -79,13 +79,13 @@ def showIpBanned():
 def visualizza(chat,nome_chat,utente,nome_utente,username,messaggio):
     print("id_utente: " + str(utente) + "\nnome_utente: " + nome_utente + "\nusername: " + username)
     try:
-        print("chat_id: " + str(chat) + "\nnome_chat: " + nome_chat) 
+        print("chat_id: " + str(chat) + "\nnome_chat: " + nome_chat)
     except:
         print("messaggio ricevuto da un channel o chat privata")
     print("\n\nMessaggio: " + messaggio + "\n" )
     print("**************************************************************************************")
     if str(chat):
-        return "nome_chat: " + str(chat) +"id_utente: " + str(utente) + "\nnome_utente: " + nome_utente + "\nusername: " + username + "\n\n" + "Messaggio: " + messaggio 
+        return "nome_chat: " + str(chat) +"id_utente: " + str(utente) + "\nnome_utente: " + nome_utente + "\nusername: " + username + "\n\n" + "Messaggio: " + messaggio
 """
     da rifattorizzare: funzione per recuperare il file id del messaggio corrente
     plus: per rendere la funzione utile si dovrebbe gestire anche il parametro file_ref
@@ -106,4 +106,4 @@ def recuperaFileID(message):
         print("formato multimediale non supportato da questa app")
         file_id = "Non supportato"
     print(">>>>file_id recuperato correttamente<<<< => " + file_id)
-    return file_id        
+    return file_id

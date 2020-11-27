@@ -13,15 +13,15 @@ def check_covid():
     file_commit = open('files/commit_covid.txt','r')
     content = file_commit.read()
     file_commit.close()
-    commit =  os.popen("git ls-remote https://github.com/pcm-dpc/COVID-19.git HEAD | awk '{ print $1}' > files/commit_covid.txt")
+    os.system("./commit.sh")
     file_commit = open('files/commit_covid.txt','r')
     content_new = file_commit.read()
-    file_commit.close() 
+    file_commit.close()
     if content == content_new:
         return False
     else:
         return True
-    
+
 
 """
     funzione che prende ogni giorno il json aggiornato contenente i dati dei contagiati in Italia.
@@ -40,4 +40,3 @@ def covid_daily():
         giorno = str(item["data"])[0:10]
     result = "I nuovi positivi in data " + giorno +" sono: " + nuovi_positivi + "\nAttualmente vi sono:\n" + ricoverati + " pazienti ricoverati con sintomi\n" + terapia_intensiva + " pazienti in terapia intensiva\n" + isolamento + " pazienti in isolamento domiciliare\n" + deceduti + " pazienti deceduti"
     return result
-
