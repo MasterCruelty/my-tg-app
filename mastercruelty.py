@@ -5,6 +5,7 @@ from pyrogram import Client
 from utils.system import *
 from utils.dbfunctions import *
 from utils.get_config import get_config_file
+from utils.sysfunctions import *
 
 config = get_config_file("config.json")
 api_id = config["api_id"]
@@ -41,9 +42,7 @@ def print_updates(client,message):
 
     #alcune funzioni di sistema
     if messaggio.startswith("/hcount") and (isAdmin(utente) or isSuper(utente)):
-        result = "Totale messaggi in questa chat: " + str(app.get_history_count(chat))
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
+        return count_messages(client,message)
     if messaggio.startswith("/id") and (isAdmin(utente) or isSuper(utente)):
         result = app.get_chat(chat)
         result = result["id"]
@@ -95,13 +94,8 @@ def print_updates(client,message):
             query = parser(messaggio)
         except:
             query = messaggio
-        if match[0].startswith("/s") or match[0].startswith("/d"):
-            fetch = app.get_users(query)
-            result = fetch_super_command(match[0],fetch)
-            app.send_message(chat,result,reply_to_message_id=id_messaggio)
-        else:
-            result = fetch_super_command(match[0],query)
-            app.send_message(chat,result,reply_to_message_id=id_messaggio)
+        result = fetch_super_command(match[0],query,client,message)
+        app.send_message(chat,result,reply_to_message_id=id_messaggio)
         return
 
 

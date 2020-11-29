@@ -10,7 +10,6 @@ import modules.atm_feature
 import modules.covid
 import utils.dbfunctions
 
-
 """
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
@@ -30,23 +29,25 @@ def fetch_command(match,query):
     if match == "/covid":
         return modules.covid.execute_covid()
 
-def fetch_super_command(match,info_user):
+def fetch_super_command(match,query,client,message):
     if match == "/setuser":
-        return utils.dbfunctions.execute_setuser(info_user)
+        return utils.dbfunctions.execute_setuser(client,message,query)
     if match == "/deluser":
-        return utils.dbfunctions.execute_deluser(info_user)
+        return utils.dbfunctions.execute_deluser(client,message,query)
     if match == "/listuser":
         return utils.dbfunctions.execute_listuser()
     if match == "/alluser":
         return utils.dbfunctions.execute_alluser()
     if match == "/setadmin":
-        return utils.dbfunctions.execute_setadmin(info_user)
+        return utils.dbfunctions.execute_setadmin(client,message,query)
     if match == "/deladmin":
-        return utils.dbfunctions.execute_deladmin(info_user)
+        return utils.dbfunctions.execute_deladmin(client,message,query)
     if match == "/listadmin":
         return utils.dbfunctions.execute_listadmin()
     if match == "/alladmin":
         return utils.dbfunctions.execute_alladmin()
+    if match == "/hcount":
+        return utils.sysfunctions.execute_count_messages(client,message)
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
 """
