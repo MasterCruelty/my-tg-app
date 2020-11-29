@@ -1,6 +1,7 @@
 import sys
 sys.path.append(sys.path[0] + "/..")
 from utils.dbtables import *
+from pyrogram import Client
 
 #Inizio della connessione con il db
 db.connect()
@@ -12,11 +13,11 @@ def execute_alluser():
 def execute_listuser():
     return list_user()
 
-def execute_setuser(info_user):
-    return set_user(info_user)
+def execute_setuser(client,message,query):
+    return set_user(client,message,query)
 
-def execute_deluser(info_user):
-    return del_user(info_user)
+def execute_deluser(client,message,query):
+    return del_user(client,message,query)
 
 def execute_alladmin():
     return all_admin()
@@ -24,11 +25,11 @@ def execute_alladmin():
 def execute_listadmin():
     return list_admin()
 
-def execute_setadmin(info_user):
-    return set_admin(info_user)
+def execute_setadmin(client,message,query):
+    return set_admin(client,message,query)
 
-def execute_deladmin(info_user):
-    return del_admin(info_user)
+def execute_deladmin(client,message,query):
+    return del_admin(client,message,query)
 
 """
 questa funzione fa una select dalla tabella User e restituisce gli id di tutti gli utenti registratii dentro una lista di int
@@ -98,8 +99,9 @@ def all_user():
 """
 questa funzione permette di registrare un nuovo utente nella tabella User
 """
-
-def set_user(json_user):
+@Client.on_message()
+def set_user(client,message,query):
+    json_user = client.get_users(query)
     userid = json_user["id"]
     nome_utente = json_user["first_name"]
     username_utente = "@" + str(json_user["username"])
@@ -116,8 +118,9 @@ def set_user(json_user):
 """
 Questa funzione elimina un utente dalla tabella User
 """
-
-def del_user(json_user):
+@Client.on_message()
+def del_user(client,message,query):
+    json_user = client.get_users(query)
     userid = json_user["id"]
     query = User.delete().where(User.id_user == userid).execute()
     result = "Utente " + str(userid) + " eliminato."
@@ -162,7 +165,8 @@ def all_admin():
 questa funzione permette di registrare un nuovo admin nella tabella Admin
 """
 
-def set_admin(json_user):
+def set_admin(client,message,query):
+    json_user = client.get_users(query)
     userid = json_user["id"]
     nome_utente = json_user["first_name"]
     username_utente = "@" + str(json_user["username"])
@@ -180,7 +184,8 @@ def set_admin(json_user):
 Questa funzione elimina un admin  dalla tabella Admin
 """
 
-def del_admin(json_user):
+def del_admin(client,message,query):
+    json_user = client.get_users(query)
     userid = json_user["id"]
     query = Admin.delete().where(Admin.id_user == userid).execute()
     result = "Admin " + str(userid) + " eliminato."
