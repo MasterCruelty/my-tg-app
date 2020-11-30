@@ -14,5 +14,5 @@ funzione d'appoggio per inviare messaggi
 @Client.on_message()
 def sendMessage(client,message,result):
     chat = message["chat"]["id"]
-    client.send_message(chat,result,"html",reply_to_message_id=message["message_id"])
+    client.send_message(chat,result,"html",disable_web_page_preview=True,reply_to_message_id=message["message_id"])
     return
