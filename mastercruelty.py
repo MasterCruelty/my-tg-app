@@ -41,29 +41,8 @@ def print_updates(client,message):
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
 
     #alcune funzioni di sistema
-    if messaggio.startswith("/hcount") and (isAdmin(utente) or isSuper(utente)):
-        return count_messages(client,message)
-    if messaggio.startswith("/id") and (isAdmin(utente) or isSuper(utente)):
-        result = app.get_chat(chat)
-        result = result["id"]
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
-    if messaggio.startswith("/getid") and (isAdmin(utente) or isSuper(utente)):
-        content = message["reply_to_message"]["from_user"]
-        result = content["id"]
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-    if messaggio.startswith("/getuser") and (isAdmin(utente) or isSuper(utente)):
-        search = parser(messaggio)
-        result = app.get_users(search)
-        app.send_message(chat,result,"html",False,False,id_messaggio)
-        return
     if "/getmessage" in str(message) and (isAdmin(utente) or isSuper(utente)):
-        try:
-            app.send_message(chat,message,"html",False,False,id_messaggio)
-        except:
-            save_json(message)
-            app.send_document(chat,"json_message.json",None,None,"Ecco il json prodotto dal messaggio","html",None,False,False,id_messaggio)
-        return
+        return get_message(client,message)
     if messaggio.startswith("/searchmsg") and (isAdmin(utente) or isSuper(utente)):
         search = parser(messaggio)
         for message in app.search_messages(chat, query = search):
@@ -94,11 +73,8 @@ def print_updates(client,message):
             query = parser(messaggio)
         except:
             query = messaggio
-        result = fetch_super_command(match[0],query,client,message)
-        app.send_message(chat,result,reply_to_message_id=id_messaggio)
+        fetch_super_command(match[0],query,client,message)
         return
-
-
 
     #funzionalità per gli utenti
     lista_comandi = comandi.split(";")
