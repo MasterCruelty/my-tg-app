@@ -1,12 +1,12 @@
 import urllib.request
 from bs4 import BeautifulSoup
+from utils.get_config import sendMessage
 
 
-
-def execute_lyrics(query):
+def execute_lyrics(query,client,message):
     parametri = query.split(",")
     result = get_lyrics_formated(parametri[0],parametri[1])
-    return result
+    return sendMessage(client,message,result)
 
 """
 Questa funzione, dati artista e canzone, effettua una richiesta http a azlyrics.com e filtrando i tag con una bellissima zuppa,
