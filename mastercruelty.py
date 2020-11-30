@@ -2,7 +2,7 @@ import time
 from datetime import date
 from datetimerange import DateTimeRange
 from pyrogram import Client 
-from utils.system import *
+from utils.utility import *
 from utils.dbfunctions import *
 from utils.get_config import get_config_file
 from utils.sysfunctions import *
@@ -84,15 +84,10 @@ def print_updates(client,message):
             query = parser(messaggio)
         except:
             query = messaggio
-        if query == "/comune":
-            app.send_message(chat,"Cerco un comune...",reply_to_message_id=id_messaggio)
-            result = fetch_command(match[0],query)
-            app.edit_message_text(chat,id_messaggio+1,result)
+        result = fetch_command(match[0],query,client,message)
+        if type(result) == list:
+            app.send_location(chat,result[0],result[1],reply_to_message_id = id_messaggio)
         else:
-            result = fetch_command(match[0],query)
-            if type(result) == list:
-                app.send_location(chat,result[0],result[1],reply_to_message_id = id_messaggio)
-            else:
-                app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
+            app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
 
 app.run()
