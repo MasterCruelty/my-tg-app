@@ -2,34 +2,10 @@ import sys
 sys.path.append(sys.path[0] + "/..")
 from utils.dbtables import *
 from pyrogram import Client
+from utils.get_config import *
 
 #Inizio della connessione con il db
 db.connect()
-
-
-def execute_alluser():
-    return all_user()
-
-def execute_listuser():
-    return list_user()
-
-def execute_setuser(client,message,query):
-    return set_user(client,message,query)
-
-def execute_deluser(client,message,query):
-    return del_user(client,message,query)
-
-def execute_alladmin():
-    return all_admin()
-
-def execute_listadmin():
-    return list_admin()
-
-def execute_setadmin(client,message,query):
-    return set_admin(client,message,query)
-
-def execute_deladmin(client,message,query):
-    return del_admin(client,message,query)
 
 """
 questa funzione fa una select dalla tabella User e restituisce gli id di tutti gli utenti registratii dentro una lista di int
@@ -56,45 +32,47 @@ def list_group_id():
 """
 questa funzione fa una select dalla tabella Group e restituisce i dati di tutti i gruppi
 """
-def list_group():
+def list_group(client,message):
     result = "Lista gruppi salvati:\n\n"
     query = Group.select()
     for group in query:
         result += str(group.id_group) + ";" + group.title
-    return result
+    return sendMessage(client,message,result)
 
 """
 questa funzione è simile a list_user ma restituisce solo il numero degli utenti registrati nella tabella User
 """
 
-def all_group():
-    result = 0
+def all_group(client,message):
+    count = 0
     query = Group.select()
     for group in query:
-        result += 1
-    return "Totale utenti registrati: " + str(result)
+        count += 1
+    result = "Totale utenti registrati: " + str(count)
+    return sendMessage(client,message,result)
 
 """
 questa funzione fa una select dalla tabella User e restituisce i dati di tutti gli utenti
 """
 
-def list_user():
+def list_user(client,message):
     result = "Lista utenti salvati:\n\n"
     query = User.select()
     for user in query:
         result += str(user.id_user) + ";" + user.name + ";" + user.username + "\n"
-    return result
+    return sendMessage(client,message,result)
 
 """
 questa funzione è simile a list_user ma restituisce solo il numero degli utenti registrati nella tabella User
 """
 
-def all_user():
-    result = 0
+def all_user(client,message):
+    count = 0
     query = User.select()
     for user in query:
-        result += 1
-    return "Totale utenti registrati: " + str(result)
+        count += 1
+    result = "Totale utenti registrati: " + str(count)
+    return sendMessage(client,message,result)
 
 """
 questa funzione permette di registrare un nuovo utente nella tabella User
@@ -113,7 +91,7 @@ def set_user(client,message,query):
     query = User.select().where(User.id_user == userid)
     for user in query:
         result = "Utente " + str(user.id_user) + " salvato!"
-    return result
+    return sendMessage(client,message,result) 
 
 """
 Questa funzione elimina un utente dalla tabella User
@@ -124,7 +102,7 @@ def del_user(client,message,query):
     userid = json_user["id"]
     query = User.delete().where(User.id_user == userid).execute()
     result = "Utente " + str(userid) + " eliminato."
-    return result
+    return sendMessage(client,message,result)
 
 """
 Questa funzione controlla se un certo utente Telegram è registrato nella tabella User
@@ -143,28 +121,29 @@ def isUser(id_utente):
 questa funzione fa una select dalla tabella Admin e restituisce i dati di tutti gli admin
 """
 
-def list_admin():
+def list_admin(client,message):
     result = "Lista admin salvati:\n\n"
     query = Admin.select()
     for admin in query:
         result += str(admin.id_user) + ";" + admin.name + ";" + admin.username + "\n"
-    return result
+    return sendMessage(client,message,result)
 
 """
 questa funzione è simile a list_admin ma restituisce solo il numero degli utenti registrati nella tabella Admin
 """
 
-def all_admin():
-    result = 0
+def all_admin(client,message):
+    count = 0
     query = Admin.select()
     for admin in query:
-        result += 1
-    return "Totale admin registrati: " + str(result)
+        count += 1
+    result = "Totale admin registrati: " + str(count)
+    return sendMessage(client,message,result)
 
 """
 questa funzione permette di registrare un nuovo admin nella tabella Admin
 """
-
+@Client.on_message()
 def set_admin(client,message,query):
     json_user = client.get_users(query)
     userid = json_user["id"]
@@ -178,18 +157,18 @@ def set_admin(client,message,query):
     query = Admin.select().where(Admin.id_user == userid)
     for admin in query:
         result = "Admin " + str(admin.id_user) + " salvato!"
-    return result
+    return sendMessage(client,message,result)
 
 """
 Questa funzione elimina un admin  dalla tabella Admin
 """
-
+@Client.on_message()
 def del_admin(client,message,query):
     json_user = client.get_users(query)
     userid = json_user["id"]
     query = Admin.delete().where(Admin.id_user == userid).execute()
     result = "Admin " + str(userid) + " eliminato."
-    return result
+    return sendMessage(client,message,result) 
 
 """
 Questa funzione controlla se un certo utente Telegram è registrato nella tabella Admin

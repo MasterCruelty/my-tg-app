@@ -9,6 +9,7 @@ import modules.lyrics
 import modules.atm_feature
 import modules.covid
 import utils.dbfunctions
+import utils.sysfunctions
 
 """
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
@@ -30,24 +31,34 @@ def fetch_command(match,query):
         return modules.covid.execute_covid()
 
 def fetch_super_command(match,query,client,message):
+    #db functions
     if match == "/setuser":
-        return utils.dbfunctions.execute_setuser(client,message,query)
+        return utils.dbfunctions.set_user(client,message,query)
     if match == "/deluser":
-        return utils.dbfunctions.execute_deluser(client,message,query)
+        return utils.dbfunctions.del_user(client,message,query)
     if match == "/listuser":
-        return utils.dbfunctions.execute_listuser()
+        return utils.dbfunctions.list_user(client,message)
     if match == "/alluser":
-        return utils.dbfunctions.execute_alluser()
+        return utils.dbfunctions.all_user(client,message)
     if match == "/setadmin":
-        return utils.dbfunctions.execute_setadmin(client,message,query)
+        return utils.dbfunctions.set_admin(client,message,query)
     if match == "/deladmin":
-        return utils.dbfunctions.execute_deladmin(client,message,query)
+        return utils.dbfunctions.del_admin(client,message,query)
     if match == "/listadmin":
-        return utils.dbfunctions.execute_listadmin()
+        return utils.dbfunctions.list_admin(client,message)
     if match == "/alladmin":
-        return utils.dbfunctions.execute_alladmin()
+        return utils.dbfunctions.all_admin(client,message)
+    #system functions
     if match == "/hcount":
-        return utils.sysfunctions.execute_count_messages(client,message)
+        return utils.sysfunctions.count_messages(client,message)
+    if match == "/id":
+        return utils.sysfunctions.id_chat(client,message)
+    if match == "/getid":
+        return utils.sysfunctions.get_id(client,message)
+    if match == "/getuser":
+        return utils.sysfunctions.get_user(client,message,query)
+    if match == "/getmessage":
+        return utils.sysfunctions.get_message(client,message)
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
 """
