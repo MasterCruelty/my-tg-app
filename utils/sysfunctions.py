@@ -1,5 +1,5 @@
 from pyrogram import Client
-import utils.system
+import utils.utility
 
 @Client.on_message()
 def count_messages(client,message):
@@ -36,9 +36,7 @@ def get_message(client,message):
     try:
         client.send_message(chat,message,"html",reply_to_message_id=message["message_id"])
     except:
-        utils.system.save_json(message)
+        utils.utility.save_json(message)
         client.send_document(chat,"json_message.json",None,None,"Ecco il json prodotto dal messaggio","html",reply_to_message_id=message["message_id"])
     return
 
-def execute_get_message(client,message):
-    return get_message(client,message)
