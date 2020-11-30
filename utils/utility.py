@@ -1,7 +1,5 @@
-from datetime import date
 import time
 import os
-import re
 import utils_config
 import modules.wiki
 import modules.gmaps
@@ -14,9 +12,9 @@ import utils.sysfunctions
 """
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
-def fetch_command(match,query):
+def fetch_command(match,query,client,message):
     if match == "/wiki":
-        return modules.wiki.execute_wiki(query)
+        return modules.wiki.execute_wiki(query,client,message)
     if match == "/map":
         return modules.gmaps.execute_map(query)
     if match == "/km":
