@@ -22,11 +22,11 @@ def fetch_command(match,query,client,message):
     if match == "/route":
         return modules.gmaps.execute_route(query,client,message)
     if match == "/lyrics":
-        return modules.lyrics.execute_lyrics(query)
+        return modules.lyrics.execute_lyrics(query,client,message)
     if match == "/atm":
-        return modules.atm_feature.execute_atm_get_stop(query)
+        return modules.atm_feature.get_stop_info(query,client,message)
     if match == "/covid":
-        return modules.covid.execute_covid()
+        return modules.covid.covid_daily(client,message)
 
 def fetch_super_command(match,query,client,message):
     #db functions
@@ -62,7 +62,10 @@ funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare tr
 """
 def parser(message):
     temp = message.split(" ",1)
-    result = temp[1]
+    try:
+        result = temp[1]
+    except:
+        result = temp[0]
     return result
 
 """

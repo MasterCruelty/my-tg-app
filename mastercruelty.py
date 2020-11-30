@@ -69,10 +69,7 @@ def print_updates(client,message):
     cmd_super = comandi_super.split(";")
     match = messaggio.split(" ")
     if match[0] in cmd_super and isSuper(utente):
-        try:
-            query = parser(messaggio)
-        except:
-            query = messaggio
+        query = parser(messaggio)
         fetch_super_command(match[0],query,client,message)
         return
 
@@ -80,11 +77,8 @@ def print_updates(client,message):
     lista_comandi = comandi.split(";")
     match = messaggio.split(" ")
     if match[0] in lista_comandi and isUser(utente):
-        try:
-            query = parser(messaggio)
-        except:
-            query = messaggio
-        result = fetch_command(match[0],query,client,message)
-        app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
+        query = parser(messaggio)
+        fetch_command(match[0],query,client,message)
+        return
 
 app.run()
