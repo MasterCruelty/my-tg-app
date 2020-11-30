@@ -1,10 +1,9 @@
 import os
 import requests
 import json
+import utils.get_config
 
 
-def execute_covid():
-    return covid_daily()
 """
 funzione che controlla se è stato effettuato un nuovo commit su salute.gov.it(problema di cookies, non funziona correttamente)
 Viene controllato se l'ultimo hash commit è cambiato
@@ -27,7 +26,7 @@ def check_covid():
     funzione che prende ogni giorno il json aggiornato contenente i dati dei contagiati in Italia.
     Direttamente dal repository git di salute.gov.it
 """
-def covid_daily():
+def covid_daily(client,message):
     url = 'https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json'
     resp = requests.get(url)
     data = json.loads(resp.text)
@@ -39,4 +38,4 @@ def covid_daily():
         deceduti = str(item["deceduti"])
         giorno = str(item["data"])[0:10]
     result = "I nuovi positivi in data " + giorno +" sono: " + nuovi_positivi + "\nAttualmente vi sono:\n" + ricoverati + " pazienti ricoverati con sintomi\n" + terapia_intensiva + " pazienti in terapia intensiva\n" + isolamento + " pazienti in isolamento domiciliare\n" + deceduti + " pazienti deceduti"
-    return result
+    return utils.get_config.sendMessage(client,message,result)

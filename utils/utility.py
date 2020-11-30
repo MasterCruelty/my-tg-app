@@ -1,7 +1,5 @@
-from datetime import date
 import time
 import os
-import re
 import utils_config
 import modules.wiki
 import modules.gmaps
@@ -9,50 +7,65 @@ import modules.lyrics
 import modules.atm_feature
 import modules.covid
 import utils.dbfunctions
-
+import utils.sysfunctions
 
 """
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
-def fetch_command(match,query):
+def fetch_command(match,query,client,message):
     if match == "/wiki":
-        return modules.wiki.execute_wiki(query)
+        return modules.wiki.execute_wiki(query,client,message)
     if match == "/map":
-        return modules.gmaps.execute_map(query)
+        return modules.gmaps.showmaps(query,client,message)
     if match == "/km":
-        return modules.gmaps.execute_km(query)
+        return modules.gmaps.execute_km(query,client,message)
     if match == "/route":
-        return modules.gmaps.execute_route(query)
+        return modules.gmaps.execute_route(query,client,message)
     if match == "/lyrics":
-        return modules.lyrics.execute_lyrics(query)
+        return modules.lyrics.execute_lyrics(query,client,message)
     if match == "/atm":
-        return modules.atm_feature.execute_atm_get_stop(query)
+        return modules.atm_feature.get_stop_info(query,client,message)
     if match == "/covid":
-        return modules.covid.execute_covid()
+        return modules.covid.covid_daily(client,message)
 
-def fetch_super_command(match,info_user):
+def fetch_super_command(match,query,client,message):
+    #db functions
     if match == "/setuser":
-        return utils.dbfunctions.execute_setuser(info_user)
+        return utils.dbfunctions.set_user(client,message,query)
     if match == "/deluser":
-        return utils.dbfunctions.execute_deluser(info_user)
+        return utils.dbfunctions.del_user(client,message,query)
     if match == "/listuser":
-        return utils.dbfunctions.execute_listuser()
+        return utils.dbfunctions.list_user(client,message)
     if match == "/alluser":
-        return utils.dbfunctions.execute_alluser()
+        return utils.dbfunctions.all_user(client,message)
     if match == "/setadmin":
-        return utils.dbfunctions.execute_setadmin(info_user)
+        return utils.dbfunctions.set_admin(client,message,query)
     if match == "/deladmin":
-        return utils.dbfunctions.execute_deladmin(info_user)
+        return utils.dbfunctions.del_admin(client,message,query)
     if match == "/listadmin":
-        return utils.dbfunctions.execute_listadmin()
+        return utils.dbfunctions.list_admin(client,message)
     if match == "/alladmin":
-        return utils.dbfunctions.execute_alladmin()
+        return utils.dbfunctions.all_admin(client,message)
+    #system functions
+    if match == "/hcount":
+        return utils.sysfunctions.count_messages(client,message)
+    if match == "/id":
+        return utils.sysfunctions.id_chat(client,message)
+    if match == "/getid":
+        return utils.sysfunctions.get_id(client,message)
+    if match == "/getuser":
+        return utils.sysfunctions.get_user(client,message,query)
+    if match == "/getmessage":
+        return utils.sysfunctions.get_message(client,message)
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
 """
 def parser(message):
     temp = message.split(" ",1)
-    result = temp[1]
+    try:
+        result = temp[1]
+    except:
+        result = temp[0]
     return result
 
 """
