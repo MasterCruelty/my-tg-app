@@ -85,9 +85,6 @@ def print_updates(client,message):
         except:
             query = messaggio
         result = fetch_command(match[0],query,client,message)
-        if type(result) == list:
-            app.send_location(chat,result[0],result[1],reply_to_message_id = id_messaggio)
-        else:
-            app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
+        app.send_message(chat,result,disable_web_page_preview=True,reply_to_message_id=id_messaggio)
 
 app.run()

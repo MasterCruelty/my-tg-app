@@ -2,42 +2,48 @@ from geopy.geocoders import Nominatim
 from geopy.distance  import geodesic
 import openrouteservice
 from openrouteservice import convert
+from pyrogram import Client
 import time
 import json
 import sys
 sys.path.append(sys.path[0] + "/..")
-from utils.get_config import get_config_file
+from utils.get_config import *
+
+
 config = get_config_file("config.json")
 api_geopy = config["api_geopy"]
 
 
-def execute_map(query):
-    return showmaps(query)
 
-def execute_km(query):
+def execute_km(query,client,message):
     addresses = query.split(',')
     km = distanza(addresses[0],addresses[1])
     result = "La distanza tra i due luoghi è di " + str(km) + " km."
-    return result
+    return sendMessage(client,message,result)
 
-def execute_route(query):
+def execute_route(query,client,message):
     addresses = query.split(',')
     route = directions(addresses[0],addresses[1])
     result = route
-    return result
+    return sendMessage(client,message,result)
 
-
-def showmaps(address):
+@Client.on_message()
+def showmaps(address,client,message):
     geolocate = Nominatim(user_agent="map_app")
     location  = geolocate.geocode(address,timeout=10000)
     coordinates = []
     coordinates.append(location.latitude)
     coordinates.append(location.longitude)
-    return coordinates
+    try:
+        chat = message["chat"]["id"]
+        id_messaggio = message["message_id"]
+        client.send_location(chat,coordinates[0],coordinates[1],reply_to_message_id=id_messaggio)
+    except:
+        return coordinates
 
 def distanza(address1,address2):
-    coord1 = showmaps(address1)
-    coord2 = showmaps(address2)
+    coord1 = showmaps(address1,client = None,message = None)
+    coord2 = showmaps(address2,client = None,message = None)
     departure = (coord1[0],coord1[1])
     arrive = (coord2[0],coord2[1])
     result = geodesic(departure,arrive).miles
@@ -46,8 +52,8 @@ def distanza(address1,address2):
 
 
 def directions(address1,address2):
-    coord1 = showmaps(address1)
-    coord2 = showmaps(address2)
+    coord1 = showmaps(address1,client = None,message = None)
+    coord2 = showmaps(address2,client = None,message = None)
     coord1 = coord1[::-1]
     coord2 = coord2[::-1]
     coords = ((coord1[0],coord1[1]),(coord2[0],coord2[1]))

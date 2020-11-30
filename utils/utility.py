@@ -16,11 +16,11 @@ def fetch_command(match,query,client,message):
     if match == "/wiki":
         return modules.wiki.execute_wiki(query,client,message)
     if match == "/map":
-        return modules.gmaps.execute_map(query)
+        return modules.gmaps.showmaps(query,client,message)
     if match == "/km":
-        return modules.gmaps.execute_km(query)
+        return modules.gmaps.execute_km(query,client,message)
     if match == "/route":
-        return modules.gmaps.execute_route(query)
+        return modules.gmaps.execute_route(query,client,message)
     if match == "/lyrics":
         return modules.lyrics.execute_lyrics(query)
     if match == "/atm":
