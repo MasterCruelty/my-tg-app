@@ -48,6 +48,7 @@ def wikiall(lang,keyword,client,message):
 #data la lingua restituisce una frase di una pagina wikipedia casuale
 def wikirandom(lang,sents,boole,client,message):
     wikipedia.set_lang(lang)
+    wikipedia.set_rate_limiting(rate_limit = True)
     random = wikipedia.random()
     result = wikipedia.summary(random,sentences=sents)
     if boole:
