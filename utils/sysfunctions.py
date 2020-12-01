@@ -1,6 +1,7 @@
 from pyrogram import Client
 import utils.utility
 import utils.get_config
+import random
 
 @Client.on_message()
 def count_messages(client,message):
@@ -34,3 +35,12 @@ def get_message(client,message):
         client.send_document(chat,"json_message.json",None,None,"Ecco il json prodotto dal messaggio","html",reply_to_message_id=message["message_id"])
     return
 
+@Client.on_message()
+def play_lotto(client,message):
+    numbers = []
+    while len(numbers) < 6:
+        n = random.randint(1,90)
+        if n not in numbers:
+            numbers.append(n)
+    result = ' '.join(str(n) for n in numbers)
+    return utils.get_config.sendMessage(client,message,result)
