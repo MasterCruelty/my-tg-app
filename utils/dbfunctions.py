@@ -87,7 +87,7 @@ def set_user(client,message,query):
     try:
         user.save()
     except:
-        return "Utente già registrato"
+        return sendMessage(client,message,"Utente già registrato")
     query = User.select().where(User.id_user == userid)
     for user in query:
         result = "Utente " + str(user.id_user) + " salvato!"
@@ -153,7 +153,7 @@ def set_admin(client,message,query):
     try:
         admin.save()
     except:
-        return "Admin già registrato"
+        return sendMessage(client,message,"Admin già registrato")
     query = Admin.select().where(Admin.id_user == userid)
     for admin in query:
         result = "Admin " + str(admin.id_user) + " salvato!"
