@@ -28,6 +28,25 @@ def fetch_command(match,query,client,message):
     if match == "/covid":
         return modules.covid.covid_daily(client,message)
 
+"""
+Analogamente a fetch_command ma per i comandi esclusivi degli utenti admin
+"""
+def fetch_admin_command(match,query,client,message):
+    #system functions
+    if match == "/hcount":
+        return utils.sysfunctions.count_messages(client,message)
+    if match == "/id":
+        return utils.sysfunctions.id_chat(client,message)
+    if match == "/getid":
+        return utils.sysfunctions.get_id(client,message)
+    if match == "/getuser":
+        return utils.sysfunctions.get_user(client,message,query)
+    if match == "/getmessage":
+        return utils.sysfunctions.get_message(client,message)
+
+"""
+Analogamente a fetch_command ma per i comandi esclusivi del super admin
+"""
 def fetch_super_command(match,query,client,message):
     #db functions
     if match == "/setuser":
@@ -46,17 +65,6 @@ def fetch_super_command(match,query,client,message):
         return utils.dbfunctions.list_admin(client,message)
     if match == "/alladmin":
         return utils.dbfunctions.all_admin(client,message)
-    #system functions
-    if match == "/hcount":
-        return utils.sysfunctions.count_messages(client,message)
-    if match == "/id":
-        return utils.sysfunctions.id_chat(client,message)
-    if match == "/getid":
-        return utils.sysfunctions.get_id(client,message)
-    if match == "/getuser":
-        return utils.sysfunctions.get_user(client,message,query)
-    if match == "/getmessage":
-        return utils.sysfunctions.get_message(client,message)
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
 """
