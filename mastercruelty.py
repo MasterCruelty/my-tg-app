@@ -11,6 +11,7 @@ config = get_config_file("config.json")
 api_id = config["api_id"]
 api_hash = config["api_hash"]
 comandi = config["lista_comandi"]
+comandi_admin = config["lista_comandi_admin"]
 comandi_super = config["lista_comandi_super"] 
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
@@ -71,6 +72,14 @@ def print_updates(client,message):
     if match[0] in cmd_super and isSuper(utente):
         query = parser(messaggio)
         fetch_super_command(match[0],query,client,message)
+        return
+
+    #funzionalità admin
+    cmd_admin = comandi_admin.split(";")
+    match = messaggio.split(" ")
+    if match[0] in cmd_admin and isAdmin(utente):
+        query = parser(messaggio)
+        fetch_admin_command(match[0],query,client,message)
         return
 
     #funzionalità per gli utenti
