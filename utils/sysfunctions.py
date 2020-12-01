@@ -1,34 +1,28 @@
 from pyrogram import Client
 import utils.utility
+import utils.get_config
 
 @Client.on_message()
 def count_messages(client,message):
     chat = message["chat"]["id"]
     totmsg = client.get_history_count(chat)
     result = "Totale messaggi in questa chat: " + str(totmsg)
-    client.send_message(chat,result,"html",reply_to_message_id=message["message_id"])
-    return
+    return utils.get_config.sendMessage(client,message,result)
 
 @Client.on_message()
 def id_chat(client,message):
     chat_id = message["chat"]["id"]
-    client.send_message(chat_id,chat_id,"html",reply_to_message_id=message["message_id"])
-    return
+    return utils.get_config.sendMessage(client,message,chat_id)
 
-@Client.on_message()
 def get_id(client,message):
-    chat = message["chat"]["id"]
     content = message["reply_to_message"]["from_user"]
     result = content["id"]
-    client.send_message(chat,result,"html",reply_to_message_id=message["message_id"])
-    return
+    return utils.get_config.sendMessage(client,message,result)
 
 @Client.on_message()
 def get_user(client,message,query):
-    chat = message["chat"]["id"]
     info_user = client.get_users(query)
-    client.send_message(chat,info_user,"html",reply_to_message_id=message["message_id"])
-    return
+    return utils.get_config.sendMessage(client,message,info_user)
 
 @Client.on_message()
 def get_message(client,message):
