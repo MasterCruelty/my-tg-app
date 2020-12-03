@@ -3,6 +3,7 @@ import re
 from pyrogram import Client
 import utils.get_config
 import utils.utility
+from bs4 import BeautifulSoup
 
 
 
@@ -23,12 +24,6 @@ def get_keyword(query):
 #Questa funzione esegue il comando wiki richiesto dall'app principale fetchato tramite la funzione in system.py
 @Client.on_message()
 def execute_wiki(query,client,message):
-    lingua = get_lang(query)
-    if len(lingua) > 3 or lingua == "all":
-        return exec_wiki_ita(query,client,message)
-    word = get_keyword(query)
-    if " all " in query:
-        return wikiall(word,client,message,lingua)
     if "/comune" in query:
         try:
             return comune(client,message)
@@ -37,6 +32,12 @@ def execute_wiki(query,client,message):
             id_messaggio = message["message_id"]
             client.edit_message_text(chat,id_messaggio+1,"Operazione fallita ")
             return
+    lingua = get_lang(query)
+    if len(lingua) > 3 or lingua == "all":
+        return exec_wiki_ita(query,client,message)
+    word = get_keyword(query)
+    if " all " in query:
+        return wikiall(word,client,message,lingua)
     if "random" in query:
         return wikirandom(1,False,client,message,lingua)
     else:
@@ -90,7 +91,7 @@ def comune(client,message):
             result = wikirandom(1,True,client,message)
         except:
             continue 
-        if ("abitanti" in result and ("comune" in result or "città" in result or "centro abitato" in result)):
+        if ("abitanti" in result and ("comune" in result or "città" in result or "centro abitato" in result or "è una frazione" in result)):
             page = result.split(" ")
             for i in range(len(page)):
                 if page[i] == "abitanti":
