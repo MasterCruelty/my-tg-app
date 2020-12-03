@@ -44,7 +44,7 @@ def execute_wiki(query,client,message):
         return wiki(word,client,message,lingua)
 
 def exec_wiki_ita(query,client,message):
-    if "all" in query:
+    if "all " in query:
         query = utils.utility.parser(query)
         return wikiall(query,client,message)
     if "random" in query:
@@ -78,27 +78,42 @@ def wikirandom(sents,boole,client,message,lang="it"):
     else:
         return utils.get_config.sendMessage(client,message,result)
 #Simpatica funzione che cerca un comune su Wikipedia e ne restituisce i dati evidenziando numero abitanti e numero pagine visitate per trovarlo.
+#Il numero di abitanti viene recuperato direttamente dalla pagina html tramite l'uso della zuppa
 @Client.on_message()
 def comune(client,message):
     chat = message["chat"]["id"]
     id_messaggio = message["message_id"]
     count = 0
     client.send_message(chat,"Cerco un comune...","html",reply_to_message_id=id_messaggio)
+    wikipedia.set_lang("it")
     while(True):
         count += 1
         client.edit_message_text(chat,id_messaggio+1,"Cerco un comune...\nVoci consultate: " + str(count))
         try:
-            result = wikirandom(1,True,client,message)
+            random = wikipedia.random()
+            result = wikipedia.summary(random,1)
         except:
             continue 
-        if ("abitanti" in result and ("comune" in result or "città" in result or "centro abitato" in result or "è una frazione" in result)):
-            page = result.split(" ")
-            for i in range(len(page)):
-                if page[i] == "abitanti":
-                    abitanti = page[i-1]
-                    if page[i-2].isdigit():
-                        abitanti = page[i-2] + page[i-1]
+        if (("è un comune" in result or "città" in result or "centro abitato" in result or "è una frazione" in result)):
+            page = wikipedia.page(random)
+            title = page.title
+            page = page.html()
+            zuppa = BeautifulSoup(page,"html.parser")
+            table = zuppa.find('table',attrs={"class": 'sinottico'})
+            text = table.get_text()
+            text = text.split("\n")
+            for i in range(len(text)):
+                if text[i].startswith("Abitanti"):
+                    abitanti = text[i]
+                    break
+            temp = abitanti.split("(")
+            abitanti = temp[0]
+            abitanti = abitanti.replace("Abitanti","")
+            abitanti = abitanti.split("[")
+            abitanti = abitanti[0]
             break
-    result = result + "\n\n" + "Abitanti: " + abitanti + "\n\nVoci consultate: " + str(count)
-    client.edit_message_text(chat,id_messaggio+1,result)
+    result = "**" + title + "**" + "\n" + result + "\n\n" + "**" + "Abitanti:** " + "**" + abitanti + "**" + "\n\n__Voci consultate:__ " + str(count)
+    title = title.replace(" ","_")
+    link = "[Guarda su Wikipedia](https://it.wikipedia.org/wiki/" + title + ")"
+    client.edit_message_text(chat,id_messaggio+1,result + "\n" + link,parse_mode="markdown",disable_web_page_preview=True)
     return
