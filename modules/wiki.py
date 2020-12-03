@@ -2,51 +2,72 @@ import wikipedia
 import re
 from pyrogram import Client
 import utils.get_config
+import utils.utility
+
+
+
+#Restituisce il parametro lingua
+def get_lang(query):
+    parole = query.split(" ")
+    lingua = parole[0]
+    return lingua
+#restituisce le parole chiavi della ricerca eliminando la lingua
+def get_keyword(query):
+    words = query.split(" ")
+    words.remove(words[0])
+    search = ""
+    for i in range(len(words)):
+        search += words[i] + " "
+    return search
+
 #Questa funzione esegue il comando wiki richiesto dall'app principale fetchato tramite la funzione in system.py
 @Client.on_message()
 def execute_wiki(query,client,message):
-    chat = message["chat"]["id"]
-    id_messaggio = message["message_id"]
-    parole = query.split(" ")
-    lingua = parole[0]
-    parole.remove(parole[0])
-    word = ""
-    for i in range(len(parole)):
-        word += parole[i] + " "
+    lingua = get_lang(query)
+    if len(lingua) > 3 or lingua == "all":
+        return exec_wiki_ita(query,client,message)
+    word = get_keyword(query)
     if " all " in query:
-        parole.remove(parole[0])
-        result = wikiall(lingua,word,client,message)
-        return result 
+        return wikiall(word,client,message,lingua)
     if "/comune" in query:
         try:
-            comune(client,message)
-            return
+            return comune(client,message)
         except:
+            chat = message["chat"]["id"]
+            id_messaggio = message["message_id"]
             client.edit_message_text(chat,id_messaggio+1,"Operazione fallita ")
             return
     if "random" in query:
-        result = wikirandom(lingua,1,False,client,message)
-        return result
+        return wikirandom(1,False,client,message,lingua)
     else:
-        result = wiki(lingua,word,client,message)
-        return result
+        return wiki(word,client,message,lingua)
+
+def exec_wiki_ita(query,client,message):
+    if "all" in query:
+        query = utils.utility.parser(query)
+        return wikiall(query,client,message)
+    if "random" in query:
+        return wikirandom(1,False,client,message)
+    else:
+        return wiki(query,client,message)
+
 
 #data la lingua e la parola chiave da cercare, restituisce una frase della voce trovata
-def wiki(lang,keyword,client,message):
+def wiki(keyword,client,message,lang="it"):
    wikipedia.set_lang(lang)
    result = wikipedia.summary(keyword,sentences = 1) 
    return utils.get_config.sendMessage(client,message,result)
 #data la lingua e la parola chiave da cercare, restituisce il numero massimo di frasi(limite della libreria) della voce trovata
-def wikiall(lang,keyword,client,message):
+def wikiall(keyword,client,message,lang="it"):
    wikipedia.set_lang(lang)
    if "random" in keyword:
-       result = wikirandom(lang,10,client,message)
+       result = wikirandom(10,client,message,lang)
        return result
    result = wikipedia.summary(keyword,sentences = 10)
    result = result.replace("==","****")
    return utils.get_config.sendMessage(client,message,result)
 #data la lingua restituisce una frase di una pagina wikipedia casuale
-def wikirandom(lang,sents,boole,client,message):
+def wikirandom(sents,boole,client,message,lang="it"):
     wikipedia.set_lang(lang)
     wikipedia.set_rate_limiting(rate_limit = True)
     random = wikipedia.random()
@@ -66,7 +87,7 @@ def comune(client,message):
         count += 1
         client.edit_message_text(chat,id_messaggio+1,"Cerco un comune...\nVoci consultate: " + str(count))
         try:
-            result = wikirandom("it",1,True,client,message)
+            result = wikirandom(1,True,client,message)
         except:
             continue 
         if ("abitanti" in result and ("comune" in result or "città" in result or "centro abitato" in result)):
