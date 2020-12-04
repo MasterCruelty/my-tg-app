@@ -46,12 +46,19 @@ def print_updates(client,message):
         return get_message(client,message)
     if messaggio.startswith("/searchmsg") and (isAdmin(utente) or isSuper(utente)):
         search = parser(messaggio)
+        result = ""
         for message in app.search_messages(chat, query = search):
             if not endsearchmsg and "/searchmsg" not in str(message):
-                result = message.message_id
-                app.send_message(chat,"Trovato","html",False,False,result)
-                time.sleep(2)
-        app.send_message(chat,"Trovati tutti i messaggi.","html",False,False,id_messaggio)
+                id_msg =  message.message_id
+                if str(chat).startswith("-100"):
+                    try:
+                        result += "<a href=\"https://t.me/c/"+str(chat).replace("-100","")+"/"+str(id_msg)+"\">"+ message.text[0:15]+"...</a>" + "\n"
+                    except:
+                        continue
+                else:
+                    app.send_message(chat,"Trovato","html",reply_to_message_id=id_msg)
+                    time.sleep(2)
+        app.send_message(chat,"Trovati tutti i messaggi.\n"+ result,"html",False,False,id_messaggio)
         endsearchmsg = False
         return
     if messaggio.startswith("/stopmsg") and (isAdmin(utente) or isSuper(utente)):
