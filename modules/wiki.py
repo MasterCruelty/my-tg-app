@@ -114,6 +114,6 @@ def comune(client,message):
             break
     result = "**" + title + "**" + "\n" + result + "\n\n" + "**" + "Abitanti:** " + "**" + abitanti + "**" + "\n\n__Voci consultate:__ " + str(count)
     title = title.replace(" ","_")
-    link = "[Guarda su Wikipedia](https://it.wikipedia.org/wiki/" + title + ")"
-    client.edit_message_text(chat,id_messaggio+1,result + "\n" + link,parse_mode="markdown",disable_web_page_preview=True)
+    link = "<a href=\"https://it.wikipedia.org/wiki"+title+"\">Guarda su Wikipedia</a>"
+    client.edit_message_text(chat,id_messaggio+1,result + "\n" + link,disable_web_page_preview=True)
     return
