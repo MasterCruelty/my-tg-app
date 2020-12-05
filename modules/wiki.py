@@ -43,6 +43,7 @@ def execute_wiki(query,client,message):
     else:
         return wiki(word,client,message,lingua)
 
+#Esegue le funzioni wiki ma con lingua italiana come default
 def exec_wiki_ita(query,client,message):
     if "all " in query:
         query = utils.utility.parser(query)
