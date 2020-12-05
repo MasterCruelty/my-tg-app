@@ -46,13 +46,18 @@ def print_updates(client,message):
         return get_message(client,message)
     if messaggio.startswith("/searchmsg") and (isAdmin(utente) or isSuper(utente)):
         search = parser(messaggio)
+        return search_msg(client,message,search)
         result = ""
+        app.send_message(chat,"Cerco i messaggi...","html",reply_to_message_id=id_messaggio)
+        count = 0
         for message in app.search_messages(chat, query = search):
             if not endsearchmsg and "/searchmsg" not in str(message):
                 id_msg =  message.message_id
                 if str(chat).startswith("-100"):
                     try:
                         result += "<a href=\"https://t.me/c/"+str(chat).replace("-100","")+"/"+str(id_msg)+"\">"+ message.text[0:15]+"...</a>" + "\n"
+                        count += 1
+                        app.edit_message_text(chat,id_messaggio+1,"Cerco i messaggi...\n"+"Messaggi trovati: "+str(count))
                     except:
                         continue
                 else:
@@ -62,6 +67,7 @@ def print_updates(client,message):
         endsearchmsg = False
         return
     if messaggio.startswith("/stopmsg") and (isAdmin(utente) or isSuper(utente)):
+        return stop_msg()
         endsearchmsg = True
         return
     if "/poll" in messaggio and isUser(utente):
