@@ -27,6 +27,8 @@ def fetch_command(match,query,client,message):
         return modules.atm_feature.get_stop_info(query,client,message)
     if match == "/covid":
         return modules.covid.covid_daily(client,message)
+    if match == "/poll":
+        return utils.sysfunctions.poll_function(client,message,query)
 
 """
 Analogamente a fetch_command ma per i comandi esclusivi degli utenti admin
@@ -45,6 +47,10 @@ def fetch_admin_command(match,query,client,message):
         return utils.sysfunctions.get_message(client,message)
     if match == "/playlotto":
         return utils.sysfunctions.play_lotto(client,message)
+    if match == "/searchmsg":
+        return utils.sysfunctions.search_msg(client,message,query)
+    if match == "/stopmsg":
+        return utils.dbfunctions.stop_msg_true()
 
 """
 Analogamente a fetch_command ma per i comandi esclusivi del super admin
