@@ -8,6 +8,32 @@ from utils.get_config import *
 db.connect()
 
 """
+pone il valore di stop a True interrompendo cosi la ricerca dei messaggi in utils.sysfunctions.search_message(client,message,search)
+"""
+def stop_msg_true():
+    Stopmsg.delete().execute() 
+    stop = Stopmsg(value = True)
+    stop.save()
+    return 
+
+"""
+Verifica se lo stop ha il valore di True
+"""
+def isTrueStop():
+    query = Stopmsg.select()
+    for stop in query:
+        return stop.value
+
+"""
+Pone il valore di stop a False come default a inizio ricerca messaggi"
+"""
+def stop_msg_false():
+    Stopmsg.delete().execute() 
+    stop = Stopmsg(value = False)
+    stop.save()
+    return 
+
+"""
 questa funzione fa una select dalla tabella User e restituisce gli id di tutti gli utenti registratii dentro una lista di int
 """
 

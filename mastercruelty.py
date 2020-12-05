@@ -15,7 +15,6 @@ comandi_admin = config["lista_comandi_admin"]
 comandi_super = config["lista_comandi_super"] 
 app = Client("my_account", api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
-endsearchmsg = False
 
 @app.on_message()
 def print_updates(client,message):
@@ -26,7 +25,6 @@ def print_updates(client,message):
     id_messaggio = message["message_id"]
     time_message = time.strftime("%H:%M:%S")
     file_id = "Nullo"
-    global endsearchmsg #this is useful to stop the search of messages
     
     if message["from_user"]["username"] is None:
         username = "Non impostato"
@@ -41,30 +39,9 @@ def print_updates(client,message):
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
 
-    #alcune funzioni di sistema
+    #Restituisce il json del messaggio
     if "/getmessage" in str(message) and (isAdmin(utente) or isSuper(utente)):
         return get_message(client,message)
-    if messaggio.startswith("/searchmsg") and (isAdmin(utente) or isSuper(utente)):
-        search = parser(messaggio)
-        for message in app.search_messages(chat, query = search):
-            if not endsearchmsg and "/searchmsg" not in str(message):
-                result = message.message_id
-                app.send_message(chat,"Trovato","html",False,False,result)
-                time.sleep(2)
-        app.send_message(chat,"Trovati tutti i messaggi.","html",False,False,id_messaggio)
-        endsearchmsg = False
-        return
-    if messaggio.startswith("/stopmsg") and (isAdmin(utente) or isSuper(utente)):
-        endsearchmsg = True
-        return
-    if "/poll" in messaggio and isUser(utente):
-        messaggio = parser(messaggio)
-        poll = messaggio.split("/")
-        domanda = poll[0]
-        opzioni = poll[1]
-        opzioni = opzioni.split(",")
-        app.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
-        return
 
     #funzionalità super admin
     cmd_super = comandi_super.split(";")
