@@ -1,11 +1,16 @@
 from pyrogram import Client
 import utils.utility
 import utils.get_config
+import utils.dbfunctions
 import random
+import time
 
 @Client.on_message()
 def search_msg(client,message,search):
+    utils.dbfunctions.stop_msg_false()
     endsearchmsg = False
+    chat = message["chat"]["id"]
+    id_messaggio = message["message_id"]
     result = ""
     client.send_message(chat,"Cerco i messaggi...","html",reply_to_message_id=id_messaggio)
     count = 0
@@ -21,11 +26,9 @@ def search_msg(client,message,search):
                     continue
             else:
                 client.send_message(chat,"Trovato","html",reply_to_message_id=id_msg)
+                endsearchmsg = utils.dbfunctions.isTrueStop()
                 time.sleep(2)
     client.send_message(chat,"Trovati tutti i messaggi.\n"+ result,"html",False,False,id_messaggio)
-
-def stop_msg():
-    #wip
 
 @Client.on_message()
 def count_messages(client,message):

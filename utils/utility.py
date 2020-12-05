@@ -45,6 +45,10 @@ def fetch_admin_command(match,query,client,message):
         return utils.sysfunctions.get_message(client,message)
     if match == "/playlotto":
         return utils.sysfunctions.play_lotto(client,message)
+    if match == "/searchmsg":
+        return utils.sysfunctions.search_msg(client,message,query)
+    if match == "/stopmsg":
+        return utils.dbfunctions.stop_msg_true()
 
 """
 Analogamente a fetch_command ma per i comandi esclusivi del super admin
