@@ -39,17 +39,9 @@ def print_updates(client,message):
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)
 
-    #alcune funzioni di sistema
+    #Restituisce il json del messaggio
     if "/getmessage" in str(message) and (isAdmin(utente) or isSuper(utente)):
         return get_message(client,message)
-    if "/poll" in messaggio and isUser(utente):
-        messaggio = parser(messaggio)
-        poll = messaggio.split("/")
-        domanda = poll[0]
-        opzioni = poll[1]
-        opzioni = opzioni.split(",")
-        app.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
-        return
 
     #funzionalità super admin
     cmd_super = comandi_super.split(";")
