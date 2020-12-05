@@ -27,6 +27,8 @@ def fetch_command(match,query,client,message):
         return modules.atm_feature.get_stop_info(query,client,message)
     if match == "/covid":
         return modules.covid.covid_daily(client,message)
+    if match == "/poll":
+        return utils.sysfunctions.poll_function(client,message,query)
 
 """
 Analogamente a fetch_command ma per i comandi esclusivi degli utenti admin

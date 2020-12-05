@@ -5,12 +5,15 @@ import utils.dbfunctions
 import random
 import time
 
+"""
+Ricerca ogni messaggio che matcha con la keyword richiesta nella chat in cui viene lanciato il comando
+"""
 @Client.on_message()
 def search_msg(client,message,search):
     utils.dbfunctions.stop_msg_false()
     endsearchmsg = False
-    chat = message["chat"]["id"]
-    id_messaggio = message["message_id"]
+    chat = utils.get_config.get_chat(message)
+    id_messaggio = utils.get_config.get_id_msg(message)
     result = ""
     client.send_message(chat,"Cerco i messaggi...","html",reply_to_message_id=id_messaggio)
     count = 0
@@ -30,31 +33,60 @@ def search_msg(client,message,search):
                 time.sleep(2)
     client.send_message(chat,"Trovati tutti i messaggi.\n"+ result,"html",False,False,id_messaggio)
 
+"""
+Lancia un sondaggio in automatico non anonimo
+"""
+@Client.on_message()
+def poll_function(client,message,query):
+    chat = utils.get_config.get_chat(message)
+    id_messaggio = utils.get_config.get_id_msg(message)
+    poll = query.split("/")
+    domanda = poll[0]
+    opzioni = poll[1]
+    opzioni = opzioni.split(",")
+    client.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
+    return
+
+"""
+Restituisce il numero di messaggi complessivo nella chat in cui viene lanciato il comando
+"""
 @Client.on_message()
 def count_messages(client,message):
-    chat = message["chat"]["id"]
+    chat = utils.get_config.get_chat(message)
     totmsg = client.get_history_count(chat)
     result = "Totale messaggi in questa chat: " + str(totmsg)
     return utils.get_config.sendMessage(client,message,result)
 
+"""
+Restituisce sotto forma di messaggio Telegram l'id della chat corrente
+"""
 @Client.on_message()
 def id_chat(client,message):
     chat_id = message["chat"]["id"]
     return utils.get_config.sendMessage(client,message,chat_id)
 
+"""
+Restituisce l'id dell'utente a cui appartiene il messaggio risposto
+"""
 def get_id(client,message):
     content = message["reply_to_message"]["from_user"]
     result = content["id"]
     return utils.get_config.sendMessage(client,message,result)
 
+"""
+Restituisce il json dell'utente richiesto(id utente come argomento)
+"""
 @Client.on_message()
 def get_user(client,message,query):
     info_user = client.get_users(query)
     return utils.get_config.sendMessage(client,message,info_user)
 
+"""
+Restituisce il json intero di un messaggio. Se il json supera la capacità di un messaggio Telegram, viene inviato sotto forma di file.
+"""
 @Client.on_message()
 def get_message(client,message):
-    chat = message["chat"]["id"]
+    chat = utils.get_config.get_chat(message)
     try:
         client.send_message(chat,message,"html",reply_to_message_id=message["message_id"])
     except:
@@ -62,6 +94,9 @@ def get_message(client,message):
         client.send_document(chat,"json_message.json",None,None,"Ecco il json prodotto dal messaggio","html",reply_to_message_id=message["message_id"])
     return
 
+"""
+Restituisce 6 numeri tutti diversi tra loro tutti nel range da 1 a 90
+"""
 @Client.on_message()
 def play_lotto(client,message):
     numbers = []
