@@ -33,10 +33,17 @@ class Group(BaseModel):
     id_group = IntegerField(unique = True)
     title = CharField()
 
+class Stopmsg(BaseModel):
+    value = BooleanField()
+
 
 db.connect()
-db.create_tables([User,Admin,SuperAdmin])
+db.create_tables([User,Admin,SuperAdmin,Stopmsg])
 
+#inizializzo il valore di stopmsg a valore di default False
+stop = Stopmsg(value = False)
+stop.save()
+#Inizializzo il super admin da file di configurazione
 overlord = SuperAdmin(id_user = id_super_admin[0], name = id_super_admin[1], username = id_super_admin[2])
 overlord.save()
 db.close()
