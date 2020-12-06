@@ -1,26 +1,37 @@
 **IT/ENG**
 
+# Come avviare/How to run
+**[IT]**
+
+Inserire i dati principali sul file **```config.json```** come indicato. I comandi sono pre-impostati nel codice quindi se si vuole cambiare il nome del comando è necessario andare a cambiare anche il match del comando nel file **```utils/utility.py```**.<br/>
+Dunque puoi lanciare l'applicazione da shell dando **```python3.8 mastercruelty.py```**.(o con il tuo file se decidi di rinominarlo)
+
+**[ENG]**
+
+First of all you have to put your data in **```config.json```** as shown. Commands are already designed inside code so if you have to change name of commands, you have to change their names also in **```utils/utility.py```**.<br/>
+Then you can just launch with **```python3.8 mastercruelty.py```**(or another name if you rename the file)
+
 # Librerie/Libraries
 
 **[IT]**
 
-La libreria principale è **pyrogram** perchè ci permette di lavorare con le API di telegram molto facilmente.<br/>
-Ho usato **utils-config** cosi che si possano mettere chiavi o altri argomenti statici in un file .json e poi importarle in seguito.<br/>
-**requests** per tutte le funzionalità che hanno richiesto di fare get o post nel web.<br/>
-**json** per giocare con gli oggetti json.<br/>
-Ho usato il modulo **geopy** per giocare con le mappe e le coordinate dei luoghi. Anche **openrouteservice** è incluso in questo.<br/>
-**os** è stato usato un paio di volte per eseguire qualche script da shell.<br/>
-E infinte il modulo **wikipedia** per fetchare dati dalla famosa enciclopedia online.<br/>
+La libreria principale è **```pyrogram```** perchè ci permette di lavorare con le API di telegram molto facilmente.<br/>
+Ho usato **```utils-config```** cosi che si possano mettere chiavi o altri argomenti statici in un file .json e poi importarle in seguito.<br/>
+**```requests```** per tutte le funzionalità che hanno richiesto di fare get o post nel web.<br/>
+**```json```** per giocare con gli oggetti json.<br/>
+Ho usato il modulo **```geopy```** per giocare con le mappe e le coordinate dei luoghi. Anche **```openrouteservice```** è incluso in questo.<br/>
+**```os```** è stato usato un paio di volte per eseguire qualche script da shell.<br/>
+E infinte il modulo **```wikipedia```** per fetchare dati dalla famosa enciclopedia online.<br/>
 
 **[ENG]**
 
-The main library is **pyrogram**, which is the one that permits to work with Telegram API very easy.<br/>
-I used **utils-config** to put keys and other static arguments stuffs in a file .json and then importing them.<br/>
-**requests** for all features that required doing get or post through web.<br/>
-**json** to play with json objects.<br/>
-I used **geopy** module to play with maps and coordinates of places. **openrouteservice** was also included in this.<br/>
-**os** was used a couple of times to execute some script from shell.<br/>
-And then **wikipedia** module for fetching data from the famous web site.<br/>
+The main library is **```pyrogram```**, which is the one that permits to work with Telegram API very easy.<br/>
+I used **```utils-config```** to put keys and other static arguments stuffs in a file .json and then importing them.<br/>
+**```requests```** for all features that required doing get or post through web.<br/>
+**```json```** to play with json objects.<br/>
+I used **geopy** module to play with maps and coordinates of places. **```openrouteservice```** was also included in this.<br/>
+**```os```** was used a couple of times to execute some script from shell.<br/>
+And then **```wikipedia```** module for fetching data from the famous web site.<br/>
 
 # Come si usano le funzioni/How to use main functions
 
