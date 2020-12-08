@@ -25,6 +25,8 @@ def fetch_command(match,query,client,message):
         return modules.lyrics.execute_lyrics(query,client,message)
     if match == "/atm":
         return modules.atm_feature.get_stop_info(query,client,message)
+    if match == "/geoatm":
+        return modules.atm_feature.geodata_stop(query,client,message)
     if match == "/covid":
         return modules.covid.covid_daily(client,message)
     if match == "/poll":
