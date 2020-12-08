@@ -10,6 +10,7 @@ api_url = config["api_url"]
 
 """
     Dato un codice fermata, vengono fornite le informazioni relative a quella fermata contattando direttamente il server atm
+    Dedicato ai dati delle fermate di mezzi di superficie/metro. Riporta dati parziali su altri tipi di richieste.
 """
 def get_stop_info(stop_code,client,message):
     data = {"url": "tpPortal/geodata/pois/stops/" + stop_code + "?lang=it".format()}
@@ -29,10 +30,11 @@ def get_stop_info(stop_code,client,message):
 
     result = "**" + descrizione + "**" + "\n"
     for i in range(len(line_code)):
-        if wait_time[i] is None:
-            wait_time[i] = "Non disponibile"
+        wait_time[i] = check_none(wait_time[i])
         result += line_code[i] + " " + line_description[i] + ": " + "**" + wait_time[i] + "**" + "\n"
+    result += "\n"
     for i in range(len(line_code)):
+        time_table[i] = check_none(time_table[i])
         result += "Orari linea " + line_code[i] + ": " + time_table[i] + "\n"
     return sendMessage(client,message,result)
 
@@ -52,6 +54,14 @@ def geodata_stop(stop_code,client,message):
     client.send_location(get_chat(message),latitud,longitud,reply_to_message_id=get_id_msg(message))
     return
 
+"""
+Controlla se un campo estratto del json è nullo per evitare eccezioni sul concatenamento di stringhe
+"""
+def check_none(field):
+    if field is None:
+        return "Non disponibile"
+    else:
+        return field
 """
 cattura eventuali eccezioni sulle richieste
 """
