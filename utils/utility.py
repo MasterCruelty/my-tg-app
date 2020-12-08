@@ -25,6 +25,8 @@ def fetch_command(match,query,client,message):
         return modules.lyrics.execute_lyrics(query,client,message)
     if match == "/atm":
         return modules.atm_feature.get_stop_info(query,client,message)
+    if match == "/geoatm":
+        return modules.atm_feature.geodata_stop(query,client,message)
     if match == "/covid":
         return modules.covid.covid_daily(client,message)
     if match == "/poll":
@@ -51,6 +53,8 @@ def fetch_admin_command(match,query,client,message):
         return utils.sysfunctions.search_msg(client,message,query)
     if match == "/stopmsg":
         return utils.dbfunctions.stop_msg_true()
+    if match == "/ping":
+        return utils.sysfunctions.ping(client,message)
 
 """
 Analogamente a fetch_command ma per i comandi esclusivi del super admin

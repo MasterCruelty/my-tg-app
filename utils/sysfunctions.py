@@ -95,6 +95,12 @@ def get_message(client,message):
     return
 
 """
+Veloce controllo se l'app è online
+"""
+def ping(client,message):
+    return utils.get_config.sendMessage(client,message,"pong")
+
+"""
 Restituisce 6 numeri tutti diversi tra loro tutti nel range da 1 a 90
 """
 @Client.on_message()
