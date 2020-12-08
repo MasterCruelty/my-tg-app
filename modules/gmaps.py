@@ -35,9 +35,7 @@ def showmaps(address,client,message):
     coordinates.append(location.latitude)
     coordinates.append(location.longitude)
     try:
-        chat = message["chat"]["id"]
-        id_messaggio = message["message_id"]
-        client.send_location(chat,coordinates[0],coordinates[1],reply_to_message_id=id_messaggio)
+        client.send_location(get_chat(message),coordinates[0],coordinates[1],reply_to_message_id=get_id_msg(message))
     except:
         return coordinates
 
