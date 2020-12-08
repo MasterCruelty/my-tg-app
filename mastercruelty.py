@@ -4,7 +4,7 @@ from datetimerange import DateTimeRange
 from pyrogram import Client 
 from utils.utility import *
 from utils.dbfunctions import *
-from utils.get_config import get_config_file
+from utils.get_config import get_config_file,get_username,get_text_message,get_chat,get_id_msg,get_id_user
 from utils.sysfunctions import *
 
 config = get_config_file("config.json")
@@ -18,23 +18,16 @@ time_range = DateTimeRange("16:40:00","17:20:00")
 
 @app.on_message()
 def print_updates(client,message):
-    chat = message["chat"]["id"]
+    #recupero parametri principali del messaggio dal json
+    chat = get_chat(message)
+    id_messaggio = get_id_msg(message)
+    utente = get_id_user(message)
     nome_chat = message["chat"]["title"]
-    utente = message["from_user"]["id"]
     nome_utente = message["from_user"]["first_name"]
-    id_messaggio = message["message_id"]
     time_message = time.strftime("%H:%M:%S")
     file_id = "Nullo"
-    
-    if message["from_user"]["username"] is None:
-        username = "Non impostato"
-    else:
-        username = "@" + message["from_user"]["username"]
-    
-    if message["text"] is None:
-        messaggio = "file multimediale"
-    else:
-        messaggio = message["text"]
+    username = get_username(message) 
+    messaggio = get_text_message(message)
 
     #rappresentazione grafica del messaggio corrente sul terminale
     visualizza(chat,nome_chat,utente,nome_utente,username,messaggio)

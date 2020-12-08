@@ -28,9 +28,8 @@ def execute_wiki(query,client,message):
         try:
             return comune(client,message)
         except:
-            chat = message["chat"]["id"]
-            id_messaggio = message["message_id"]
-            client.edit_message_text(chat,id_messaggio+1,"Operazione fallita ")
+            id_messaggio = utils.get_config.get_id_msg(message)
+            client.edit_message_text(utils.get_config.get_chat(message),id_messaggio+1,"Operazione fallita")
             return
     lingua = get_lang(query)
     if len(lingua) > 3 or lingua == "all":
@@ -82,8 +81,8 @@ def wikirandom(sents,boole,client,message,lang="it"):
 #Il numero di abitanti viene recuperato direttamente dalla pagina html tramite l'uso della zuppa
 @Client.on_message()
 def comune(client,message):
-    chat = message["chat"]["id"]
-    id_messaggio = message["message_id"]
+    chat = utils.get_config.get_chat(message)
+    id_messaggio = utils.get_config.get_id_msg(message)
     count = 0
     client.send_message(chat,"Cerco un comune...","html",reply_to_message_id=id_messaggio)
     wikipedia.set_lang("it")
