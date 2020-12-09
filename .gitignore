@@ -7,8 +7,8 @@ __pycache__/
 files/
 
 #Ignora le sessioni
-my_account.session
-my_account.session-journal
+*.session
+*.session-journal
 
 #Ignora il file config.json e il file json_message.json
 config.json
