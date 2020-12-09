@@ -13,8 +13,7 @@ api_url = config["api_url"]
     Dedicato ai dati delle fermate di mezzi di superficie/metro. Riporta dati parziali su altri tipi di richieste.
 """
 def get_stop_info(stop_code,client,message):
-    data = {"url": "tpPortal/geodata/pois/stops/" + stop_code + "?lang=it".format()}
-    resp = requests.post(api_url,data = data)
+    resp = get_json_atm(stop_code)
     data_json = handle_except(resp)
     if str(data_json).startswith("404"):
         return sendMessage(client,message,data_json)
@@ -39,12 +38,29 @@ def get_stop_info(stop_code,client,message):
     return sendMessage(client,message,result)
 
 """
-dato un codice fermata, fornisce le coordinate geografiche di quella fermata
+Restituisce i dati della rivendita richiesta.
+"""
+def get_rivendita_info(stop_code,client,message):
+    resp = get_json_atm(stop_code)
+    data_json = handle_except(resp)
+    if str(data_json).startswith("404"):
+        return sendMessage(client,message,data_json)
+    descrizione = data_json["Description"]
+    address = data_json["Address"]
+    comune = data_json["Municipality"]
+    dettagli = data_json["Details"]
+    chiusura = dettagli["Giorno chiusura"]["Info"]
+    servizi = dettagli["Servizi"]["Info"]
+    result = "**"+descrizione+" "+address+" ("+comune+")**"+"\n"+"Giorno di chiusura: "+"**"+chiusura+"**"+"\n"+"Servizi: "+"**"+servizi+"**"
+    return sendMessage(client,message,result)
+
+"""
+dato un codice fermata, fornisce le coordinate geografiche di quella fermata.
+Funziona con qualsiasi tipo di oggetto, dalla fermata del bus al parchimetro.
 """
 @Client.on_message()
 def geodata_stop(stop_code,client,message):
-    data = {"url": "tpPortal/geodata/pois/stops/" + stop_code + "?lang=it".format()}
-    resp = requests.post(api_url,data = data)
+    resp = get_json_atm(stop_code)
     data_json = handle_except(resp)
     if str(data_json).startswith("404"):
         return sendMessage(client,message,data_json)
@@ -55,7 +71,15 @@ def geodata_stop(stop_code,client,message):
     return
 
 """
-Controlla se un campo estratto del json è nullo per evitare eccezioni sul concatenamento di stringhe
+Fa la richiesta al server atm e restituisce il json corrispondente.
+"""
+def get_json_atm(stop_code):
+    data = {"url": "tpPortal/geodata/pois/stops/" + stop_code + "?lang=it".format()}
+    resp = requests.post(api_url,data = data)
+    return resp
+
+"""
+Controlla se un campo estratto del json è nullo per evitare eccezioni sul concatenamento di stringhe.
 """
 def check_none(field):
     if field is None:
@@ -63,7 +87,7 @@ def check_none(field):
     else:
         return field
 """
-cattura eventuali eccezioni sulle richieste
+cattura eventuali eccezioni sulle richieste.
 """
 def handle_except(resp):
     try:
