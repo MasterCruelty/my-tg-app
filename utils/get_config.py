@@ -16,6 +16,9 @@ def sendMessage(client,message,result):
     client.send_message(get_chat(message),result,disable_web_page_preview=True,reply_to_message_id=get_id_msg(message))
     return
 
+"""
+Restituisce l'id utente
+"""
 def get_id_user(message):
     try:
         result = message["from_user"]["id"]
@@ -28,6 +31,14 @@ Restituisce l'id della chat
 def get_chat(message):
     return message["chat"]["id"]
 
+"""
+Restituisce il nome utente
+"""
+def get_first_name(message):
+    try:
+        return message["from_user"]["first_name"]
+    except:
+        return "Nome utente non disponibile"
 """
 Restituisce username dell'utente
 """

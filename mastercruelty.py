@@ -4,7 +4,7 @@ from datetimerange import DateTimeRange
 from pyrogram import Client 
 from utils.utility import *
 from utils.dbfunctions import *
-from utils.get_config import get_config_file,get_username,get_text_message,get_chat,get_id_msg,get_id_user
+from utils.get_config import get_config_file,get_username,get_text_message,get_chat,get_id_msg,get_id_user,get_first_name
 from utils.sysfunctions import *
 
 config = get_config_file("config.json")
@@ -23,7 +23,7 @@ def print_updates(client,message):
     id_messaggio = get_id_msg(message)
     utente = get_id_user(message)
     nome_chat = message["chat"]["title"]
-    nome_utente = message["from_user"]["first_name"]
+    nome_utente = get_first_name(message)
     time_message = time.strftime("%H:%M:%S")
     file_id = "Nullo"
     username = get_username(message) 
