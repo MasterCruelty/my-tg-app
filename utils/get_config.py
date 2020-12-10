@@ -21,8 +21,7 @@ Restituisce l'id utente
 """
 def get_id_user(message):
     try:
-        result = message["from_user"]["id"]
-        return result
+        return message["from_user"]["id"]
     except:
         return "id utente non disponibile"
 """
@@ -43,10 +42,10 @@ def get_first_name(message):
 Restituisce username dell'utente
 """
 def get_username(message):
-    if message["from_user"]["username"] is None:
-        return "Non impostato"
-    else:
+    try:
         return "@" + message["from_user"]["username"]
+    except:
+        return "Non impostato"
 
 """
 Restituisce il campo testo del messaggio
