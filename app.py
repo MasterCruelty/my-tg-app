@@ -11,9 +11,9 @@ config = get_config_file("config.json")
 api_id = config["api_id"]
 api_hash = config["api_hash"]
 session = config["session_name"]
-comandi = config["lista_comandi"]
-comandi_admin = config["lista_comandi_admin"]
-comandi_super = config["lista_comandi_super"] 
+comandi = config["commands"][0]
+comandi_admin = config["commands"][1]
+comandi_super = config["commands"][2]
 app = Client(session, api_id, api_hash)
 time_range = DateTimeRange("16:40:00","17:20:00")
 
