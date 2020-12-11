@@ -16,3 +16,6 @@ json_message.json
 
 #Ignora file .db
 *.db
+
+#ignora txt
+ip_banned.txt
