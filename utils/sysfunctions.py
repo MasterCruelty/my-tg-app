@@ -101,6 +101,39 @@ def ping(client,message):
     return utils.get_config.sendMessage(client,message,"pong")
 
 """
+documentazione dei comandi utente direttamente su Telegram
+"""
+def help(client,message,query):
+    help_file = utils.get_config.get_config_file("help.json")
+    if "wiki" in query:
+        help_wiki = help_file["wiki"][0]
+        help_wikiall = help_file["wiki"][1]
+        help_wikirandom = help_file["wiki"][2]
+        help_comune = help_file["wiki"][3]
+        return utils.get_config.sendMessage(client,message,help_wiki+"\n\n"+help_wikiall+"\n\n"+help_wikirandom+"\n\n"+help_comune)
+    if "lyrics" in query:
+        help_lyrics = help_file["lyrics"]
+        return utils.get_config.sendMessage(client,message,help_lyrics)
+    if "covid" in query:
+        help_covid = help_file["covid"]
+        return utils.get_config.sendMessage(client,message,help_covid)
+    if "poll" in query:
+        help_poll = help_file["poll"]
+        return utils.get_config.sendMessage(client,message,help_poll)
+    if "mappe" in query:
+        help_map = help_file["mappe"][0]
+        help_km = help_file["mappe"][1]
+        help_route = help_file["mappe"][2]
+        return utils.get_config.sendMessage(client,message,help_map+"\n\n"+help_km+"\n\n"+help_route)
+    if "atm" in query:
+        help_atm = help_file["atm"][0]
+        help_edatm = help_file["atm"][1]
+        help_geoatm = help_file["atm"][2]
+        return utils.get_config.sendMessage(client,message,help_atm+"\n\n"+help_edatm+"\n\n"+help_geoatm)
+    else:
+        return utils.get_config.sendMessage(client,message,"Cerca un comando in particolare come ad esempio:\n /help mappe")
+
+"""
 Restituisce 6 numeri tutti diversi tra loro tutti nel range da 1 a 90
 """
 @Client.on_message()
