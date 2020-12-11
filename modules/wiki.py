@@ -22,11 +22,11 @@ def get_keyword(query):
     return search
 
 #genero il link alla pagina wikipedia della pagina richiesta per saperne di più
-def create_link(keyword):
+def create_link(keyword,lang):
     page = wikipedia.page(keyword)
     keyword = page.title
     keyword = keyword.replace(" ","_")
-    link = "<a href=\"https://it.wikipedia.org/wiki/"+keyword+"\">Guarda su Wikipedia</a>"
+    link = "<a href=\"https://"+lang+".wikipedia.org/wiki/"+keyword+"\">Guarda su Wikipedia</a>"
     return link
 
 #Questa funzione esegue il comando wiki richiesto dall'app principale fetchato tramite la funzione in system.py
@@ -65,7 +65,7 @@ def exec_wiki_ita(query,client,message):
 def wiki(keyword,client,message,lang="it"):
    wikipedia.set_lang(lang)
    result = wikipedia.summary(keyword,sentences = 1) 
-   result += "\n"+create_link(keyword)
+   result += "\n"+create_link(keyword,lang)
    return utils.get_config.sendMessage(client,message,result)
 #data la lingua e la parola chiave da cercare, restituisce il numero massimo di frasi(limite della libreria) della voce trovata
 def wikiall(keyword,client,message,lang="it"):
@@ -75,7 +75,7 @@ def wikiall(keyword,client,message,lang="it"):
        return result
    result = wikipedia.summary(keyword,sentences = 10)
    result = result.replace("==","****")
-   result += "\n"+create_link(keyword)
+   result += "\n"+create_link(keyword,lang)
    return utils.get_config.sendMessage(client,message,result)
 #data la lingua restituisce una frase di una pagina wikipedia casuale
 def wikirandom(sents,boole,client,message,lang="it"):
@@ -86,7 +86,7 @@ def wikirandom(sents,boole,client,message,lang="it"):
     if boole:
         return result
     else:
-        result += "\n"+create_link(keyword)
+        result += "\n"+create_link(keyword,lang)
         return utils.get_config.sendMessage(client,message,result)
 #Simpatica funzione che cerca un comune su Wikipedia e ne restituisce i dati evidenziando numero abitanti e numero pagine visitate per trovarlo.
 #Il numero di abitanti viene recuperato direttamente dalla pagina html tramite l'uso della zuppa
