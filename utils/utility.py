@@ -35,6 +35,8 @@ def fetch_command(match,query,client,message):
         return modules.covid.covid_daily(client,message)
     if match == "/poll":
         return utils.sysfunctions.poll_function(client,message,query)
+    if match == "/help":
+        return utils.sysfunctions.help(client,message,query)
 
 """
 Analogamente a fetch_command ma per i comandi esclusivi degli utenti admin
