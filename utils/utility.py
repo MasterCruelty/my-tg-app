@@ -1,5 +1,6 @@
 import time
 import os
+from pyrogram import Client
 import utils_config
 import modules.wiki
 import modules.gmaps
@@ -8,6 +9,7 @@ import modules.atm_feature
 import modules.covid
 import utils.dbfunctions
 import utils.sysfunctions
+import utils.get_config
 
 """
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
@@ -79,6 +81,8 @@ def fetch_super_command(match,query,client,message):
         return utils.dbfunctions.list_admin(client,message)
     if match == "/alladmin":
         return utils.dbfunctions.all_admin(client,message)
+    if match == "/ipbanned":
+        return showIpBanned(client,message)
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
 """
@@ -101,12 +105,11 @@ def save_json(message):
 """
 	funzione che esegue uno script shell per recuperare gli ip bannati sul raspberry pi
 """
-def showIpBanned():
-    #os.popen ("sudo zgrep 'Ban ' /var/log/fail2ban.log* > ip_banned.txt")
-    os.system("./ip_banned.sh")
-    file_banned = open("ip_banned.txt",'r')
-    lista_banned = file_banned.read()
-    return lista_banned
+@Client.on_message()
+def showIpBanned(client,message):
+    os.system("chmod +x full_path/ip_banned.sh|sh full_path/ip_banned.sh")
+    utils.get_config.sendMessage(client,message,"Sto inviando il file...")
+    return client.send_document(utils.get_config.get_chat(message),"ip_banned.txt","html")
 
 """
 	funzione per visualizzare a schermo i dati principali del messaggio in arrivo
