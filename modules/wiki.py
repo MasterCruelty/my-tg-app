@@ -86,7 +86,7 @@ def wikirandom(sents,boole,client,message,lang="it"):
     if boole:
         return result
     else:
-        result += "\n"+create_link(keyword,lang)
+        result += "\n"+create_link(random,lang)
         return utils.get_config.sendMessage(client,message,result)
 #Simpatica funzione che cerca un comune su Wikipedia e ne restituisce i dati evidenziando numero abitanti e numero pagine visitate per trovarlo.
 #Il numero di abitanti viene recuperato direttamente dalla pagina html tramite l'uso della zuppa
