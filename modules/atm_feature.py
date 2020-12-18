@@ -7,6 +7,33 @@ from pyrogram import Client
 
 config = get_config_file("config.json")
 api_url = config["api_url"]
+api_get = config["api_get"]
+
+
+"""
+Restituisce l'elenco di tutte le fermate della linea richiesta con i codici corrispondenti
+"""
+def search_line(client,message,line_number):
+    line = line_number.split(" ")
+    line_number = line[0]
+    try:
+        direction = line[1]
+    except:
+        return sendMessage(client,message,"__Parametro direzione mancante__")
+    request = "tpl/journeyPatterns/" + str(line_number) + "|" + direction
+    get = api_get + "" + request
+    resp = requests.get(get)
+    data_json = handle_except(resp)
+    if str(data_json).startswith("404"):
+        return sendMessage(client,message,data_json)
+    fermate = data_json["Stops"]
+    description = data_json["Line"]["LineDescription"]
+    result = "Linea **" + description + "** :\n\n<i>digita /atm 'codice' per sapere i dettagli di una fermata in particolare.</i>\n\n"
+    for item in fermate:
+        result += "**" + item["Description"] + "**" + " | codice: " + "<code>" + item["Code"] + "</code>\n\n"
+    return sendMessage(client,message,result)
+
+
 
 """
     Dato un codice fermata, vengono fornite le informazioni relative a quella fermata contattando direttamente il server atm
