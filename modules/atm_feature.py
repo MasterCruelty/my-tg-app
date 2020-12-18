@@ -14,7 +14,13 @@ api_get = config["api_get"]
 Restituisce l'elenco di tutte le fermate della linea richiesta con i codici corrispondenti
 """
 def search_line(client,message,line_number):
-    request = "tpl/journeyPatterns/" + str(line_number) + "%7C0"
+    line = line_number.split(" ")
+    line_number = line[0]
+    try:
+        direction = line[1]
+    except:
+        return sendMessage(client,message,"__Parametro direzione mancante__")
+    request = "tpl/journeyPatterns/" + str(line_number) + "|" + direction
     get = api_get + "" + request
     resp = requests.get(get)
     data_json = handle_except(resp)
