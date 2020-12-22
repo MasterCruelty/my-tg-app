@@ -57,9 +57,9 @@ def fetch_admin_command(match,query,client,message):
         return utils.sysfunctions.get_message(client,message)
     if match == "/playlotto":
         return utils.sysfunctions.play_lotto(client,message)
-    if match == "/searchmsg" and check_group(client,message):
+    if match == "/searchmsg":
         return utils.sysfunctions.search_msg(client,message,query)
-    if match == "/stopmsg" and check_group(client,message):
+    if match == "/stopmsg":
         return utils.dbfunctions.stop_msg_true()
     if match == "/ping":
         return utils.sysfunctions.ping(client,message)
