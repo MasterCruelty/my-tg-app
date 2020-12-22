@@ -15,7 +15,7 @@ import utils.get_config
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
 def fetch_command(match,query,client,message):
-    if match == "/wiki":
+    if match == "/wiki" and check_group(client,message):
         return modules.wiki.execute_wiki(query,client,message)
     if match == "/map":
         return modules.gmaps.showmaps(query,client,message)
@@ -23,21 +23,21 @@ def fetch_command(match,query,client,message):
         return modules.gmaps.execute_km(query,client,message)
     if match == "/route":
         return modules.gmaps.execute_route(query,client,message)
-    if match == "/lyrics":
+    if match == "/lyrics" and check_group(client,message):
         return modules.lyrics.execute_lyrics(query,client,message)
-    if match == "/atm":
+    if match == "/atm" and check_group(client,message):
         return modules.atm_feature.get_stop_info(query,client,message)
-    if match == "/geoatm":
+    if match == "/geoatm" and check_group(client,message):
         return modules.atm_feature.geodata_stop(query,client,message)
-    if match == "/edatm":
+    if match == "/edatm" and check_group(client,message):
         return modules.atm_feature.get_rivendita_info(query,client,message)
-    if match == "/searchatm":
+    if match == "/searchatm" and check_group(client,message):
         return modules.atm_feature.search_line(client,message,query)
-    if match == "/covid":
+    if match == "/covid" and check_group(client,message):
         return modules.covid.covid_daily(client,message)
-    if match == "/poll":
+    if match == "/poll" and check_group(client,message):
         return utils.sysfunctions.poll_function(client,message,query)
-    if match == "/help":
+    if match == "/help" and check_group(client,message):
         return utils.sysfunctions.help(client,message,query)
 
 """
@@ -53,13 +53,13 @@ def fetch_admin_command(match,query,client,message):
         return utils.sysfunctions.get_id(client,message)
     if match == "/getuser":
         return utils.sysfunctions.get_user(client,message,query)
-    if match == "/getmessage":
+    if match == "/getmessage" and check_group(client,message):
         return utils.sysfunctions.get_message(client,message)
     if match == "/playlotto":
         return utils.sysfunctions.play_lotto(client,message)
-    if match == "/searchmsg":
+    if match == "/searchmsg" and check_group(client,message):
         return utils.sysfunctions.search_msg(client,message,query)
-    if match == "/stopmsg":
+    if match == "/stopmsg" and check_group(client,message):
         return utils.dbfunctions.stop_msg_true()
     if match == "/ping":
         return utils.sysfunctions.ping(client,message)
@@ -87,6 +87,18 @@ def fetch_super_command(match,query,client,message):
         return utils.dbfunctions.all_admin(client,message)
     if match == "/ipbanned":
         return showIpBanned(client,message)
+
+"""
+controlla che robbot non sia nella stessa chat, altrimenti esegue il comando
+"""
+@Client.on_message()
+def check_group(client,message):
+    try:
+        check = client.get_chat_member(utils.get_config.get_chat(message),133326326)
+        return False
+    except:
+        return True
+
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
 """
