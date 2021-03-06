@@ -17,9 +17,9 @@ Questa funzione prende come argomento il match e la richiesta dal main e dirotta
 def fetch_command(match,query,client,message):
     if match == "/wiki" and check_group(client,message):
         return modules.wiki.execute_wiki(query,client,message)
-    if match == "/map":
+    if match == "/map" and check_group(client,message):
         return modules.gmaps.showmaps(query,client,message)
-    if match == "/km":
+    if match == "/km" and check_group(client,message):
         return modules.gmaps.execute_km(query,client,message)
     if match == "/route":
         return modules.gmaps.execute_route(query,client,message)
