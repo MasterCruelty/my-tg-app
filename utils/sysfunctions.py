@@ -130,7 +130,7 @@ def help(client,message,query):
         help_searchatm = help_file["atm"][3]
         return utils.get_config.sendMessage(client,message,help_atm+"\n\n"+help_edatm+"\n\n"+help_geoatm+"\n\n"+help_searchatm)
     else:
-        return utils.get_config.sendMessage(client,message,"Cerca un comando in particolare come ad esempio:\n /help mappe")
+        return utils.get_config.sendMessage(client,message,"Cerca un comando in particolare come ad esempio:\n /help 'comando'\n__Comandi: wiki, lyrics, covid, poll, atm e mappe.__")
 
 """
 Restituisce 6 numeri tutti diversi tra loro tutti nel range da 1 a 90
