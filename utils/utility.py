@@ -34,7 +34,7 @@ def fetch_command(match,query,client,message):
     if match == "/searchatm" and check_group(client,message):
         return modules.atm_feature.search_line(client,message,query)
     if match == "/covid" and check_group(client,message):
-        return modules.covid.execute_covid(client,message,query)
+        return modules.covid.covid_cases(client,message,query)
     if match == "/poll" and check_group(client,message):
         return utils.sysfunctions.poll_function(client,message,query)
     if match == "/help" and check_group(client,message):
