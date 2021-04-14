@@ -90,7 +90,7 @@ def get_message(client,message):
     if(check):
         chat = utils.get_config.get_chat(message)
         utils.utility.save_json(message)
-        client.send_document(chat,"json_message.json",None,None,"Ecco il json prodotto dal messaggio","html",reply_to_message_id=message["message_id"])
+        client.send_document(chat,document = "json_message.json",caption = "__Ecco il json prodotto dal messaggio__",reply_to_message_id=message["message_id"])
 
 """
 Veloce controllo se l'app è online
