@@ -1,62 +1,51 @@
 **IT/ENG**
 
-# Come avviare/How to run
-**[IT]**
 
-Inserire i dati principali sul file **```config.json```** come indicato. I comandi sono pre-impostati nel codice quindi se si vuole cambiare il nome del comando è necessario andare a cambiare anche il match del comando nel file **```utils/utility.py```**.<br/>
-Dunque puoi lanciare l'applicazione da shell dando **```python3.8 mastercruelty.py```**.(o con il tuo file se decidi di rinominarlo)
+# **[IT]**
 
-**[ENG]**
+# Come impostare
 
-First of all you have to put your data in **```config.json```** as shown. Commands are already designed inside code so if you have to change name of commands, you have to change their names also in **```utils/utility.py```**.<br/>
-Then you can just launch with **```python3.8 mastercruelty.py```**(or another name if you rename the file)
+Per un corretto funzionamento è necessario compilare a dovere il file ```config.json```. Quindi è necessario essere in possesso dei seguenti dati:
 
-# Librerie/Libraries
+* Api keys di Telegram: ```api_id``` e ```api_hash```.
+* Bot token: ```bot_token```.
+* Api url atm se si vogliono usare le loro api: ```api_url``` e ```api_get```.
+* I dati telegram dell'amministratore del bot: ```id_super_admin```.
+* Il percorso dove si trova il file .db: ```path_db```.
+* Nome della sessione: ```session_name```.
+* I nomi dei comandi utente, admin e superadmin: ```user_commands```, ```admin_commands``` e ```super_admin_commands```.
 
-**[IT]**
+I dati del super admin servono a colui che potrà usare le funzioni di interazione con il database e altre funzioni particolari.
+I nomi dei comandi da inserire nel ```config.json``` possono essere ricopiati dal codice oppure possono essere modificati sul codice e poi ricopiati nel file json.	
 
-La libreria principale è **```pyrogram```** perchè ci permette di lavorare con le API di telegram molto facilmente.<br/>
-Ho usato **```utils-config```** cosi che si possano mettere chiavi o altri argomenti statici in un file .json e poi importarle in seguito.<br/>
-**```requests```** per tutte le funzionalità che hanno richiesto di fare get o post nel web.<br/>
-**```json```** per giocare con gli oggetti json.<br/>
-Ho usato il modulo **```geopy```** per giocare con le mappe e le coordinate dei luoghi. Anche **```openrouteservice```** è incluso in questo.<br/>
-**```os```** è stato usato un paio di volte per eseguire qualche script da shell.<br/>
-E infinte il modulo **```wikipedia```** per fetchare dati dalla famosa enciclopedia online.<br/>
+### Dipendenze
 
-**[ENG]**
+* Pyrogram
+* geopy
+* bs4
+* wikipedia
 
-The main library is **```pyrogram```**, which is the one that permits to work with Telegram API very easy.<br/>
-I used **```utils-config```** to put keys and other static arguments stuffs in a file .json and then importing them.<br/>
-**```requests```** for all features that required doing get or post through web.<br/>
-**```json```** to play with json objects.<br/>
-I used **geopy** module to play with maps and coordinates of places. **```openrouteservice```** was also included in this.<br/>
-**```os```** was used a couple of times to execute some script from shell.<br/>
-And then **```wikipedia```** module for fetching data from the famous web site.<br/>
 
-# Come si usano le funzioni/How to use main functions
+# **[ENG]**
 
-**[IT]**
+# How to setup
 
-```python
-1. /wiki  : "/wiki <lingua> <parola chiave da cercare>" (modalità base)  
-2. /poll  : "/poll <domanda>/<opzione 1>, <opzione 2>, <opzione N>"
-3. /covid : è sufficiente scrivere /covid
-4. /atm   : "/atm <codice fermata>"
-5. /map   : "/map <luogo>"
-6. /km    : "/km <luogo 1>, <luogo 2>"
-7. /route : "/route <luogo 1>, <luogo 2>"
-8. /lyrics: "/lyrics <artista>, <canzone>"
-```
+The correct way to setup this bot is to compile the file  ```config.json```. So it's necessary to have these data:
 
-**[ENG]**
+* Telegram api keys: ```api_id``` e ```api_hash```.
+* Telegram bot token: ```bot_token```.
+* Atm api url if you wanna use their api: ```api_url``` e ```api_get```.
+* Telegram data of the owner of the bot: ```id_super_admin```.
+* The path where is the .db file: ```path_db```.
+* The session name: ```session_name```.
+* Name of user commands, admin commands and super admin commands: ```user_commands```, ```admin_commands``` e ```super_admin_commands```.
 
-```python
-1. /wiki  : "/wiki <lang> <keyword to search>" (basic mode)
-2. /poll  : "/poll <question>/<option 1>, <option 2>, <option N>"
-3. /covid : just type /covid
-4. /atm   : "/atm <stop code>"
-5. /map   : "/map <place>"
-6. /km    : "/km <place 1>, <place 2>"
-7. /route : "/route <place 1>, <place 2>"
-8. /lyrics: "/lyrics <artist>, <song>"
-```
+Data of super admin is needed because he's the only one who can use db functions and other special functions.
+Name of commands to put inside ```config.json``` can be copied from source code or renamed inside source code and then copied in json file.	
+
+### Dependencies
+
+* Pyrogram
+* geopy
+* bs4
+* wikipedia
