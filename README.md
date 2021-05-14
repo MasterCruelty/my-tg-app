@@ -1,3 +1,13 @@
+![License](https://img.shields.io/github/license/MasterCruelty/my-tg-app)
+[![image](https://img.shields.io/github/stars/MasterCruelty/my-tg-app)](https://github.com/MasterCruelty/my-tg-app/stargazers)
+[![image](https://img.shields.io/github/forks/MasterCruelty/my-tg-app)](https://github.com/MasterCruelty/my-tg-app/network/members)
+![CodeSize](https://img.shields.io/github/languages/code-size/MasterCruelty/my-tg-app)
+[![image](https://img.shields.io/github/issues/MasterCruelty/my-tg-app)](https://github.com/MasterCruelty/my-tg-app/issues)
+![image](https://img.shields.io/github/languages/top/MasterCruelty/my-tg-app)
+![image](https://img.shields.io/github/commit-activity/w/MasterCruelty/my-tg-app)
+
+# my-tg-app
+
 **IT/ENG**
 
 
