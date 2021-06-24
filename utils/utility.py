@@ -81,12 +81,6 @@ def fetch_super_command(match,query,client,message):
         return utils.dbfunctions.set_admin(client,message,query)
     if match == "/deladmin":
         return utils.dbfunctions.del_admin(client,message,query)
-    if match == "/listadmin":
-        return utils.dbfunctions.list_admin(client,message)
-    if match == "/alladmin":
-        return utils.dbfunctions.all_admin(client,message)
-    if match == "/ipbanned":
-        return showIpBanned(client,message)
 
 """
 controlla che robbot non sia nella stessa chat, altrimenti esegue il comando
@@ -118,14 +112,6 @@ def save_json(message):
     save = open(nome_file,'w')
     save.write(str(message))
     save.close()
-"""
-	funzione che esegue uno script shell per recuperare gli ip bannati sul raspberry pi
-"""
-@Client.on_message()
-def showIpBanned(client,message):
-    os.system("chmod +x full_path/ip_banned.sh|sh full_path/ip_banned.sh")
-    utils.get_config.sendMessage(client,message,"Sto inviando il file...")
-    return client.send_document(utils.get_config.get_chat(message),"ip_banned.txt","html")
 
 """
 	funzione per visualizzare a schermo i dati principali del messaggio in arrivo
