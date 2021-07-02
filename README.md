@@ -5,6 +5,7 @@
 [![image](https://img.shields.io/github/issues/MasterCruelty/my-tg-app)](https://github.com/MasterCruelty/my-tg-app/issues)
 ![image](https://img.shields.io/github/languages/top/MasterCruelty/my-tg-app)
 ![image](https://img.shields.io/github/commit-activity/w/MasterCruelty/my-tg-app)
+![image](https://img.shields.io/github/contributors/MasterCruelty/my-tg-app)
 
 # my-tg-app
 
