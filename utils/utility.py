@@ -29,8 +29,6 @@ def fetch_command(match,query,client,message):
         return modules.atm_feature.get_stop_info(query,client,message)
     if match == "/geoatm" and check_group(client,message):
         return modules.atm_feature.geodata_stop(query,client,message)
-    if match == "/edatm" and check_group(client,message):
-        return modules.atm_feature.get_rivendita_info(query,client,message)
     if match == "/searchatm" and check_group(client,message):
         return modules.atm_feature.search_line(client,message,query)
     if match == "/covid" and check_group(client,message):
