@@ -84,8 +84,16 @@ questa funzione fa una select dalla tabella User e restituisce i dati di tutti g
 def list_user(client,message):
     result = "Lista utenti salvati:\n\n"
     query = User.select()
-    for user in query:
-        result += str(user.id_user) + ";" + user.name + ";" + user.username + ";Admin: " + str(user.admin) + "\n"
+    if(get_chat(message) != 96000757):
+        for user in query:
+            try:
+                client.get_chat_member(get_chat(message),user.id_user)
+                result += str(user.id_user) + ";" + user.name + ";" + user.username + ";Admin: " + str(user.admin) + "\n"
+            except:
+                continue
+    else:
+        for user in query:
+            result += str(user.id_user) + ";" + user.name + ";" + user.username + ";Admin: " + str(user.admin) + "\n"
     return sendMessage(client,message,result)
 
 """
