@@ -8,6 +8,7 @@ import json
 import sys
 sys.path.append(sys.path[0] + "/..")
 from utils.get_config import *
+from gtts import gTTS
 
 
 config = get_config_file("config.json")
@@ -31,7 +32,7 @@ def execute_km(query,client,message):
 
 def execute_route(query,client,message):
     addresses = query.split(',')
-    route = directions(addresses[0],addresses[1])
+    route = directions(client,message,addresses[0],addresses[1])
     result = route
     return sendMessage(client,message,result)
 
@@ -73,35 +74,30 @@ def distanza(address1,address2):
     result = (result * 1.609344)
     return round(result,2)
 
-
-def directions(address1,address2):
+@Client.on_message()
+def directions(client,message,address1,address2):
     coord1 = showmaps(address1,client = None,message = None)
     coord2 = showmaps(address2,client = None,message = None)
     coord1 = coord1[::-1]
     coord2 = coord2[::-1]
     coords = ((coord1[0],coord1[1]),(coord2[0],coord2[1]))
+    client_geopy = openrouteservice.Client(key = api_geopy)
+    travel = client_geopy.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
     client = openrouteservice.Client(key = api_geopy)
-    try:
-        travel = client.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
-    except:
-        return "__Destinazione troppo lontana__"
+    travel = client.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
     dis_time = travel['routes'][0]['summary']
     distanza = dis_time['distance']
     distanza = round(distanza,2)
-    time_travel = float(dis_time['duration']) / 60
-    time_travel = round(time_travel,2)
+    time_travel = round((float(dis_time['duration']) / 60),2)
     if(time_travel > 60):
         time_travel = str(round(time_travel / 60,2)) + " ore."
     else:
         time_travel = str(time_travel) + " minuti."
-    steps = travel['routes'][0]
-    steps = steps['segments'][0]
-    steps = steps["steps"]
+    steps = travel['routes'][0]['segments'][0]["steps"]
     istruzioni = ""
     for item in steps:
         if float(item["distance"]) < 1:
-            tragitto = float(item["distance"]) * 1000
-            tragitto = int(tragitto)
+            tragitto = int((float(item["distance"]) * 1000))
             tragitto = str(tragitto) + " metri"
         else:
             tragitto = round(item["distance"],2)
@@ -110,5 +106,8 @@ def directions(address1,address2):
             istruzioni += item["instruction"] + "\n"
         else:
             istruzioni += item["instruction"] + " per " + tragitto + "\n"
-    result = "La tua destinazione si trova a " + str(distanza) + " km raggiungibile in circa "  + str(time_travel)  + "\n\n" + istruzioni
+    tts = gTTS(istruzioni,lang="it")
+    tts.save("istruzioni.mp3")
+    client.send_document(get_chat(message),document = "istruzioni.mp3",caption = "Istruzioni per raggiungere la destinazione", reply_to_message_id=get_id_msg(message))
+    result = "La tua destinazione si trova a " + str(distanza) + " km raggiungibile in circa "  + str(time_travel)
     return result

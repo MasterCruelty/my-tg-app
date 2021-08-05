@@ -17,6 +17,9 @@ json_message.json
 #Ignora file .db
 *.db
 
+#ignora file .mp3
+*.mp3
+
 #ignora txt
 ip_banned.txt
 unknown_errors.txt
