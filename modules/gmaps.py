@@ -83,6 +83,8 @@ def directions(client,message,address1,address2):
     coords = ((coord1[0],coord1[1]),(coord2[0],coord2[1]))
     client_geopy = openrouteservice.Client(key = api_geopy)
     travel = client_geopy.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
+    client = openrouteservice.Client(key = api_geopy)
+    travel = client.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
     dis_time = travel['routes'][0]['summary']
     distanza = dis_time['distance']
     distanza = round(distanza,2)
