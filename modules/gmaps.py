@@ -8,6 +8,7 @@ import json
 import sys
 sys.path.append(sys.path[0] + "/..")
 from utils.get_config import *
+from gtts import gTTS
 
 
 config = get_config_file("config.json")
@@ -31,7 +32,7 @@ def execute_km(query,client,message):
 
 def execute_route(query,client,message):
     addresses = query.split(',')
-    route = directions(addresses[0],addresses[1])
+    route = directions(client,message,addresses[0],addresses[1])
     result = route
     return sendMessage(client,message,result)
 
@@ -73,8 +74,8 @@ def distanza(address1,address2):
     result = (result * 1.609344)
     return round(result,2)
 
-
-def directions(address1,address2):
+@Client.on_message()
+def directions(client,message,address1,address2):
     coord1 = showmaps(address1,client = None,message = None)
     coord2 = showmaps(address2,client = None,message = None)
     coord1 = coord1[::-1]
@@ -103,5 +104,8 @@ def directions(address1,address2):
             istruzioni += item["instruction"] + "\n"
         else:
             istruzioni += item["instruction"] + " per " + tragitto + "\n"
-    result = "La tua destinazione si trova a " + str(distanza) + " km raggiungibile in circa "  + str(time_travel)  + "\n\n" + istruzioni
+    tts = gTTS(istruzioni)
+    tts.save("istruzioni.mp3")
+    client.send_document(get_chat(message),document = "istruzioni.mp3",caption = "Istruzioni per raggiungere la destinazione", reply_to_message_id=get_id_msg(message))
+    result = "La tua destinazione si trova a " + str(distanza) + " km raggiungibile in circa "  + str(time_travel)
     return result
