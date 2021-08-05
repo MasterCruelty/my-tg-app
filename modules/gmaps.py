@@ -104,7 +104,7 @@ def directions(client,message,address1,address2):
             istruzioni += item["instruction"] + "\n"
         else:
             istruzioni += item["instruction"] + " per " + tragitto + "\n"
-    tts = gTTS(istruzioni)
+    tts = gTTS(istruzioni,lang="it")
     tts.save("istruzioni.mp3")
     client.send_document(get_chat(message),document = "istruzioni.mp3",caption = "Istruzioni per raggiungere la destinazione", reply_to_message_id=get_id_msg(message))
     result = "La tua destinazione si trova a " + str(distanza) + " km raggiungibile in circa "  + str(time_travel)
