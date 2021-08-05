@@ -81,7 +81,10 @@ def directions(address1,address2):
     coord2 = coord2[::-1]
     coords = ((coord1[0],coord1[1]),(coord2[0],coord2[1]))
     client = openrouteservice.Client(key = api_geopy)
-    travel = client.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
+    try:
+        travel = client.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
+    except:
+        return "__Destinazione troppo lontana__"
     dis_time = travel['routes'][0]['summary']
     distanza = dis_time['distance']
     distanza = round(distanza,2)
