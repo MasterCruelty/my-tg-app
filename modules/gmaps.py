@@ -85,7 +85,7 @@ def directions(address1,address2):
     dis_time = travel['routes'][0]['summary']
     distanza = dis_time['distance']
     distanza = round(distanza,2)
-    time_travel = round(float(dis_time['duration']) / 60),2)
+    time_travel = round((float(dis_time['duration']) / 60),2)
     if(time_travel > 60):
         time_travel = str(round(time_travel / 60,2)) + " ore."
     else:
