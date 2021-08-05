@@ -85,15 +85,14 @@ def directions(address1,address2):
     dis_time = travel['routes'][0]['summary']
     distanza = dis_time['distance']
     distanza = round(distanza,2)
-    time_travel = float(dis_time['duration']) / 60
-    time_travel = round(time_travel,2)
+    time_travel = round(float(dis_time['duration']) / 60),2)
     if(time_travel > 60):
         time_travel = str(round(time_travel / 60,2)) + " ore."
     else:
         time_travel = str(time_travel) + " minuti."
-    steps = travel['routes'][0]
-    steps = steps['segments'][0]
-    steps = steps["steps"]
+    steps = travel['routes'][0]['segments'][0]["steps"]
+    #steps = steps['segments'][0]
+    #steps = steps["steps"]
     istruzioni = ""
     for item in steps:
         if float(item["distance"]) < 1:
