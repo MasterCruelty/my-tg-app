@@ -29,10 +29,21 @@ Per un corretto funzionamento è necessario compilare a dovere il file ```config
 I dati del super admin servono a colui che potrà usare le funzioni di interazione con il database e altre funzioni particolari.
 I nomi dei comandi da inserire nel ```config.json``` possono essere ricopiati dal codice oppure possono essere modificati sul codice e poi ricopiati nel file json.	
 
-### Come funzionano i comandi dello userbot
+### Come funzionano i comandi utente dello userbot
 
 Il funzionamento dei comandi è spiegato all'interno del file ```help.json```. Si tratta del file che viene usato dallo userbot per rispondere al comando ```/help <nome comando>```.
 Le spiegazioni sono in Italiano, ma volendo si possono tradurre in qualsiasi lingua sostituendo i campi della struttura dati oppure addirittura renderlo multilingua, ma in quel caso c'è da sviluppare la componente che rende possibile il cambio di lingua.
+
+### Come funzionano i comandi admin e super
+
+* registrare un nuovo utente: ```/setuser``` <id_utente>
+* registrare un nuovo admin: ```/setadmin``` <id_utente> 
+* cancellare un utente: ```/deluser``` <id_utente>
+* revocare i privilegi admin: ```/deladmin``` <id_utente> (l'utente sarà comunque ancora tra i registrati ma senza i poteri admin)
+* mostrare tutti gli utenti registrati: ```/listuser```
+* mostrare il numero di utenti registrati: ```/alluser```
+* verificare se il bot è online: ```/ping```
+
 
 ### Dipendenze
 
@@ -63,6 +74,18 @@ Name of commands to put inside ```config.json``` can be copied from source code 
 
 The features of the commands are explained inside ```help.json```. It is the file which is used by the userbot to reply at ```/help <command name>```.
 This json file is only in Italian, but you can translate it in every languages by changing the correct fields with your translations or even making the userbot multi-language but in that case you have to develop the component for change the language runtime.
+
+### How the admin/super commands works
+
+* register a new user: ```/setuser``` <id_user>
+* register a new admin: ```/setadmin``` <id_user> 
+* delete a user: ```/deluser``` <id_user>
+* delete an admin: ```/deladmin``` <id_user> (it will just revoke the admin power, it doesn't delete the user)
+* How to list all user registered: ```/listuser``` 
+* How to show ho many users are registered: ```/alluser```
+* check if the bot is online: ```/ping```
+
+
 
 ### Dependencies
 
