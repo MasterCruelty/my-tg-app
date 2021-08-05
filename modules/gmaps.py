@@ -91,13 +91,10 @@ def directions(address1,address2):
     else:
         time_travel = str(time_travel) + " minuti."
     steps = travel['routes'][0]['segments'][0]["steps"]
-    #steps = steps['segments'][0]
-    #steps = steps["steps"]
     istruzioni = ""
     for item in steps:
         if float(item["distance"]) < 1:
-            tragitto = float(item["distance"]) * 1000
-            tragitto = int(tragitto)
+            tragitto = int((float(item["distance"]) * 1000))
             tragitto = str(tragitto) + " metri"
         else:
             tragitto = round(item["distance"],2)
