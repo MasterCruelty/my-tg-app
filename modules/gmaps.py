@@ -101,14 +101,14 @@ def directions(client,message,address1,address2):
     for item in steps:
         if float(item["distance"]) < 1:
             tragitto = int((float(item["distance"]) * 1000))
-            tragitto = str(tragitto) + " metri"
+            tragitto = "Tra " + str(tragitto) + " metri "
         else:
             tragitto = round(item["distance"],2)
-            tragitto = str(tragitto) + " km"
+            tragitto = "Tra " + str(tragitto) + " km "
         if "Arrivo" in item["instruction"]:
             istruzioni += item["instruction"] + "\n"
         else:
-            istruzioni += item["instruction"] + " per " + tragitto + "\n"
+            istruzioni += tragitto + item["instruction"] + "\n"
     tts = gTTS(istruzioni,lang="it")
     tts.save("istruzioni.mp3")
     client.send_document(get_chat(message),document = "istruzioni.mp3",caption = "Istruzioni per raggiungere la destinazione", reply_to_message_id=get_id_msg(message))
