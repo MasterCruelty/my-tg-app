@@ -31,8 +31,10 @@ def execute_km(query,client,message):
     return sendMessage(client,message,result)
 
 def execute_route(query,client,message):
-    addresses = query.split(',')
-    route = directions(client,message,addresses[0],addresses[1])
+    #uso il carattere '/' come separatore per recuperare modalità di trasporto e dopo uso ',' per recuperare i due luoghi
+    mode = query.split('/')[0]
+    addresses = mode[1].split(',')
+    route = directions(client,message,addresses[0],addresses[1],mode)
     result = route
     return sendMessage(client,message,result)
 
@@ -75,15 +77,18 @@ def distanza(address1,address2):
     return round(result,2)
 
 @Client.on_message()
-def directions(client,message,address1,address2):
+def directions(client,message,address1,address2,query):
     coord1 = showmaps(address1,client = None,message = None)
     coord2 = showmaps(address2,client = None,message = None)
     coord1 = coord1[::-1]
     coord2 = coord2[::-1]
     coords = ((coord1[0],coord1[1]),(coord2[0],coord2[1]))
     client_geopy = openrouteservice.Client(key = api_geopy)
+    modes = { 'macchina': 'driving-car', 'piedi': 'foot-walking', 'bicicletta':'cycling-road'}
+    if query in modes:
+        profile = modes[query]
     try:
-        travel = client_geopy.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
+        travel = client_geopy.directions(coords,profile=profile,format='json',preference = 'fastest',units='km',language="it")
     except:
         return "__Destinazione troppo lontana__"
     client_geopy = openrouteservice.Client(key = api_geopy)
