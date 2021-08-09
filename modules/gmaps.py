@@ -32,9 +32,12 @@ def execute_km(query,client,message):
 
 def execute_route(query,client,message):
     #uso il carattere '/' come separatore per recuperare modalità di trasporto e dopo uso ',' per recuperare i due luoghi
-    first_split = query.split('/')
-    mode = first_split[0]
-    addresses = first_split[1].split(',')
+    try:
+        first_split = query.split('/')
+        mode = first_split[0]
+        addresses = first_split[1].split(',')
+    except:
+        return sendMessage(client,message,"__Errore formato__\nprova /help mappe.__")
     route = directions(client,message,addresses[0],addresses[1],mode)
     result = route
     return sendMessage(client,message,result)
