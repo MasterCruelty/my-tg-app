@@ -11,7 +11,7 @@
 	"mappe":{
 		"map":"**/map 'place'** => restituisce la posizione del luogo richiesto.",
 		"km":"**/km 'place1' , 'place2'** => restituisce la distanza tra i due luoghi in km.",
-		"route":"**/route 'place1' , 'place2'** => restituisce il percorso per raggiungere il luogo 2 partendo dal luogo 1."
+		"route":"**/route 'mode'/ 'place1' , 'place2'** => restituisce il percorso per raggiungere il luogo 2 partendo dal luogo 1 nella modalità scelta. \n__Le modalità sono: piedi, bicicletta, macchina."
 	},
 	"atm":{
 		"atm_default":"**/atm 'stop_code'** => restituisce i dati relativi alla fermata associata al codice inserito",
