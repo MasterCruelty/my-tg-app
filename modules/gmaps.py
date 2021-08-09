@@ -31,8 +31,14 @@ def execute_km(query,client,message):
     return sendMessage(client,message,result)
 
 def execute_route(query,client,message):
-    addresses = query.split(',')
-    route = directions(client,message,addresses[0],addresses[1])
+    #uso il carattere '/' come separatore per recuperare modalità di trasporto e dopo uso ',' per recuperare i due luoghi
+    try:
+        first_split = query.split('/')
+        mode = first_split[0]
+        addresses = first_split[1].split(',')
+    except:
+        return sendMessage(client,message,"__Errore formato__\nprova /help mappe.__")
+    route = directions(client,message,addresses[0],addresses[1],mode)
     result = route
     return sendMessage(client,message,result)
 
@@ -75,19 +81,22 @@ def distanza(address1,address2):
     return round(result,2)
 
 @Client.on_message()
-def directions(client,message,address1,address2):
+def directions(client,message,address1,address2,query):
     coord1 = showmaps(address1,client = None,message = None)
     coord2 = showmaps(address2,client = None,message = None)
     coord1 = coord1[::-1]
     coord2 = coord2[::-1]
     coords = ((coord1[0],coord1[1]),(coord2[0],coord2[1]))
     client_geopy = openrouteservice.Client(key = api_geopy)
+    #dizionario con le tre modalità di trasporto supportate dalla funzione
+    modes = { 'macchina': 'driving-car', 'piedi': 'foot-walking', 'bicicletta':'cycling-road'}
+    if query in modes:
+        profile = modes[query]
     try:
-        travel = client_geopy.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
+        travel = client_geopy.directions(coords,profile=profile,format='json',preference = 'fastest',units='km',language="it")
     except:
         return "__Destinazione troppo lontana__"
     client_geopy = openrouteservice.Client(key = api_geopy)
-    travel = client_geopy.directions(coords,profile='driving-car',format='json',preference = 'fastest',units='km',language="it")
     dis_time = travel['routes'][0]['summary']
     distanza = dis_time['distance']
     distanza = round(distanza,2)
@@ -101,16 +110,16 @@ def directions(client,message,address1,address2):
     for item in steps:
         if float(item["distance"]) < 1:
             tragitto = int((float(item["distance"]) * 1000))
-            tragitto = str(tragitto) + " metri"
+            tragitto = "Tra " + str(tragitto) + " metri "
         else:
             tragitto = round(item["distance"],2)
-            tragitto = str(tragitto) + " km"
+            tragitto = "Tra " + str(tragitto) + " km "
         if "Arrivo" in item["instruction"]:
             istruzioni += item["instruction"] + "\n"
         else:
-            istruzioni += item["instruction"] + " per " + tragitto + "\n"
+            istruzioni += tragitto + item["instruction"] + "\n"
     tts = gTTS(istruzioni,lang="it")
     tts.save("istruzioni.mp3")
-    client.send_document(get_chat(message),document = "istruzioni.mp3",caption = "Istruzioni per raggiungere la destinazione", reply_to_message_id=get_id_msg(message))
+    client.send_document(get_chat(message),document = "istruzioni.mp3",caption = "Istruzioni per raggiungere la destinazione con: " + query, reply_to_message_id=get_id_msg(message))
     result = "La tua destinazione si trova a " + str(distanza) + " km raggiungibile in circa "  + str(time_travel)
     return result
