@@ -79,6 +79,9 @@ def fetch_super_command(match,query,client,message):
         return utils.dbfunctions.set_admin(client,message,query)
     if match == "/deladmin":
         return utils.dbfunctions.del_admin(client,message,query)
+    #functions which use local machine path
+    if match == "/send":
+        return utils.sysfunctions.send_file(client,message,query)
 
 """
 controlla che robbot non sia nella stessa chat, altrimenti esegue il comando

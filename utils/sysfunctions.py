@@ -58,19 +58,6 @@ def send_file(client,message,path):
     return
 
 """
-Preso come argomento un path esegue il codice di quel file
-"""
-def exec_file(client,message,path):
-    chat = utils.get_config.get_chat(message)
-    try:
-        os.system(path)
-        client.send_message(chat,"__Eseguito come richiesto.__","html",False,False,id_messaggio)
-    except:
-        client.send_message(chat,"__Errore durante l'esecuzione del comando.__","html",False,False,id_messaggio)
-
-
-    
-"""
 Restituisce il numero di messaggi complessivo nella chat in cui viene lanciato il comando
 """
 @Client.on_message()
