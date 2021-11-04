@@ -4,6 +4,7 @@ import utils.get_config
 import utils.dbfunctions
 import random
 import time
+import os
 
 """
 Ricerca ogni messaggio che matcha con la keyword richiesta nella chat in cui viene lanciato il comando
@@ -47,6 +48,28 @@ def poll_function(client,message,query):
     client.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
     return
 
+"""
+Preso come argomento un path intero, invia quel file su telegram(utile per backuppare file di configurazione o .db)
+"""
+@Client.on_message()
+def send_file(client,message,path):
+    chat = utils.get_config.get_chat(message)
+    client.send_document(chat,document = path,caption = "__Ecco il file richiesto__",reply_to_message_id=message["message_id"])
+    return
+
+"""
+Preso come argomento un path esegue il codice di quel file
+"""
+def exec_file(client,message,path):
+    chat = utils.get_config.get_chat(message)
+    try:
+        os.system(path)
+        client.send_message(chat,"__Eseguito come richiesto.__","html",False,False,id_messaggio)
+    except:
+        client.send_message(chat,"__Errore durante l'esecuzione del comando.__","html",False,False,id_messaggio)
+
+
+    
 """
 Restituisce il numero di messaggi complessivo nella chat in cui viene lanciato il comando
 """
