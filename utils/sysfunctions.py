@@ -48,6 +48,15 @@ def poll_function(client,message,query):
     return
 
 """
+Preso come argomento un path intero, invia quel file su telegram(utile per backuppare file di configurazione o .db)
+"""
+@Client.on_message()
+def send_file(client,message,path):
+    chat = utils.get_config.get_chat(message)
+    client.send_document(chat,document = path,caption = "__Ecco il file richiesto__",reply_to_message_id=message["message_id"])
+    return
+
+"""
 Restituisce il numero di messaggi complessivo nella chat in cui viene lanciato il comando
 """
 @Client.on_message()
