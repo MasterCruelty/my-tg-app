@@ -43,6 +43,7 @@ Le spiegazioni sono in Italiano, ma volendo si possono tradurre in qualsiasi lin
 * mostrare tutti gli utenti registrati: ```/listuser```
 * mostrare il numero di utenti registrati: ```/alluser```
 * verificare se il bot è online: ```/ping```
+* inviare un file dalla macchina locale: ```/send``` <path>
 
 
 ### Dipendenze
@@ -84,6 +85,7 @@ This json file is only in Italian, but you can translate it in every languages b
 * How to list all user registered: ```/listuser``` 
 * How to show ho many users are registered: ```/alluser```
 * check if the bot is online: ```/ping```
+* send a file from local machine: ```/send``` <path>
 
 
 
