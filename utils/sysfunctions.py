@@ -4,7 +4,6 @@ import utils.get_config
 import utils.dbfunctions
 import random
 import time
-import os
 
 """
 Ricerca ogni messaggio che matcha con la keyword richiesta nella chat in cui viene lanciato il comando
