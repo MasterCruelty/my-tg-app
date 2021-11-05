@@ -30,7 +30,7 @@ def execute_km(query,client,message):
         result = "La distanza tra i due luoghi è di " + str(km) + " km."
     return sendMessage(client,message,result)
 
-def execute_route(query,client,message):
+def execute_route(client,message,query):
     #uso il carattere '/' come separatore per recuperare modalità di trasporto e dopo uso ',' per recuperare i due luoghi
     try:
         first_split = query.split('/')

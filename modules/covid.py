@@ -37,7 +37,7 @@ def check_repo(repo):
 
     Restituisce i dati principali sui contagi da covid19.
 """
-def covid_cases(client,message,query):
+def covid_cases(query,client,message):
     regioni = covid_format_json('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni-latest.json')
     italia  = covid_format_json('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json')
     trovata = False
