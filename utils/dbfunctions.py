@@ -10,7 +10,7 @@ db.connect()
 """
 pone il valore di stop a True interrompendo cosi la ricerca dei messaggi in utils.sysfunctions.search_message(client,message,search)
 """
-def stop_msg_true():
+def stop_msg_true(client=None,message=None):
     Stopmsg.delete().execute() 
     stop = Stopmsg(value = True)
     stop.save()

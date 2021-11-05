@@ -11,77 +11,64 @@ import utils.dbfunctions
 import utils.sysfunctions
 import utils.get_config
 
+
+dictionary = {      '/wiki'       : modules.wiki.execute_wiki,
+                    '/map'        : modules.gmaps.showmaps,
+                    '/km'         : modules.gmaps.execute_km,
+                    '/lyrics'     : modules.lyrics.execute_lyrics,
+                    '/atm'        : modules.atm_feature.get_stop_info,
+                    '/geoatm'     : modules.atm_feature.geodata_stop,
+                    '/searchatm'  : modules.atm_feature.search_line,
+                    '/covid'      : modules.covid.covid_cases,
+                    '/poll'       : utils.sysfunctions.poll_function,
+                    '/help'       : utils.sysfunctions.help}
+
+dictionary_admin = {'/hcount'     : utils.sysfunctions.count_messages,
+                    '/route'      : modules.gmaps.execute_route,
+                    '/id'         : utils.sysfunctions.id_chat,
+                    '/getid'      : utils.sysfunctions.get_id,
+                    '/getuser'    : utils.sysfunctions.get_user,
+                    '/getmessage' : utils.sysfunctions.get_message,
+                    '/playlotto'  : utils.sysfunctions.play_lotto,
+                    '/searchmsg'  : utils.sysfunctions.search_msg,
+                    '/stopmsg'    : utils.dbfunctions.stop_msg_true,
+                    '/ping'       : utils.sysfunctions.ping}
+
+dictionary_super = {'/setuser'    : utils.dbfunctions.set_user,
+                    '/deluser'    : utils.dbfunctions.del_user,
+                    '/listuser'   : utils.dbfunctions.list_user,
+                    '/alluser'    : utils.dbfunctions.all_user,
+                    '/setadmin'   : utils.dbfunctions.set_admin,
+                    '/deladmin'   : utils.dbfunctions.del_admin,
+                    '/send'       : utils.sysfunctions.send_file}
 """
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
 def fetch_command(match,query,client,message):
-    if match == "/wiki" and check_group(client,message):
-        return modules.wiki.execute_wiki(query,client,message)
-    if match == "/map" and check_group(client,message):
-        return modules.gmaps.showmaps(query,client,message)
-    if match == "/km" and check_group(client,message):
-        return modules.gmaps.execute_km(query,client,message)
-    if match == "/route":
-        return modules.gmaps.execute_route(query,client,message)
-    if match == "/lyrics" and check_group(client,message):
-        return modules.lyrics.execute_lyrics(query,client,message)
-    if match == "/atm" and check_group(client,message):
-        return modules.atm_feature.get_stop_info(query,client,message)
-    if match == "/geoatm" and check_group(client,message):
-        return modules.atm_feature.geodata_stop(query,client,message)
-    if match == "/searchatm" and check_group(client,message):
-        return modules.atm_feature.search_line(client,message,query)
-    if match == "/covid" and check_group(client,message):
-        return modules.covid.covid_cases(client,message,query)
-    if match == "/poll" and check_group(client,message):
-        return utils.sysfunctions.poll_function(client,message,query)
-    if match == "/help" and check_group(client,message):
-        return utils.sysfunctions.help(client,message,query)
+    if match in dictionary and check_group(client,message):
+        return dictionary[match](query,client,message)
 
 """
 Analogamente a fetch_command ma per i comandi esclusivi degli utenti admin
 """
 def fetch_admin_command(match,query,client,message):
     #system functions
-    if match == "/hcount":
-        return utils.sysfunctions.count_messages(client,message)
-    if match == "/id":
-        return utils.sysfunctions.id_chat(client,message)
-    if match == "/getid":
-        return utils.sysfunctions.get_id(client,message)
-    if match == "/getuser":
-        return utils.sysfunctions.get_user(client,message,query)
-    if match == "/getmessage" and check_group(client,message):
-        return utils.sysfunctions.get_message(client,message)
-    if match == "/playlotto":
-        return utils.sysfunctions.play_lotto(client,message)
-    if match == "/searchmsg":
-        return utils.sysfunctions.search_msg(client,message,query)
-    if match == "/stopmsg":
-        return utils.dbfunctions.stop_msg_true()
-    if match == "/ping":
-        return utils.sysfunctions.ping(client,message)
+    if match in dictionary_admin:
+        try:
+            return dictionary_admin[match](client,message,query)
+        except:
+            return dictionary_admin[match](client,message)
 
 """
 Analogamente a fetch_command ma per i comandi esclusivi del super admin
 """
 def fetch_super_command(match,query,client,message):
-    #db functions
-    if match == "/setuser":
-        return utils.dbfunctions.set_user(client,message,query)
-    if match == "/deluser":
-        return utils.dbfunctions.del_user(client,message,query)
-    if match == "/listuser":
-        return utils.dbfunctions.list_user(client,message)
-    if match == "/alluser":
-        return utils.dbfunctions.all_user(client,message)
-    if match == "/setadmin":
-        return utils.dbfunctions.set_admin(client,message,query)
-    if match == "/deladmin":
-        return utils.dbfunctions.del_admin(client,message,query)
-    #functions which use local machine path
-    if match == "/send":
-        return utils.sysfunctions.send_file(client,message,query)
+    #db functions and send_file
+    if match in dictionary_super:
+        try:
+            return dictionary_super[match](client,message,query)
+        except:
+            return dictionary_super[match](client,message)
 
 """
 controlla che robbot non sia nella stessa chat, altrimenti esegue il comando
@@ -127,24 +114,3 @@ def visualizza(chat,nome_chat,utente,nome_utente,username,messaggio):
     print("**************************************************************************************")
     if str(chat):
         return "nome_chat: " + str(chat) +"id_utente: " + str(utente) + "\nnome_utente: " + nome_utente + "\nusername: " + username + "\n\n" + "Messaggio: " + messaggio
-"""
-    da rifattorizzare: funzione per recuperare il file id del messaggio corrente
-    plus: per rendere la funzione utile si dovrebbe gestire anche il parametro file_ref
-"""
-def recuperaFileID(message):
-    try:
-        try:
-            file_id = message["photo"]["file_id"]
-        except:
-            try:
-                file_id = message["animation"]["file_id"]
-            except:
-                try:
-                    file_id = message["video_note"]["file_id"]
-                except:
-                    file_id = message["video"]["file_id"]
-    except:
-        print("formato multimediale non supportato da questa app")
-        file_id = "Non supportato"
-    print(">>>>file_id recuperato correttamente<<<< => " + file_id)
-    return file_id
