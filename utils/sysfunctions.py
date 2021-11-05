@@ -45,7 +45,6 @@ def poll_function(client,message,query):
     opzioni = poll[1]
     opzioni = opzioni.split(",")
     client.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
-    return
 
 """
 Preso come argomento un path intero, invia quel file su telegram(utile per backuppare file di configurazione o .db)
@@ -53,8 +52,10 @@ Preso come argomento un path intero, invia quel file su telegram(utile per backu
 @Client.on_message()
 def send_file(client,message,path):
     chat = utils.get_config.get_chat(message)
-    client.send_document(chat,document = path,caption = "__Ecco il file richiesto__",reply_to_message_id=message["message_id"])
-    return
+    try:
+        client.send_document(chat,document = path,caption = "__Ecco il file richiesto__",reply_to_message_id=message["message_id"])
+    except:
+        client.send_message(chat,"__Errore file non trovato.__","md",False,False,message["message_id"])
 
 """
 Restituisce il numero di messaggi complessivo nella chat in cui viene lanciato il comando
