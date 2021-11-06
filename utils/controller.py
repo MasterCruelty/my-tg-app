@@ -40,7 +40,8 @@ dictionary_super = {'/setuser'    : utils.dbfunctions.set_user,
                     '/alluser'    : utils.dbfunctions.all_user,
                     '/setadmin'   : utils.dbfunctions.set_admin,
                     '/deladmin'   : utils.dbfunctions.del_admin,
-                    '/send'       : utils.sysfunctions.send_file}
+                    '/send'       : utils.sysfunctions.send_file,
+                    '/exec'       : utils.sysfunctions.exec_file}
 """
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
