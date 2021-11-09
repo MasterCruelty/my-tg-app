@@ -58,14 +58,19 @@ def send_file(client,message,path):
     except:
         client.send_message(chat,"__Errore file non trovato.__","md",False,False,message["message_id"])
 
+"""
+Esegue un comando dalla shell della macchina su cui è hostato lo userbot e manda l'output del comando sulla stessa chat.
+"""
 @Client.on_message()
 def exec_file(client,message,src):
     chat = utils.get_config.get_chat(message)
     try:
-        os.system("bash " + src)
-        client.send_message(chat,"__Eseguito come richiesto.__","md",False,False,message["message_id"])
-    except:
-        client.send_message(chat,"__Errore durante l'esecuzione.__","md",False,False,message["message_id"])
+        os.system(src + " > out.txt")
+        out = open("out.txt",'r')
+        client.send_message(chat,"__Eseguito come richiesto.__\n**output:**\n__" + out.read() + "__","md",False,False,message["message_id"])
+    except Exception as ex:
+        client.send_message(chat,"__Probabilmente l'output del comando è troppo lungo, ma il comando è stato eseguito.__\n" + str(ex),"md",False,False,message["message_id"])
+    out.close()
 
 """
 Restituisce il numero di messaggi complessivo nella chat in cui viene lanciato il comando

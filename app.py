@@ -1,6 +1,4 @@
 import time
-from datetime import date
-from datetimerange import DateTimeRange
 from pyrogram import Client 
 from utils.controller import *
 from utils.dbfunctions import *
@@ -15,7 +13,6 @@ comandi = config["commands"][0]
 comandi_admin = config["commands"][1]
 comandi_super = config["commands"][2]
 app = Client(session, api_id, api_hash)
-time_range = DateTimeRange("16:40:00","17:20:00")
 
 @app.on_message()
 def print_updates(client,message):
