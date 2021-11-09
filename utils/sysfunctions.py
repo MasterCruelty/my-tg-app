@@ -68,8 +68,8 @@ def exec_file(client,message,src):
         os.system(src + " > out.txt")
         out = open("out.txt",'r')
         client.send_message(chat,"__Eseguito come richiesto.__\n**output:**\n__" + out.read() + "__","md",False,False,message["message_id"])
-    except:
-        client.send_message(chat,"__Errore durante l'esecuzione.__","md",False,False,message["message_id"])
+    except Exception as ex:
+        client.send_message(chat,"__Probabilmente l'output del comando è troppo lungo.__\n" + str(ex),"md",False,False,message["message_id"])
     out.close()
 
 """
