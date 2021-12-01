@@ -61,7 +61,7 @@ Le spiegazioni sono in Italiano, ma volendo si possono tradurre in qualsiasi lin
 The correct way to setup this bot is to compile the file  ```config.json```. So it's necessary to have these data:
 
 * Telegram api keys: ```api_id``` e ```api_hash```. You can generate them [here](https://my.telegram.org/apps)
-* Atm api url if you wanna use their api: ```api_url``` e ```api_get```. You can generate it from [here](https://t.me/BotFather)
+* Atm api url if you wanna use their api: ```api_url``` e ```api_get```. (The api are not public so I won't share them here)
 * Telegram data of the owner of the bot: ```id_super_admin```.
 * The path where is the .db file: ```path_db```.
 * The session name: ```session_name```.
