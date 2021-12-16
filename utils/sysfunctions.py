@@ -150,10 +150,9 @@ def help(query,client,message):
         return utils.get_config.sendMessage(client,message,help_map+"\n\n"+help_km+"\n\n"+help_route)
     if "atm" in query:
         help_atm = help_file["atm"][0]
-        help_edatm = help_file["atm"][1]
-        help_geoatm = help_file["atm"][2]
-        help_searchatm = help_file["atm"][3]
-        return utils.get_config.sendMessage(client,message,help_atm+"\n\n"+help_edatm+"\n\n"+help_geoatm+"\n\n"+help_searchatm)
+        help_geoatm = help_file["atm"][1]
+        help_searchatm = help_file["atm"][2]
+        return utils.get_config.sendMessage(client,message,help_atm+"\n\n"+help_geoatm+"\n\n"+help_searchatm)
     else:
         return utils.get_config.sendMessage(client,message,"Cerca un comando in particolare come ad esempio:\n /help 'comando'\n__Comandi: wiki, lyrics, covid, poll, atm e mappe.__")
 
