@@ -17,7 +17,7 @@ headers = { "Origin": "https://giromilano.atm.it/",
 Restituisce l'elenco delle fermate dato l'indirizzo richiesto con i codici fermata corrispondenti
 """
 def search_line(line_number,client,message):
-     stops = search_stop(line_number)
+    stops = search_stop(line_number)
     result = str(len(stops)) + " risultati:\n<i>digita /atm 'codice' per sapere i dettagli di una fermata in particolare.</i>\n\n"
     for item in stops:
         if item["Lines"] == []:
