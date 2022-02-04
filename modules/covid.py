@@ -1,6 +1,6 @@
 import requests
 import json
-import utils.get_config
+import utils.get_config as ugc
 
 """
     url => url github da cui recuperare il json
@@ -42,7 +42,7 @@ def covid_cases(query,client,message):
     italia  = covid_format_json('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json')
     trovata = False
     if(check_repo(regioni) or check_repo(italia)):
-        return utils.get_config.sendMessage(client,message,"__Errore repository sorgente__")
+        return ugc.sendMessage(client,message,"__Errore repository sorgente__")
     for item in regioni:
         if(query.title()[0:5] in item["denominazione_regione"]):
             regione = item["denominazione_regione"]
@@ -71,6 +71,6 @@ def covid_cases(query,client,message):
             break
     if(trovata):
         result = "I nuovi positivi in data **" + giorno +"** in __**" + regione + "**__  sono: **" + format_values(nuovi_positivi) + "**\nAttualmente vi sono:\n\n __pazienti ricoverati con sintomi:__ **" +format_values(ricoverati) +"**\n __pazienti in terapia intensiva:__ **" + format_values(terapia_intensiva) + "**\n __pazienti in isolamento domiciliare:__ **" + format_values(isolamento) + "**\n __pazienti deceduti:__ **" + format_values(deceduti) + "**\n\n" + "__ingressi t.i. :__ **" + format_values(ingressi_ti) + "**\n__variazione positivi:__ **" + format_values(var_positivi) + "**"
-        return utils.get_config.sendMessage(client,message,result)
+        return ugc.sendMessage(client,message,result)
     else:
-        return utils.get_config.sendMessage(client,message,"__Regione non trovata__")
+        return ugc.sendMessage(client,message,"__Regione non trovata__")
