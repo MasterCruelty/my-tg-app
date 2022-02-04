@@ -53,6 +53,13 @@ Le spiegazioni sono in Italiano, ma volendo si possono tradurre in qualsiasi lin
 * bs4
 * wikipedia
 
+### Progetti esterni usati
+
+* [Pyrogram](https://github.com/pyrogram/pyrogram)
+* [Covid19 dati Italiani sui casi](https://github.com/pcm-dpc/COVID-19)
+* [Geopy](https://github.com/geopy/geopy)
+* [Wikipedia wrapper](https://github.com/goldsmith/Wikipedia)
+* [Peewee](https://github.com/coleifer/peewee)
 
 # **[ENG]**
 
@@ -95,3 +102,11 @@ This json file is only in Italian, but you can translate it in every languages b
 * geopy
 * bs4
 * wikipedia
+
+### External projects used
+
+* [Pyrogram](https://github.com/pyrogram/pyrogram)
+* [Covid19 cases Italian data](https://github.com/pcm-dpc/COVID-19)
+* [Geopy](https://github.com/geopy/geopy)
+* [Wikipedia wrapper](https://github.com/goldsmith/Wikipedia)
+* [Peewee](https://github.com/coleifer/peewee)
