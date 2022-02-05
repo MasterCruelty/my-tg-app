@@ -44,7 +44,7 @@ dictionary_super = {'/setuser'    : udb.set_user,
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
 def fetch_command(match,query,client,message):
-    if check_group(client,message):
+    if match in dictionary and check_group(client,message):
         return dictionary[match](query,client,message)
 
 """
