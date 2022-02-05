@@ -44,7 +44,7 @@ dictionary_super = {'/setuser'    : udb.set_user,
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
 def fetch_command(match,query,client,message):
-    if match in dictionary and check_group(client,message):
+    if check_group(client,message):
         return dictionary[match](query,client,message)
 
 """
@@ -73,7 +73,7 @@ controlla che robbot non sia nella stessa chat, altrimenti esegue il comando
 @Client.on_message()
 def check_group(client,message):
     try:
-        check = client.get_chat_member(utils.get_config.get_chat(message),133326326)
+        check = client.get_chat_member(ugc.get_chat(message),133326326)
         return False
     except:
         return True
