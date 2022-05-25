@@ -1,21 +1,21 @@
 {
 	"wiki":{
-		"wiki_default":"**/wiki 'keyword'** => ricerca in italiano di default.\n**/wiki 'lang' 'keyword'** => ricerca nella lingua richiesta.",
-		"wikiall":"**/wiki all 'keyword'** => ricerca in italiano mostrando 10 paragrafi.\n**/wiki 'lang' all 'keyword'** => ricerca nella lingua richiesta.",
-		"wikirandom":"**/wiki random** => una pagina casuale in italiano.\n**/wiki 'lang' random** => una pagina casuale nella lingua richiesta.",
+		"wiki_default":"**/wiki 'keyword'** => ricerca in italiano di default.\n**/wiki 'lang' 'keyword'** => ricerca nella lingua richiesta.\n",
+		"wikiall":"**/wiki all 'keyword'** => ricerca in italiano mostrando 10 paragrafi.\n**/wiki 'lang' all 'keyword'** => ricerca nella lingua richiesta.\n",
+		"wikirandom":"**/wiki random** => una pagina casuale in italiano.\n**/wiki 'lang' random** => una pagina casuale nella lingua richiesta.\n",
 		"wikicomune":"**/wiki /comune** => cerca in Wikipedia la pagina di un comune/città/centro abitato/etc."
 	},
 	"lyrics":"**/lyrics 'artist' , 'song'** => restituisce le lyrics della canzone richiesta.",
 	"covid":"**/covid** => restituisce i dati relativi alla pandemia in italia nel giorno corrente.\n**/covid 'region'** => restituisce i dati della regione.",
 	"poll":"**/poll 'question' / 'option1','option2','option_n'** => invia un sondaggio.",
 	"mappe":{
-		"map":"**/map 'place'** => restituisce la posizione del luogo richiesto.",
-		"km":"**/km 'place1' , 'place2'** => restituisce la distanza tra i due luoghi in km.",
+		"map":"**/map 'place'** => restituisce la posizione del luogo richiesto.\n",
+		"km":"**/km 'place1' , 'place2'** => restituisce la distanza tra i due luoghi in km.\n",
 		"route":"**/route 'mode'/ 'place1' , 'place2'** => restituisce il percorso per raggiungere il luogo 2 partendo dal luogo 1 nella modalità scelta. \n__Le modalità sono: piedi, bicicletta, macchina.__"
 	},
 	"atm":{
-		"atm_default":"**/atm 'stop_code'** => restituisce i dati relativi alla fermata associata al codice inserito",
-		"geoatm":"**/geoatm 'stop_code'** => restituisce la posizione dell'oggetto atm associato al codice fermata inserito",
+		"atm_default":"**/atm 'stop_code'** => restituisce i dati relativi alla fermata associata al codice inserito\n",
+		"geoatm":"**/geoatm 'stop_code'** => restituisce la posizione dell'oggetto atm associato al codice fermata inserito\n",
 		"searchatm":"**/searchatm 'address'**  => Restituisce tutte le fermate trovate con quell'indirizzo.\n__/searchatm via vigevano__"
 	}
 
