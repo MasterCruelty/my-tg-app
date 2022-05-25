@@ -17,6 +17,6 @@
 		"atm_default":"**/atm 'stop_code'** => restituisce i dati relativi alla fermata associata al codice inserito\n",
 		"geoatm":"**/geoatm 'stop_code'** => restituisce la posizione dell'oggetto atm associato al codice fermata inserito\n",
 		"searchatm":"**/searchatm 'address'**  => Restituisce tutte le fermate trovate con quell'indirizzo.\n__/searchatm via vigevano__"
-	}
-
+	},
+	"default": "Cerca un comando in particolare come ad esempio:\n /help 'comando'\n__Comandi: wiki, lyrics, covid, poll, atm e mappe.__"
 }
