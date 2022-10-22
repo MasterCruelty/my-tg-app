@@ -16,11 +16,11 @@ def search_msg(client,message,search):
     chat = ugc.get_chat(message)
     id_messaggio = ugc.get_id_msg(message)
     result = ""
-    client.send_message(chat,"Cerco i messaggi...","html",reply_to_message_id=id_messaggio)
+    client.send_message(chat,"Cerco i messaggi...",reply_to_message_id=id_messaggio)
     count = 0
     for message in client.search_messages(chat, query = search):
         if not endsearchmsg and "/searchmsg" not in str(message):
-            id_msg =  message.message_id
+            id_msg =  message.id
             if str(chat).startswith("-100"):
                 try:
                     result += "<a href=\"https://t.me/c/"+str(chat).replace("-100","")+"/"+str(id_msg)+"\">"+ message.text[0:15]+"...</a>" + "\n"
@@ -29,10 +29,10 @@ def search_msg(client,message,search):
                 except:
                     continue
             else:
-                client.send_message(chat,"Trovato","html",reply_to_message_id=id_msg)
+                client.send_message(chat,"Trovato",reply_to_message_id=id_msg)
                 endsearchmsg = udb.isTrueStop()
                 time.sleep(2)
-    client.send_message(chat,"Trovati tutti i messaggi.\n"+ result,"html",False,False,id_messaggio)
+    client.send_message(chat,"Trovati tutti i messaggi.\n"+ result,reply_to_message_id=id_messaggio)
 
 """
 Lancia un sondaggio in automatico non anonimo
@@ -54,9 +54,9 @@ Preso come argomento un path intero, invia quel file su telegram(utile per backu
 def send_file(client,message,path):
     chat = ugc.get_chat(message)
     try:
-        client.send_document(chat,document = path,caption = "__Ecco il file richiesto__",reply_to_message_id=message["message_id"])
+        client.send_document(chat,document = path,caption = "__Ecco il file richiesto__",reply_to_message_id=message.id)
     except:
-        client.send_message(chat,"__Errore file non trovato.__","md",False,False,message["message_id"])
+        client.send_message(chat,"__Errore file non trovato.__",False,False,reply_to_message_id=message.id)
 
 """
 Esegue un comando dalla shell della macchina su cui è hostato lo userbot e manda l'output del comando sulla stessa chat.
@@ -67,9 +67,9 @@ def exec_file(client,message,src):
     try:
         os.system(src + " > out.txt")
         out = open("out.txt",'r')
-        client.send_message(chat,"__Eseguito come richiesto.__\n**output:**\n__" + out.read() + "__","md",False,False,message["message_id"])
+        client.send_message(chat,"__Eseguito come richiesto.__\n**output:**\n__" + out.read() + "__",reply_to_message_id=message.id)
     except Exception as ex:
-        client.send_message(chat,"__Probabilmente l'output del comando è troppo lungo, ma il comando è stato eseguito.__\n" + str(ex),"md",False,False,message["message_id"])
+        client.send_message(chat,"__Probabilmente l'output del comando è troppo lungo, ma il comando è stato eseguito.__\n" + str(ex),reply_to_message_id=message.id)
     out.close()
 
 """
@@ -87,15 +87,15 @@ Restituisce sotto forma di messaggio Telegram l'id della chat corrente
 """
 @Client.on_message()
 def id_chat(client,message):
-    chat_id = message["chat"]["id"]
+    chat_id = message.chat.id
     return ugc.sendMessage(client,message,chat_id)
 
 """
 Restituisce l'id dell'utente a cui appartiene il messaggio risposto
 """
 def get_id(client,message):
-    content = message["reply_to_message"]["from_user"]
-    result = content["id"]
+    content = message.reply_to_message.from_user
+    result = content.id
     return ugc.sendMessage(client,message,result)
 
 """
@@ -115,7 +115,7 @@ def get_message(client,message):
     if(check):
         chat = ugc.get_chat(message)
         uct.save_json(message)
-        client.send_document(chat,document = "json_message.json",caption = "__Ecco il json prodotto dal messaggio__",reply_to_message_id=message["message_id"])
+        client.send_document(chat,document = "json_message.json",caption = "__Ecco il json prodotto dal messaggio__",reply_to_message_id=message.id)
 
 """
 Veloce controllo se l'app è online
@@ -132,7 +132,7 @@ def help(query,client,message):
     help_file = ugc.get_config_file("help.json")
     if query in help_array:
         help_request = help_file[query][0:]
-        help_request = str(help_request).replace("(","").replace(")","").replace('"','').replace(",","").replace(r'\n','\n')
+        help_request = str(help_request).replace("(","").replace(")","").replace('"','').replace(r'\n','\n')
         return ugc.sendMessage(client,message,help_request)
     else:
         help_request = help_file["default"]

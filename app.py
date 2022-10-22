@@ -13,6 +13,7 @@ comandi = config["commands"][0]
 comandi_admin = config["commands"][1]
 comandi_super = config["commands"][2]
 app = Client(session, api_id, api_hash)
+print("The app is running...")
 
 @app.on_message()
 def print_updates(client,message):
@@ -20,7 +21,7 @@ def print_updates(client,message):
     chat = get_chat(message)
     id_messaggio = get_id_msg(message)
     utente = get_id_user(message)
-    nome_chat = message["chat"]["title"]
+    nome_chat = message.chat.title
     nome_utente = get_first_name(message)
     time_message = time.strftime("%H:%M:%S")
     file_id = "Nullo"
