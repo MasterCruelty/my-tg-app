@@ -116,9 +116,9 @@ questa funzione permette di registrare un nuovo utente nella tabella User
 @Client.on_message()
 def set_user(client,message,query):
     json_user = client.get_users(query)
-    userid = json_user["id"]
-    nome_utente = json_user["first_name"]
-    username_utente = "@" + str(json_user["username"])
+    userid = json_user.id
+    nome_utente = json_user.first_name
+    username_utente = "@" + str(json_user.username)
     user = User(id_user = userid, name = nome_utente, username = username_utente)
     try:
         user.save()
@@ -135,7 +135,7 @@ Questa funzione elimina un utente dalla tabella User
 @Client.on_message()
 def del_user(client,message,query):
     json_user = client.get_users(query)
-    userid = json_user["id"]
+    userid = json_user.id
     query = User.delete().where(User.id_user == userid).execute()
     result = "Utente " + str(userid) + " eliminato."
     return sendMessage(client,message,result)
@@ -159,9 +159,9 @@ questa funzione permette di registrare un nuovo admin nella tabella Admin
 @Client.on_message()
 def set_admin(client,message,query):
     json_user = client.get_users(query)
-    userid = json_user["id"]
-    nome_utente = json_user["first_name"]
-    username_utente = "@" + str(json_user["username"])
+    userid = json_user.id
+    nome_utente = json_user.first_name
+    username_utente = "@" + str(json_user.username)
     admin = User(id_user = userid, name = nome_utente, username = username_utente, admin = True)
     try:
         admin.save()
@@ -179,7 +179,7 @@ Questa funzione elimina un admin  dalla tabella Admin
 @Client.on_message()
 def del_admin(client,message,query):
     json_user = client.get_users(query)
-    userid = json_user["id"]
+    userid = json_user.id
     query = User.update({User.admin: False}).where(User.id_user == userid).execute()
     result = "Admin " + str(userid) + " revocato."
     return sendMessage(client,message,result)  
