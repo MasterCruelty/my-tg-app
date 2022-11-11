@@ -1,4 +1,4 @@
-from pyrogram import Client
+from pyrogram import Client,errors
 import utils.controller as uct
 import utils.get_config as ugc
 import utils.dbfunctions as udb
@@ -45,10 +45,10 @@ def poll_function(query,client,message):
     domanda = poll[0]
     try:
         opzioni = poll[1]
-    except IndexError:
+        opzioni = opzioni.split(",")
+        client.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
+    except (IndexError,errors.exceptions.bad_request_400.PollAnswersInvalid):
         return ugc.sendMessage(client,message,"__Errore formato.\n/help poll__")
-    opzioni = opzioni.split(",")
-    client.send_poll(chat,domanda,opzioni,is_anonymous=False,reply_to_message_id=id_messaggio)
 
 """
 Preso come argomento un path intero, invia quel file su telegram(utile per backuppare file di configurazione o .db)
