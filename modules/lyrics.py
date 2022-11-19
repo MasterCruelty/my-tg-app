@@ -5,7 +5,10 @@ from utils.get_config import sendMessage
 
 def execute_lyrics(query,client,message):
     parametri = query.split(",")
-    result = get_lyrics_formated(parametri[0],parametri[1])
+    try:
+        result = get_lyrics_formated(parametri[0],parametri[1])
+    except IndexError:  
+        return sendMessage(client,message,"__Errore formato.\nProva /help lyrics__")
     return sendMessage(client,message,result)
 
 """
