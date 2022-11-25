@@ -50,11 +50,14 @@ def execute_route(client,message,query):
 """
 @Client.on_message()
 def showmaps(address,client,message):
+    check = False
     if "-i" in address:
         check = True
         address = address.replace("-i","")
     geolocate = Nominatim(user_agent="my-tg-app")
     location  = geolocate.geocode(address,timeout=10000)
+    if location == None:
+        return sendMessage(client,message,"__404: page not found.__")
     coordinates = []
     caption = "__**" + location.address + "\n\nTipologia luogo: " + location.raw["type"] + "\n\nImportanza: " + str(round(location.raw["importance"],2)) + "**__"
     caption += "\n\n__Importanza è un valore compreso tra 0 e 1 circa, calcolato in base al rank del luogo negli articoli di Wikipedia.__"
