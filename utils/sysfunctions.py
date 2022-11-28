@@ -81,7 +81,7 @@ Restituisce il numero di messaggi complessivo nella chat in cui viene lanciato i
 @Client.on_message()
 def count_messages(client,message):
     chat = ugc.get_chat(message)
-    totmsg = client.get_chat_history_count(chat)
+    totmsg = client.search_messages_count(chat)
     result = "Totale messaggi in questa chat: " + str(totmsg)
     return ugc.sendMessage(client,message,result)
 
