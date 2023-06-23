@@ -38,12 +38,12 @@ def execute_wiki(query,client,message):
             client.edit_message_text(ugc.get_chat(message),message.id+1,"Operazione fallita")
             return
     lingua = get_lang(query)
-    if not(lingua in wikipedia.languages()) or lingua == "all":
+    if (lingua not in wikipedia.languages()) or lingua == "all":
         return exec_wiki_ita(query,client,message)
     word = get_keyword(query)
     if " all " in query:
         return wikiall(word,client,message,lingua)
-    if "random" in query:
+    if "-r" in query:
         return wikirandom(1,False,client,message,lingua)
     else:
         return wiki(word,client,message,lingua)
@@ -53,7 +53,7 @@ def exec_wiki_ita(query,client,message):
     if "all " in query:
         query = uct.parser(query)
         return wikiall(query,client,message)
-    if "random" in query:
+    if "-r" in query:
         return wikirandom(1,False,client,message)
     else:
         return wiki(query,client,message)
@@ -72,7 +72,7 @@ def wiki(keyword,client,message,lang="it"):
 #data la lingua e la parola chiave da cercare, restituisce il numero massimo di frasi(limite della libreria) della voce trovata
 def wikiall(keyword,client,message,lang="it"):
    wikipedia.set_lang(lang)
-   if "random" in keyword:
+   if "-r" in keyword:
        result = wikirandom(10,client,message,lang)
        return result
    try:
@@ -106,13 +106,16 @@ def comune(client,message):
     wikipedia.set_lang("it")
     while(True):
         count += 1
-        client.edit_message_text(chat,id_messaggio+1,"Cerco un comune...\nVoci consultate: " + str(count))
+        #Stampo solo per numeri pari dimezzando il numero di modifiche al messaggio.
+        #Meno carico sulle richieste api di Telegram.
+        if count % 2 == 0:
+            client.edit_message_text(chat,id_messaggio+1,"Cerco un comune...\nVoci consultate: " + str(count))
         try:
             random = wikipedia.random()
             result = wikipedia.summary(random,1)
         except:
             continue 
-        if (("è un comune" in result or "città" in result or "centro abitato" in result or "è una frazione" in result)):
+        if (("è un comune" in result or "è una curazia" in result or "città" in result or "centro abitato" in result or "è una frazione" in result)):
             page = wikipedia.page(random)
             title = page.title
             page_source = page.html()
