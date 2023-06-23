@@ -13,7 +13,7 @@ from gtts import gTTS
 
 config = get_config_file("config.json")
 api_geopy = config["api_geopy"]
-
+not_found = "__Error 404: not found__"
 
 
 """
@@ -23,12 +23,18 @@ api_geopy = config["api_geopy"]
 """
 def execute_km(query,client,message):
     addresses = query.split(',')
-    km = distanza(addresses[0],addresses[1])
+    try:
+        km = distanza(addresses[0],addresses[1])
+    except IndexError:
+        return sendMessage(client,message,"__Errore: distanza non calcolabile.__")
     if(km == "None"):
-        result = "__Error 404: not found__"
+        result = not_found
     else:
         result = "La distanza tra i due luoghi è di " + str(km) + " km."
-    return sendMessage(client,message,result)
+    try:
+        return sendMessage(client,message,result)
+    except AttributeError:
+        return km
 
 def execute_route(client,message,query):
     #uso il carattere '/' come separatore per recuperare modalità di trasporto e dopo uso ',' per recuperare i due luoghi
@@ -57,7 +63,10 @@ def showmaps(address,client,message):
     geolocate = Nominatim(user_agent="my-tg-app")
     location  = geolocate.geocode(address,timeout=10000)
     if location == None:
-        return sendMessage(client,message,"__404: page not found.__")
+        try:
+            return sendMessage(client,message,not_found)
+        except AttributeError:
+            print("errore generico")
     coordinates = []
     caption = "__**" + location.address + "\n\nTipologia luogo: " + location.raw["type"] + "\n\nImportanza: " + str(round(location.raw["importance"],2)) + "**__"
     caption += "\n\n__Importanza è un valore compreso tra 0 e 1 circa, calcolato in base al rank del luogo negli articoli di Wikipedia.__\n"
@@ -68,7 +77,7 @@ def showmaps(address,client,message):
     try:
         coordinates.append(location.latitude)
         coordinates.append(location.longitude)
-    except:
+    except AttributeError:
         return sendMessage(client,message,"__Error 404: not found__")
     try:
         client.send_location(get_chat(message),coordinates[0],coordinates[1],reply_to_message_id=get_id_msg(message))
