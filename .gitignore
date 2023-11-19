@@ -5,6 +5,7 @@ __pycache__/
 
 #Ignora questa cartella
 files/
+out.txt
 
 #Ignora le sessioni
 *.session

@@ -13,10 +13,5 @@
 		"km":"**/km 'place1' , 'place2'** => restituisce la distanza tra i due luoghi in km.\n",
 		"route":"**/route 'mode'/ 'place1' , 'place2'** => restituisce il percorso per raggiungere il luogo 2 partendo dal luogo 1 nella modalità scelta. \n__Le modalità sono: piedi, bicicletta, macchina.__"
 	},
-	"atm":{
-		"atm_default":"**/atm 'stop_code'** => restituisce i dati relativi alla fermata associata al codice inserito\n",
-		"geoatm":"**/geoatm 'stop_code'** => restituisce la posizione dell'oggetto atm associato al codice fermata inserito\n",
-		"searchatm":"**/searchatm 'address'**  => Restituisce tutte le fermate trovate con quell'indirizzo.\n__/searchatm via vigevano__"
-	},
-	"default": "Cerca un comando in particolare come ad esempio:\n /help 'comando'\n__Comandi: wiki, lyrics, covid, poll, atm e mappe.__"
+	"default": "Cerca un comando in particolare come ad esempio:\n /help 'comando'\n__Comandi: wiki, lyrics, covid, poll e mappe.__"
 }
