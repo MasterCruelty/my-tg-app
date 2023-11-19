@@ -3,7 +3,6 @@ import utils_config
 import modules.wiki
 import modules.gmaps
 import modules.lyrics
-import modules.atm_feature
 import modules.covid
 import utils.dbfunctions as udb
 import utils.sysfunctions as usys
