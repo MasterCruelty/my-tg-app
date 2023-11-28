@@ -58,10 +58,11 @@ Analogamente a fetch_command ma per i comandi esclusivi del super admin
 """
 def fetch_super_command(match,query,client,message):
     #db functions and send_file
-    try:
-        return dictionary_super[match](client,message,query)
-    except:
-        return dictionary_super[match](client,message)
+    if check_group(client,message):
+        try:
+            return dictionary_super[match](client,message,query)
+        except:
+            return dictionary_super[match](client,message)
 
 """
 controlla che robbot o il babbometer non sia nella stessa chat, altrimenti esegue il comando
