@@ -64,12 +64,13 @@ def fetch_super_command(match,query,client,message):
         return dictionary_super[match](client,message)
 
 """
-controlla che robbot non sia nella stessa chat, altrimenti esegue il comando
+controlla che robbot o il babbometer non sia nella stessa chat, altrimenti esegue il comando
 """
 @Client.on_message()
 def check_group(client,message):
     try:
         check = client.get_chat_member(ugc.get_chat(message),133326326)
+        check2 = client.get_chat_member(ugc.get_chat(message),6868419108)
         return False
     except:
         return True
