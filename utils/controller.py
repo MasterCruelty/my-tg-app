@@ -40,7 +40,7 @@ dictionary_super = {'/setuser'    : udb.set_user,
 Questa funzione prende come argomento il match e la richiesta dal main e dirotta la richiesta sul file dedicato a quel comando
 """
 def fetch_command(match,query,client,message):
-    if check_group(client,message):
+    if check_group(client,message) and check_group2(client,message):
         return dictionary[match](query,client,message)
 
 """
@@ -48,17 +48,18 @@ Analogamente a fetch_command ma per i comandi esclusivi degli utenti admin
 """
 def fetch_admin_command(match,query,client,message):
     #system functions
-    try:
-        return dictionary_admin[match](client,message,query)
-    except:
-        return dictionary_admin[match](client,message)
+    if check_group2(client,message):
+        try:
+            return dictionary_admin[match](client,message,query)
+        except:
+            return dictionary_admin[match](client,message)
 
 """
 Analogamente a fetch_command ma per i comandi esclusivi del super admin
 """
 def fetch_super_command(match,query,client,message):
     #db functions and send_file
-    if check_group(client,message):
+    if check_group2(client,message):
         try:
             return dictionary_super[match](client,message,query)
         except:
@@ -71,11 +72,17 @@ controlla che robbot o il babbometer non sia nella stessa chat, altrimenti esegu
 def check_group(client,message):
     try:
         check = client.get_chat_member(ugc.get_chat(message),133326326)
-        check2 = client.get_chat_member(ugc.get_chat(message),6868419108)
         return False
     except:
         return True
 
+@Client.on_message()
+def check_group2(client,message):
+    try:
+        check2 = client.get_chat_member(ugc.get_chat(message),6868419108)
+        return False
+    except:
+        return True
 """
 funzione che aiuta a parsare i comandi nel sorgente principale senza sporcare troppo in giro
 """
