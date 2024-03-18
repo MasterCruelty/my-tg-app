@@ -37,53 +37,8 @@ def execute_wiki(query,client,message):
         except:
             client.edit_message_text(ugc.get_chat(message),message.id+1,"Operazione fallita")
             return
-    lingua = get_lang(query)
-    if (lingua not in wikipedia.languages()) or lingua == "all":
-        return exec_wiki_ita(query,client,message)
-    word = get_keyword(query)
-    if " all " in query:
-        return wikiall(word,client,message,lingua)
-    if "-r" in query:
-        return wikirandom(1,False,client,message,lingua)
-    else:
-        return wiki(word,client,message,lingua)
 
-#Esegue le funzioni wiki ma con lingua italiana come default
-def exec_wiki_ita(query,client,message):
-    if "all " in query:
-        query = uct.parser(query)
-        return wikiall(query,client,message)
-    if "-r" in query:
-        return wikirandom(1,False,client,message)
-    else:
-        return wiki(query,client,message)
 
-#data la lingua e la parola chiave da cercare, restituisce una frase della voce trovata
-def wiki(keyword,client,message,lang="it"):
-   wikipedia.set_lang(lang)
-   try:
-       result = wikipedia.summary(keyword,sentences = 1) 
-       result += "\n"+create_link(keyword,lang)
-   except wikipedia.exceptions.DisambiguationError as wd:
-       result =  str(wd)
-   except wikipedia.exceptions.PageError as err:
-       result = str(err)
-   return ugc.sendMessage(client,message,result)
-#data la lingua e la parola chiave da cercare, restituisce il numero massimo di frasi(limite della libreria) della voce trovata
-def wikiall(keyword,client,message,lang="it"):
-   wikipedia.set_lang(lang)
-   if "-r" in keyword:
-       result = wikirandom(10,client,message,lang)
-       return result
-   try:
-       result = wikipedia.summary(keyword,sentences = 10)
-       result = result.replace("==","****")
-       result += "\n"+create_link(keyword,lang)
-   except wikipedia.exceptions.DisambiguationError as wd:
-       result =  str(wd)
-   except wikipedia.exceptions.PageError as err:
-       result = str(err)
-   return ugc.sendMessage(client,message,result)
 #data la lingua restituisce una frase di una pagina wikipedia casuale
 def wikirandom(sents,boole,client,message,lang="it"):
     wikipedia.set_lang(lang)
