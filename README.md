@@ -56,6 +56,7 @@ Le spiegazioni sono in Italiano, ma volendo si possono tradurre in qualsiasi lin
 * utils_config
 * openrouteservice
 * gtts
+* peewee
 
 ### Progetti esterni usati
 
@@ -111,6 +112,7 @@ This json file is only in Italian, but you can translate it in every languages b
 * utils_config
 * openrouteservice
 * gtts
+* peewee
 
 ### External projects used
 
@@ -119,4 +121,5 @@ This json file is only in Italian, but you can translate it in every languages b
 * [Geopy](https://github.com/geopy/geopy)
 * [Wikipedia wrapper](https://github.com/goldsmith/Wikipedia)
 * [Another Wikipedia wrapper](https://github.com/martin-majlis/Wikipedia-API)
+* [Peewee](https://github.com/coleifer/peewee)
 * [Peewee](https://github.com/coleifer/peewee)
