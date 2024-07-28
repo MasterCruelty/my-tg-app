@@ -52,6 +52,7 @@ Le spiegazioni sono in Italiano, ma volendo si possono tradurre in qualsiasi lin
 * geopy
 * bs4
 * wikipedia
+* wikipedia-api
 
 ### Progetti esterni usati
 
@@ -59,6 +60,7 @@ Le spiegazioni sono in Italiano, ma volendo si possono tradurre in qualsiasi lin
 * [Covid19 dati Italiani sui casi](https://github.com/pcm-dpc/COVID-19)
 * [Geopy](https://github.com/geopy/geopy)
 * [Wikipedia wrapper](https://github.com/goldsmith/Wikipedia)
+* [Another Wikipedia wrapper](https://github.com/martin-majlis/Wikipedia-API)
 * [Peewee](https://github.com/coleifer/peewee)
 
 # **[ENG]**
@@ -102,6 +104,7 @@ This json file is only in Italian, but you can translate it in every languages b
 * geopy
 * bs4
 * wikipedia
+* wikipedia-api
 
 ### External projects used
 
@@ -109,4 +112,5 @@ This json file is only in Italian, but you can translate it in every languages b
 * [Covid19 cases Italian data](https://github.com/pcm-dpc/COVID-19)
 * [Geopy](https://github.com/geopy/geopy)
 * [Wikipedia wrapper](https://github.com/goldsmith/Wikipedia)
+* [Another Wikipedia wrapper](https://github.com/martin-majlis/Wikipedia-API)
 * [Peewee](https://github.com/coleifer/peewee)
